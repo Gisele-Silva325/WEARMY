@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="shortcut icon" href="assets/BTS-Logo.png" type="image/x-icon">
+    <title>WEARMY - Home</title>
+</head>
+
+<body>
+    <header>
+        <img class="bts-logo" src="assets/BTS-Logo.png" alt="logo do bts" />
+        <div class="navegacao">
+            <ul>
+                <li><a href="">Cadastro</a></li>
+                <li> | </li>
+                <li><a href="">Login</a></li>
+            </ul>
+            <div class="dropdown">
+                <button class="mainmenubtn" onclick="mostrarmenu()">
+                    <img class="menu" src="assets/menu.png" alt="menu lateral" />
+                </button>
+                <div class="dropdown-child" id="child_dropdown">
+                    <a href="index.html">Home</a>
+                    <a href="qmeBTS.html">Quem são o BTS?</a>
+                    <a href="wearmy.html">O que é o WEARMY</a>
+                    <a href="">Discrografia</a>
+                    <a href="simulador.html">Simulador da coleção</a>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="banner" id='WEARMY'>
+        <h1>WEARMY</h1>
+        <img class="WEARMY" src="assets/banner-wearmy.png" alt="banner weamy">
+    </div>
+    <div class="container">
+        <div class="text-wearmy">
+            <div class="box-wearmy">
+                <h1>O que é?</h1>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ut blandit augue. Nullam at odio in
+                    nulla tristique convallis sit amet ornare velit. Mauris sem enim, aliquet vitae augue et, viverra
+                    semper
+                    nibh. Sed orci velit, vehicula laoreet posuere nec, consequat non libero. In tempor eu libero quis
+                    hendrerit. Morbi tristique eros eu consequat lacinia. Curabitur convallis risus ut mattis tincidunt.
+                    Duis lorem velit, laoreet eget aliquam nec, luctus ac dui. Ut nec risus fringilla, gravida risus a,
+                    congue metus. Vivamus non pharetra nibh.
+                </p>
+            </div>
+            <div class="box-wearmy">
+                <h1>Objetivo do projeto</h1>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ut blandit augue. Nullam at odio in
+                    nulla tristique convallis sit amet ornare velit. Mauris sem enim, aliquet vitae augue et, viverra
+                    semper
+                    nibh. Sed orci velit, vehicula laoreet posuere nec, consequat non libero. In tempor eu libero quis
+                    hendrerit. Morbi tristique eros eu consequat lacinia. Curabitur convallis risus ut mattis tincidunt.
+                    Duis lorem velit, laoreet eget aliquam nec, luctus ac dui. Ut nec risus fringilla, gravida risus a,
+                    congue metus. Vivamus non pharetra nibh.
+                </p>
+            </div>
+        </div>
+        <div class="formDuvida">
+            <h1>
+                Possui alguma dúvida?
+            </h1>
+            <div class="perguntas">
+                <h2>Nome Completo</h2>
+                <input type="text" id="nomeDuvida" placeholder="Digite seu nome" />
+                <h2>E-mail</h2>
+                <input type="text" id="emailDuvida" placeholder="army@email.com" />
+                <h2>Selecione o tipo de dúvida</h2>
+                <select name="tipoDuvida" id="tipoDuvida">
+                    <option value="">Selecione o tipo de dúvida</option>
+                    <option value="conta">Conta</option>
+                    <option value="projeto">Projeto</option>
+                    <option value="privacidade">Privacidade</option>
+                    <option value="outro">Outros</option>
+                </select>
+                <h2>Assunto</h2>
+                <input type="text" id="assuntoDuvida" placeholder="Escreva o tópico" />
+                <h2>Escreva sua dúvida</h2>
+                <textarea cols="8" rows="3" id="textoDuvida" placeholder="Discorra sobre assunto"></textarea>
+                <button class="btnFormDuv" id="btnCleanDuv">
+                    limpar
+                </button>
+                <button class="btnFormDuv" id="btnSendDuv">
+                    enviar
+                </button>
+            </div>
+            <img class="bts-van" src="assets/van-wearmy.png" alt="bt21 vann">
+        </div>
+    </div>
+    <div class="footer">
+            © WEARMY
+    </div>
+</body>
+
+</html>
+<script>
+    var exibir_menu = false
+
+    function mostrarmenu() {
+        if (exibir_menu == true) {
+            exibir_menu = false
+            child_dropdown.style.display = 'none'
+        } else {
+            exibir_menu = true
+            child_dropdown.style.display = 'block'
+        }
+    }
+</script>

@@ -1,0 +1,772 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="shortcut icon" href="assets/BTS-Logo.png" type="image/x-icon">
+    <title>WEARMY - Home</title>
+</head>
+
+<body>
+    <header>
+        <img class="bts-logo" src="assets/BTS-Logo.png" alt="logo do bts" />
+        <div class="navegacao">
+            <ul>
+                <li><a href="">Cadastro</a></li>
+                <li> | </li>
+                <li><a href="">Login</a></li>
+            </ul>
+            <div class="dropdown">
+                <button class="mainmenubtn" onclick="mostrarmenu()">
+                    <img class="menu" src="assets/menu.png" alt="menu lateral" />
+                </button>
+                <div class="dropdown-child" id="child_dropdown">
+                    <a href="index.html">Home</a>
+                    <a href="qmeBTS.html">Quem são o BTS?</a>
+                    <a href="wearmy.html">O que é o WEARMY</a>
+                    <a href="">Discrografia</a>
+                    <a href="simulador.html">Simulador da coleção</a>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="banner" id='calculadora'>
+        <h1><span>Simulando sua coleção</span></h1>
+        <h2>Foi levado em consideração os preços oficiais do weverse.
+            A cotação do dolar é atulizada semanalmente
+        </h2>
+        <img class="calculadora" src="assets/banner-calculadora.png" alt="banner weamy">
+    </div>
+    <div class="container" id="container_simulador">
+        <div class="mensagemTotal" id="msgTotal">
+            ASBDVJKSADHGJSDGSKKSDJHGDGHJDSGJGDGFDGFASDHGFSH
+        </div>
+        <div class="catalogo">
+            <div class="catalogo-linha">
+                <div class="box-catalogo" id="BoxCatalogo">
+                    <img src="assets/img/bts-2kool4skuul.jpg" alt="2kool4skuul">
+                    <div class="texto-album">
+                        Single Album [2 COOL 4 SKOOL] <span class="valorItem">$9.66</span>
+                        <span class="precoAlbum">
+                            Quantidade de itens
+                            <span id="qtdItem">
+                                0
+                            </span>
+                            <div class="btnCart">
+                                <button>
+                                    +
+                                </button>
+                                <button>
+                                    —
+                                </button>
+                            </div>
+                        </span>
+                    </div>
+                </div>
+                <div class="box-catalogo" id="BoxCatalogo">
+                    <img src="assets/img/bts-O!RUL82.jpg" alt="O!RUL82" />
+                    <div class="texto-album">
+                        BTS 1st Mini Album[O!RUL8,2?] <span class="valorItem">$11.05</span>
+                        <span class="precoAlbum">
+                            Quantidade de itens
+                            <span id="qtdItem">
+                                0
+                            </span>
+                            <div class="btnCart">
+                                <button>
+                                    +
+                                </button>
+                                <button>
+                                    —
+                                </button>
+                            </div>
+                        </span>
+                    </div>
+                </div>
+                <div class="box-catalogo" id="BoxCatalogo">
+                    <img src="assets/img/bts-skoolluvaffair.jpg" alt="skool luv affair" />
+                    <div class="texto-album">
+                        BTS 2nd Mini Album[Skool Luv Affair] <span class="valorItem">$11.05</span>
+                        <span class="precoAlbum">
+                            Quantidade de itens
+                            <span id="qtdItem">
+                                0
+                            </span>
+                            <div class="btnCart">
+                                <button>
+                                    +
+                                </button>
+                                <button>
+                                    —
+                                </button>
+                            </div>
+                        </span>
+                    </div>
+                </div>
+                <div class="box-catalogo" id="BoxCatalogo">
+                    <img src="assets/img/bts-skoolluvaffairspecial.jpg" alt="skool luv affair special" />
+                    <div class="texto-album">
+                        Skool Luv Affair Special Addition <span class="valorItem">$36.60</span>
+                        <span class="precoAlbum">
+                            Quantidade de itens
+                            <span id="qtdItem">
+                                0
+                            </span>
+                            <div class="btnCart">
+                                <button>
+                                    +
+                                </button>
+                                <button>
+                                    —
+                                </button>
+                            </div>
+                        </span>
+                    </div>
+                </div>
+                <div class="box-catalogo" id="BoxCatalogo">
+                    <img src="assets/img/bts-dark&wild.jpg" alt="dark & wild">
+                    <div class="texto-album">
+                        BTS 1st Album [Dark & Wild] <span class="valorItem">$13.84</span>
+                        <span class="precoAlbum">
+                            Quantidade de itens
+                            <span id="qtdItem">
+                                0
+                            </span>
+                            <div class="btnCart">
+                                <button>
+                                    +
+                                </button>
+                                <button>
+                                    —
+                                </button>
+                            </div>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- SEGUNDA LINHA DE CATALOGO -->
+        <div class="catalogo">
+            <div class="catalogo-linha">
+                <div class="box-catalogo" id="BoxCatalogo">
+                    <img src="assets/img/hyyhpt1.jpg" alt="the most beatifull moment in life pt1">
+                    <div class="texto-album">
+                        BTS 3rd Mini Album[The Most Beautiful Moment in Life PT.1] <span class="valorItem">$12.44</span>
+                        <span class="precoAlbum">
+                            Quantidade de itens
+                            <span id="qtdItem">
+                                0
+                            </span>
+                            <div class="btnCart">
+                                <button>
+                                    +
+                                </button>
+                                <button>
+                                    —
+                                </button>
+                            </div>
+                        </span>
+                    </div>
+                </div>
+                <div class="box-catalogo" id="BoxCatalogo">
+                    <img src="assets/img/hyyhpt3.jpg" alt="the most beatifull moment in life pt3" />
+                    <div class="texto-album">
+                        BTS Young Forever in The Most Beautiful Moment in Life <span class="valorItem">$19.32</span>
+                        <span class="precoAlbum">
+                            Quantidade de itens
+                            <span id="qtdItem">
+                                0
+                            </span>
+                            <div class="btnCart">
+                                <button>
+                                    +
+                                </button>
+                                <button>
+                                    —
+                                </button>
+                            </div>
+                        </span>
+                    </div>
+                </div>
+                <div class="box-catalogo" id="BoxCatalogo">
+                    <img src="assets/img/wings.jpg" alt="WINGS" />
+                    <div class="texto-album">
+                        BTS 2nd Album [WINGS] <span class="valorItem">$13.84</span>
+                        <span class="precoAlbum">
+                            Quantidade de itens
+                            <span id="qtdItem">
+                                0
+                            </span>
+                            <div class="btnCart">
+                                <button>
+                                    +
+                                </button>
+                                <button>
+                                    —
+                                </button>
+                            </div>
+                        </span>
+                    </div>
+                </div>
+                <div class="box-catalogo"  id="BoxCatalogo">
+                    <img src="assets/img/bts-YNWA.jpg" alt="you never walk alone" />
+                    <div class="texto-album">
+                        YOU NEVER WALK ALONE <span class="valorItem">$16.53</span>
+                        <span class="precoAlbum">
+                            Quantidade de itens
+                            <span id="qtdItem">
+                                0
+                            </span>
+                            <div class="btnCart">
+                                <button>
+                                    +
+                                </button>
+                                <button>
+                                    —
+                                </button>
+                            </div>
+                        </span>
+                    </div>
+                </div>
+                <div class="box-catalogo" id="BoxCatalogo">
+                    <img src="assets/img/bts-lyher.jpg" alt="love yourself: her">
+                    <div class="texto-album">
+                        LOVE YOURSELF 承 'Her' <span class="valorItem">$13.84</span>
+                        <span class="precoAlbum">
+                            Quantidade de itens
+                            <span id="qtdItem">
+                                0
+                            </span>
+                            <div class="btnCart">
+                                <button>
+                                    +
+                                </button>
+                                <button>
+                                    —
+                                </button>
+                            </div>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <!-- TERCEIRA LINHA DE CATALOGO -->
+            <div class="catalogo">
+                <div class="catalogo-linha">
+                    <div class="box-catalogo" id="BoxCatalogo">
+                        <img src="assets/img/bts-lytear.jpeg" alt="love yourself:tear">
+                        <div class="texto-album">
+                            LOVE YOURSELF 轉 'Tear' <span class="valorItem">$15.14</span>
+                            <span class="precoAlbum">
+                                Quantidade de itens
+                                <span id="qtdItem">
+                                    0
+                                </span>
+                                <div class="btnCart">
+                                    <button>
+                                        +
+                                    </button>
+                                    <button>
+                                        —
+                                    </button>
+                                </div>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="box-catalogo" id="BoxCatalogo" id="BoxCatalogo">
+                        <img src="assets/img/bts-lyanswer.png" alt="love yourself:answer" />
+                        <div class="texto-album">
+                            LOVE YOURSELF 結 ´Answer´ <span class="valorItem">$16.53</span>
+                            <span class="precoAlbum">
+                                Quantidade de itens
+                                <span id="qtdItem">
+                                    0
+                                </span>
+                                <div class="btnCart">
+                                    <button>
+                                        +
+                                    </button>
+                                    <button>
+                                        —
+                                    </button>
+                                </div>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="box-catalogo" id="BoxCatalogo" id="BoxCatalogo">
+                        <img src="assets/img/bts-motspersona.jpg" alt="Map of Soul: Persona" />
+                        <div class="texto-album">
+                            MAP OF THE SOUL : PERSONA<span class="valorItem">$13.74</span>
+                            <span class="precoAlbum">
+                                Quantidade de itens
+                                <span id="qtdItem">
+                                    0
+                                </span>
+                                <div class="btnCart">
+                                    <button>
+                                        +
+                                    </button>
+                                    <button>
+                                        —
+                                    </button>
+                                </div>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="box-catalogo" id="BoxCatalogo" id="BoxCatalogo">
+                        <img src="assets/img/bts-mots7.jpg" alt="Map of Soul: 7" />
+                        <div class="texto-album">
+                            Map Of The Soul : 7 <span class="valorItem">$18.02</span>
+                            <span class="precoAlbum">
+                                Quantidade de itens
+                                <span id="qtdItem">
+                                    0
+                                </span>
+                                <div class="btnCart">
+                                    <button>
+                                        +
+                                    </button>
+                                    <button>
+                                        —
+                                    </button>
+                                </div>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="box-catalogo" id="BoxCatalogo" id="BoxCatalogo">
+                        <img src="assets/img/bts-dynamite1.png" alt="bts dynamite day version">
+                        <div class="texto-album">
+                            Dynamite - Limited Edition Cassette <span class="valorItem">$8.26</span>
+                            <span class="precoAlbum">
+                                Quantidade de itens
+                                <span id="qtdItem">
+                                    0
+                                </span>
+                                <div class="btnCart">
+                                    <button>
+                                        +
+                                    </button>
+                                    <button>
+                                        —
+                                    </button>
+                                </div>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- TERCEIRA LINHA DE CATALOGO  -->
+                <div class="catalogo">
+                    <div class="catalogo-linha">
+                        <div class="box-catalogo" id="BoxCatalogo" id="BoxCatalogo">
+                            <img src="assets/img/bts-dynamite2.png" alt="bts dynamite night version">
+                            <div class="texto-album">
+                                Dynamite - Limited Edition 7 Vinyl <span class="valorItem">$9.66</span>
+                                <span class="precoAlbum">
+                                    Quantidade de itens
+                                    <span id="qtdItem">
+                                        0
+                                    </span>
+                                    <div class="btnCart">
+                                        <button>
+                                            +
+                                        </button>
+                                        <button>
+                                            —
+                                        </button>
+                                    </div>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="box-catalogo" id="BoxCatalogo" id="BoxCatalogo">
+                            <img src="assets/img/bts-be.jpg" alt="bts be" />
+                            <div class="texto-album">
+                                BE (Deluxe Edition) <span class="valorItem">$36.60</span>
+                                <span class="precoAlbum">
+                                    Quantidade de itens
+                                    <span id="qtdItem">
+                                        0
+                                    </span>
+                                    <div class="btnCart">
+                                        <button>
+                                            +
+                                        </button>
+                                        <button>
+                                            —
+                                        </button>
+                                    </div>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="box-catalogo" id="BoxCatalogo" id="BoxCatalogo">
+                            <img src="assets/img/bts-be-essencials.png" alt="BE: Essencials" />
+                            <div class="texto-album">
+                                BE (Essential Edition)<span class="valorItem">$17.92</span>
+                                <span class="precoAlbum">
+                                    Quantidade de itens
+                                    <span id="qtdItem">
+                                        0
+                                    </span>
+                                    <div class="btnCart">
+                                        <button>
+                                            +
+                                        </button>
+                                        <button>
+                                            —
+                                        </button>
+                                    </div>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="box-catalogo" id="BoxCatalogo" id="BoxCatalogo">
+                            <img src="assets/img/bts-butter-vinyl.png" alt="BTS Butter Vynil" />
+                            <div class="texto-album">
+                                BTS Butter 7 Vinyl <span class="valorItem">$10.96</span>
+                                <span class="precoAlbum">
+                                    Quantidade de itens
+                                    <span id="qtdItem">
+                                        0
+                                    </span>
+                                    <div class="btnCart">
+                                        <button>
+                                            +
+                                        </button>
+                                        <button>
+                                            —
+                                        </button>
+                                    </div>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="box-catalogo" id="BoxCatalogo">
+                            <img src="assets/img/bts-butter-cassete.png" alt="BTS Butter Cassete">
+                            <div class="texto-album">
+                                BTS Butter Cassette <span class="valorItem">$9.10</span>
+                                <span class="precoAlbum">
+                                    Quantidade de itens
+                                    <span id="qtdItem">
+                                        0
+                                    </span>
+                                    <div class="btnCart">
+                                        <button>
+                                            +
+                                        </button>
+                                        <button>
+                                            —
+                                        </button>
+                                    </div>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- QUARTA LINHA DE CATALOGO -->
+                    <div class="catalogo">
+                        <div class="catalogo-linha">
+                            <div class="box-catalogo" id="BoxCatalogo">
+                                <img src="assets/img/butter.png" alt="bts butter">
+                                <div class="texto-album">
+                                    BTS Butter <span class="valorItem">$16.53</span>
+                                    <span class="precoAlbum">
+                                        Quantidade de itens
+                                        <span id="qtdItem">
+                                            0
+                                        </span>
+                                        <div class="btnCart">
+                                            <button>
+                                                +
+                                            </button>
+                                            <button>
+                                                —
+                                            </button>
+                                        </div>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="box-catalogo" id="BoxCatalogo">
+                                <img src="assets/img/bts-proofStandard.jpg" alt="BTS Proof" />
+                                <div class="texto-album">
+                                    Proof (Standard Edition) <span class="valorItem">$51.00</span>
+                                    <span class="precoAlbum">
+                                        Quantidade de itens
+                                        <span id="qtdItem">
+                                            0
+                                        </span>
+                                        <div class="btnCart">
+                                            <button>
+                                                +
+                                            </button>
+                                            <button>
+                                                —
+                                            </button>
+                                        </div>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="box-catalogo" id="BoxCatalogo">
+                                <img src="assets/img/bts-proofCompact.jpg" alt="BTS Proof Compact" />
+                                <div class="texto-album">
+                                    Proof (Compact Edition)<span class="valorItem">$17.92</span>
+                                    <span class="precoAlbum">
+                                        Quantidade de itens
+                                        <span id="qtdItem">
+                                            0
+                                        </span>
+                                        <div class="btnCart">
+                                            <button>
+                                                +
+                                            </button>
+                                            <button>
+                                                —
+                                            </button>
+                                        </div>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="box-catalogo" id="BoxCatalogo">
+                                <img src="assets/img/bts-myuniverse.jpg" alt="BTS MyUniverse" />
+                                <div class="texto-album">
+                                    COLDPLAY CD SINGLE MY UNIVERSE (feat.BTS) <span class="valorItem">$5.38</span>
+                                    <span class="precoAlbum">
+                                        Quantidade de itens
+                                        <span id="qtdItem">
+                                            0
+                                        </span>
+                                        <div class="btnCart">
+                                            <button>
+                                                +
+                                            </button>
+                                            <button>
+                                                —
+                                            </button>
+                                        </div>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="box-catalogo" id="BoxCatalogo">
+                                <img src="assets/img/bts-myuniverseEpiphane.png" alt="BTS MyUniverse Epiphane">
+                                <div class="texto-album">
+                                    My Universe (Epiphane Edition) - Alternate CD Single <span
+                                        class="valorItem">$7.24</span>
+                                    <span class="precoAlbum">
+                                        Quantidade de itens
+                                        <span id="qtdItem">
+                                            0
+                                        </span>
+                                        <div class="btnCart">
+                                            <button>
+                                                +
+                                            </button>
+                                            <button>
+                                                —
+                                            </button>
+                                        </div>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- QUINTA LINHA DE CATALOGO -->
+                        <div class="catalogo">
+                            <div class="catalogo-linha">
+                                <div class="box-catalogo" id="BoxCatalogo">
+                                    <img src="assets/img/jimin-face.jpg" alt="Jimin Face Album">
+                                    <div class="texto-album">
+                                        Jimin (BTS) 'FACE' <span class="valorItem">$17.18</span>
+                                        <span class="precoAlbum">
+                                            Quantidade de itens
+                                            <span id="qtdItem">
+                                                0
+                                            </span>
+                                            <div class="btnCart">
+                                                <button>
+                                                    +
+                                                </button>
+                                                <button>
+                                                    —
+                                                </button>
+                                            </div>
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="box-catalogo" id="BoxCatalogo">
+                                    <img src="assets/img/Indigo_RM.jpg" alt="BTS RM Indigo" />
+                                    <div class="texto-album">
+                                        RM (BTS) 'Indigo' (Book Edition) <span class="valorItem">$16.53</span>
+                                        <span class="precoAlbum">
+                                            Quantidade de itens
+                                            <span id="qtdItem">
+                                                0
+                                            </span>
+                                            <div class="btnCart">
+                                                <button>
+                                                    +
+                                                </button>
+                                                <button>
+                                                    —
+                                                </button>
+                                            </div>
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="box-catalogo" id="BoxCatalogo">
+                                    <img src="assets/img/bts-jin-astronaut.jpg" alt="BTS Jin Astronaut" />
+                                    <div class="texto-album">
+                                        Jin (BTS) The Astronaut<span class="valorItem">$15.79</span>
+                                        <span class="precoAlbum">
+                                            Quantidade de itens
+                                            <span id="qtdItem">
+                                                0
+                                            </span>
+                                            <div class="btnCart">
+                                                <button>
+                                                    +
+                                                </button>
+                                                <button>
+                                                    —
+                                                </button>
+                                            </div>
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="box-catalogo" id="BoxCatalogo">
+                                    <img src="assets/img/bts-baddecisions.png" alt="BTS Bad Decisions" />
+                                    <div class="texto-album">
+                                        Bad Decisions CD <span class="valorItem">$9.10</span>
+                                        <span class="precoAlbum">
+                                            Quantidade de itens
+                                            <span id="qtdItem">
+                                                0
+                                            </span>
+                                            <div class="btnCart">
+                                                <button>
+                                                    +
+                                                </button>
+                                                <button>
+                                                    —
+                                                </button>
+                                            </div>
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="box-catalogo" id="BoxCatalogo">
+                                    <img src="assets/img/bts-jackinthebox.png" alt="BTS Jack in the box">
+                                    <div class="texto-album">
+                                        j-hope (BTS) Jack In The Box (Weverse Albums) <span
+                                            class="valorItem">$9.75</span>
+                                        <span class="precoAlbum">
+                                            Quantidade de itens
+                                            <span id="qtdItem">
+                                                0
+                                            </span>
+                                            <div class="btnCart">
+                                                <button>
+                                                    +
+                                                </button>
+                                                <button>
+                                                    —
+                                                </button>
+                                            </div>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- SEXTA LINHA DE CATALOGO -->
+                            <div class="catalogo">
+                                <div class="catalogo-linha">
+                                    <div class="box-catalogo" id="BoxCatalogo">
+                                        <img src="assets/img/bts-DDay.jpg" alt="Agust D - D Day">
+                                        <div class="texto-album">
+                                            Agust D (BTS) 'D-DAY' <span class="valorItem">$17.18</span>
+                                            <span class="precoAlbum">
+                                                Quantidade de itens
+                                                <span id="qtdItem">
+                                                    0
+                                                </span>
+                                                <div class="btnCart">
+                                                    <button>
+                                                        +
+                                                    </button>
+                                                    <button>
+                                                        —
+                                                    </button>
+                                                </div>
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div class="box-catalogo" id="BoxCatalogo">
+                                        <img src="assets/img/bts-btswordost.png" alt="BTS Word OST" />
+                                        <div class="texto-album">
+                                            BTS WORLD Soundtrack <span class="valorItem">$15.14</span>
+                                            <span class="precoAlbum">
+                                                Quantidade de itens
+                                                <span id="qtdItem">
+                                                    0
+                                                </span>
+                                                <div class="btnCart">
+                                                    <button>
+                                                        +
+                                                    </button>
+                                                    <button>
+                                                        —
+                                                    </button>
+                                                </div>
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div class="box-catalogo" id="BoxCatalogo">
+                                        <img src="assets/img/bts-jin-astronaut.jpg" alt="BTS Jin Astronaut" />
+                                        <div class="texto-album">
+                                            Jin (BTS) The Astronaut<span class="valorItem">$15.79</span>
+                                            <span class="precoAlbum">
+                                                Quantidade de itens
+                                                <span id="qtdItem">
+                                                    0
+                                                </span>
+                                                <div class="btnCart">
+                                                    <button>
+                                                        +
+                                                    </button>
+                                                    <button>
+                                                        —
+                                                    </button>
+                                                </div>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="texto-album" id="finalCompra">
+                                    <h1>Já selecionou todos os items que faltam para completar sua coleção?</h1>
+                                    <div class="btnCart">
+                                        <button>
+                                            Limpar
+                                        </button>
+                                        <button onclick="finalizarCompra()">
+                                            Finalizar
+                                        </button>
+                                    </span>
+                                </div>
+                                </div>
+                                </div>
+                            
+</body>
+
+</html>
+<script>
+    var exibir_menu = false
+
+    function mostrarmenu() {
+        if (exibir_menu == true) {
+            exibir_menu = false
+            child_dropdown.style.display = 'none'
+        } else {
+            exibir_menu = true
+            child_dropdown.style.display = 'block'
+        }
+    }
+    function finalizarCompra(){
+        // child_dropdown.style.display = 'block'
+        BoxCatalogo.style.opacity = '0.3';
+        document.getElementById('msgTotal').scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+</script>

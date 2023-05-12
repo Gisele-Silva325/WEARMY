@@ -4,10 +4,110 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
     <link rel="shortcut icon" href="assets/BTS-Logo.png" type="image/x-icon">
     <title>WEARMY - Home</title>
 </head>
 <body>
-    <div classy="container"></div>
+    <header>
+        <img class="bts-logo" src="assets/BTS-Logo.png" alt="logo do bts" />
+        <div class="navegacao">
+            <ul>
+                <li><a href="">Cadastro</a></li>
+                <li> | </li>
+                <li><a href="">Login</a></li>
+            </ul>
+            <div class="dropdown">
+                <button class="mainmenubtn" onclick="mostrarmenu()">
+                    <img class="menu" src="assets/menu.png" alt="menu lateral" />
+                </button>
+                <div class="dropdown-child" id="child_dropdown">
+                    <a href="index.html">Home</a>
+                    <a href="qmeBTS.html">Quem são o BTS?</a>
+                    <a href="wearmy.html">O que é o WEARMY</a>
+                    <a href="">Discrografia</a>
+                    <a href="simulador.html">Simulador da coleção</a>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="banner" id='qmBTS'>
+        <img class="home-bts" src="assets/banner-bts.png" alt="aaaaaaaaaaaa">
+    </div>
+    <div class="container">
+        <div class="box" id="box-BTS">
+            <img src="assets/box1_bts.jpg">
+            <div class="box-text">
+                <h1>Quem são o <span>BTS</span>?</h1>
+                <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin sit amet malesuada justo, sit amet
+                    sagittis nisi. Vivamus at mauris pulvinar leo facilisis ultricies. Pellentesque pulvinar at mauris
+                    quis pharetra. Sed eget massa ut mi commodo consectetur quis non nisl. Maecenas at ante imperdiet,
+                    egestas ipsum in, tincidunt sapien. Nullam dui justo, scelerisque sed arcu sed, accumsan ultricies
+                    nisi. Sed gravida mollis dui, non tincidunt lectus dapibus at. Aenean viverra dictum metus, vel
+                    ultricies dui mattis at. Integer in mi ac diam feugiat porttitor. Donec aliquam, tellus sit amet
+                    ultricies molestie, turpis velit laoreet erat, eu pellentesque velit ante quis tellus. Sed vulputate
+                    tincidunt felis eget volutpat. Mauris et facilisis nunc..</span>
+            </div>
+        </div>
+        <div class="box" id="box-WEARMY">
+            <img src="assets/box2_wearmy.png">
+            <div class="box-text" id="text-WEARMY">
+                <h1>O que é o <span>WEARMY</span>?</h1>
+                <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin sit amet malesuada justo, sit amet
+                    sagittis nisi. Vivamus at mauris pulvinar leo facilisis ultricies. Pellentesque pulvinar at mauris
+                    quis pharetra. Sed eget massa ut mi commodo consectetur quis non nisl. Maecenas at ante imperdiet,
+                    egestas ipsum in, tincidunt sapien. Nullam dui justo, scelerisque sed arcu sed, accumsan ultricies
+                    nisi. Sed gravida mollis dui, non tincidunt lectus dapibus at. Aenean viverra dictum metus, vel
+                    ultricies dui mattis at. Integer in mi ac diam feugiat porttitor. Donec aliquam, tellus sit amet
+                    ultricies molestie, turpis velit laoreet erat, eu pellentesque velit ante quis tellus. Sed vulputate
+                    tincidunt felis eget volutpat. Mauris et facilisis nunc..</span>
+            </div>
+        </div>
+        <div class="box" id="box-Discografia">
+            <img src="assets/box1_bts.jpg">
+            <div class="box-text">
+                <h1>Acesse a <span>discografia</span></h1>
+                <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin sit amet malesuada justo, sit amet
+                    sagittis nisi. Vivamus at mauris pulvinar leo facilisis ultricies. Pellentesque pulvinar at mauris
+                    quis pharetra. Sed eget massa ut mi commodo consectetur quis non nisl. Maecenas at ante imperdiet,
+                    egestas ipsum in, tincidunt sapien. Nullam dui justo, scelerisque sed arcu sed, accumsan ultricies
+                    nisi. Sed gravida mollis dui, non tincidunt lectus dapibus at. Aenean viverra dictum metus, vel
+                    ultricies dui mattis at. Integer in mi ac diam feugiat porttitor. Donec aliquam, tellus sit amet
+                    ultricies molestie, turpis velit laoreet erat, eu pellentesque velit ante quis tellus. Sed vulputate
+                    tincidunt felis eget volutpat. Mauris et facilisis nunc..</span>
+            </div>
+        </div>
+        <div class="box" id="box-Simulacao">
+            <img src="assets/box1_bts.jpg">
+            <div class="box-text" id="text-simulacao">
+                <h1><span>Simule</span> sua coleção</h1>
+                <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin sit amet malesuada justo, sit amet
+                    sagittis nisi. Vivamus at mauris pulvinar leo facilisis ultricies. Pellentesque pulvinar at mauris
+                    quis pharetra. Sed eget massa ut mi commodo consectetur quis non nisl. Maecenas at ante imperdiet,
+                    egestas ipsum in, tincidunt sapien. Nullam dui justo, scelerisque sed arcu sed, accumsan ultricies
+                    nisi. Sed gravida mollis dui, non tincidunt lectus dapibus at. Aenean viverra dictum metus, vel
+                    ultricies dui mattis at. Integer in mi ac diam feugiat porttitor. Donec aliquam, tellus sit amet
+                    ultricies molestie, turpis velit laoreet erat, eu pellentesque velit ante quis tellus. Sed vulputate
+                    tincidunt felis eget volutpat. Mauris et facilisis nunc..</span>
+            </div>
+        </div>
+    </div>
 </body>
+<div class="footer">
+        © WEARMY
+</div>
+
 </html>
+<script>
+    var exibir_menu = false
+
+function mostrarmenu() {
+    if (exibir_menu == true) {
+        exibir_menu = false
+        child_dropdown.style.display = 'none'
+    } else {
+        exibir_menu = true
+        child_dropdown.style.display = 'block'
+    }
+}
+</script>

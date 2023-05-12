@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="shortcut icon" href="assets/BTS-Logo.png" type="image/x-icon">
+    <title>WEARMY - Home</title>
+</head>
+<body>
+    <header>
+        <img class="bts-logo" src="assets/BTS-Logo.png" alt="logo do bts" />
+        <div class="navegacao">
+            <ul>
+                <li><a href="">Cadastro</a></li>
+                <li> | </li>
+                <li><a href="">Login</a></li>
+            </ul>
+            <div class="dropdown">
+                <button class="mainmenubtn" onclick="mostrarmenu()">
+                    <img class="menu" src="assets/menu.png" alt="menu lateral" />
+                </button>
+                <div class="dropdown-child" id="child_dropdown">
+                    <a href="index.html">Home</a>
+                    <a href="qmeBTS.html">Quem são o BTS?</a>
+                    <a href="wearmy.html">O que é o WEARMY</a>
+                    <a href="">Discrografia</a>
+                    <a href="simulador.html">Simulador da coleção</a>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="banner" id='qmBTS'>
+        <h1>Quem são o <span>BTS</span>?</h1>
+        <img class="qmBTS" src="assets/banner-bts-sobre.png" alt="banner bts">
+    </div>
+    <div class="container">
+        <span class="content-text">
+            <h1>Inicio</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin sit amet malesuada justo, sit amet
+                sagittis nisi. Vivamus at mauris pulvinar leo facilisis ultricies. Pellentesque pulvinar at mauris
+                quis pharetra. Sed eget massa ut mi commodo consectetur quis non nisl. Maecenas at ante imperdiet,
+                egestas ipsum in, tincidunt sapien. Nullam dui justo, scelerisque sed arcu sed, accumsan ultricies
+                nisi. Sed gravida mollis dui, non tincidunt lectus dapibus at. Aenean viverra dictum metus, vel
+                ultricies dui mattis at. Integer in mi ac diam feugiat porttitor. Donec aliquam, tellus sit amet
+                ultricies molestie, turpis velit laoreet erat, eu pellentesque velit ante quis tellus. Sed vulputate
+                tincidunt felis eget volutpat. Mauris et facilisis nunc..
+            </p>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/rBG5L7UsUxA"
+                title="YouTube video player" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen>
+            </iframe>
+            <h1>Auge e dias atuais</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin sit amet malesuada justo, sit amet
+                sagittis nisi. Vivamus at mauris pulvinar leo facilisis ultricies. Pellentesque pulvinar at mauris
+                quis pharetra. Sed eget massa ut mi commodo consectetur quis non nisl. Maecenas at ante imperdiet,
+                egestas ipsum in, tincidunt sapien. Nullam dui justo, scelerisque sed arcu sed, accumsan ultricies
+                nisi. Sed gravida mollis dui, non tincidunt lectus dapibus at. Aenean viverra dictum metus, vel
+                ultricies dui mattis at. Integer in mi ac diam feugiat porttitor. Donec aliquam, tellus sit amet
+                ultricies molestie, turpis velit laoreet erat, eu pellentesque velit ante quis tellus. Sed vulputate
+                tincidunt felis eget volutpat. Mauris et facilisis nunc..
+            </p><iframe width="560" height="315" src="https://www.youtube.com/embed/kXpOEzNZ8hQ"
+                title="YouTube video player" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen></iframe>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin sit amet malesuada justo, sit amet
+                sagittis nisi. Vivamus at mauris pulvinar leo facilisis ultricies. Pellentesque pulvinar at mauris
+                quis pharetra. Sed eget massa ut mi commodo consectetur quis non nisl. Maecenas at ante imperdiet,
+                egestas ipsum in, tincidunt sapien. Nullam dui justo, scelerisque sed arcu sed, accumsan ultricies
+                nisi. Sed gravida mollis dui, non tincidunt lectus dapibus at. Aenean viverra dictum metus, vel
+                ultricies dui mattis at. Integer in mi ac diam feugiat porttitor. Donec aliquam, tellus sit amet
+                ultricies molestie, turpis velit laoreet erat, eu pellentesque velit ante quis tellus. Sed vulputate
+                tincidunt felis eget volutpat. Mauris et facilisis nunc..
+            </p>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/iy9qZR_OGa0"
+                title="YouTube video player" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen>
+            </iframe>
+        </span>
+    </div>
+    <div class="footer">
+            © WEARMY
+    </div>
+</body>
+
+</html>
+<script>
+    var exibir_menu = false
+
+    function mostrarmenu() {
+        if (exibir_menu == true) {
+            exibir_menu = false
+            child_dropdown.style.display = 'none'
+        } else {
+            exibir_menu = true
+            child_dropdown.style.display = 'block'
+        }
+    }
+</script>
