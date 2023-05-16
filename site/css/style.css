@@ -137,7 +137,8 @@ header ul{
     flex-direction: column;
     justify-content:space-between;
     align-items: center;
-    height: fit-content;
+    /* height: fit-content; */
+    height: 100%;
     width: 100%;
 }
 
@@ -503,4 +504,143 @@ iframe{
     margin-bottom: 0;
     font-family: 'Solano Gothic MVB Bd' !important;
     color: #3F2D6F;
+}
+
+/* CADASTRO WEARMY */
+
+.box-cadastro{
+    display: flex;
+    margin-top: 8%;
+    width: 40%;
+    height: fit-content;
+    flex-direction: column;
+    padding: 3vb;
+    align-items: center;
+    background-color: #DED6D3;
+    color: #3F2D6F;
+    font-size: larger;
+}
+.form-cadastro{
+    display: flex;
+    flex-direction: column;
+    font-family: 'Solano Gothic MVB Bd' !important;
+}
+
+.form-cadastro input{
+    margin-bottom: 2vb;
+}
+
+.form-cadastro a{
+    color: #b37eb5;
+    text-decoration: none;
+}
+.form-cadastro a:hover{
+    font-style: italic;
+    font-weight: 600;
+}
+
+.form-cadastro p{
+    font-size: medium;
+}
+
+.form-cadastro button{
+    margin-top: 1vb;
+    font-family: 'Solano Gothic MVB Bd' !important;
+    padding: 0.5vb;
+    cursor: pointer;
+}
+
+.cadastro-titulo{
+    display: flex;
+    flex-direction: row;
+    margin-top: 0;
+    font-family: 'Solano Gothic MVB Bd' !important;
+}
+
+.cadastro-titulo img{
+    align-self: center;
+    margin-left: 4vb;
+    width: 30px;
+    height: 45px;
+}
+
+.inptRadio{
+    margin-top: 1vb;
+    font-family: 'Solano Gothic MVB Bd' !important;
+    margin-left: 1vb;
+}
+.inptRadio input{
+    cursor: pointer;
+}
+#membroBTS{
+    cursor: pointer;
+}
+
+/* LOGIN */
+.box-login{
+    display: flex;
+    margin-top: 8%;
+    width: 40%;
+    height: fit-content;
+    flex-direction: column;
+    padding: 3vb;
+    align-items: center;
+    background-color: #DED6D3;
+    color: #3F2D6F;
+    font-size: larger;
+}
+.form-login{
+    display: flex;
+    flex-direction: column;
+    font-family: 'Solano Gothic MVB Bd' !important;
+}
+
+.form-login input{
+    margin-bottom: 2vb;
+}
+
+.form-login a{
+    color: #b37eb5;
+    text-decoration: none;
+}
+.form-login a:hover{
+    font-style: italic;
+    font-weight: 600;
+}
+
+.form-login p{
+    font-size: medium;
+}
+
+.form-login button{
+    margin-top: 1vb;
+    font-family: 'Solano Gothic MVB Bd' !important;
+    cursor: pointer;
+    padding: 0.5vb;
+}
+
+.login-titulo{
+    display: flex;
+    flex-direction: row;
+    margin-top: 0;
+    font-family: 'Solano Gothic MVB Bd' !important;
+}
+
+.login-titulo img{
+    align-self: center;
+    margin-left: 4vb;
+    width: 30px;
+    height: 45px;
+}
+
+.inptRadio{
+    margin-top: 1vb;
+    font-family: 'Solano Gothic MVB Bd' !important;
+    margin-left: 1vb;
+}
+.inptRadio input{
+    cursor: pointer;
+}
+#membroBTS{
+    cursor: pointer;
 }
