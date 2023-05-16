@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="js/funcoes.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="shortcut icon" href="assets/BTS-Logo.png" type="image/x-icon">
+    <title>WEARMY - Home</title>
+</head>
+<body>
+    <header>
+        <img class="bts-logo" src="assets/BTS-Logo.png" alt="logo do bts" />
+        <div class="navegacao">
+            <ul>
+                <li><a href="cadastro.html">Cadastro</a></li>
+                <li> | </li>
+                <li><a href="login.html">Login</a></li>
+            </ul>
+            <div class="dropdown">
+                <button class="mainmenubtn" onclick="mostrarmenu()">
+                    <img class="menu" src="assets/menu.png" alt="menu lateral" />
+                </button>
+                <div class="dropdown-child" id="child_dropdown">
+                    <a href="index.html">Home</a>
+                    <a href="qmeBTS.html">Quem são o BTS?</a>
+                    <a href="wearmy.html">O que é o WEARMY</a>
+                    <a href="">Discrografia</a>
+                    <a href="simulador.html">Simulador da coleção</a>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="container">
+        <div class="box-cadastro">
+                <h1>WEARMY</h1>
+                <div class="form-cadastro">
+                    Digite seu nome
+                    <input type="text" id="nomeForm" />
+                    <span id="erroNome"></span>
+                    Crie um username
+                    <input type="text" id="usernameForm" />
+                    <span id="erroUser"></span>
+                    Digite sua email
+                    <input type="email" id="emailForm" />
+                    <span id="erroEmail"></span>
+                    Selecione seu integrante favorito do BTS
+                    <select name="membroBTS" id="membroBTS">
+                        <option value="RM">RM</option>
+                        <option value="Jin">Jin</option>
+                        <option value="Suga">Suga</option>
+                        <option value="J-Hope">J-Hope</option>
+                        <option value="Jimin">Jimin</option>
+                        <option value="V">V</option>
+                        <option value="Jungkook">Jungkook</option>
+                        <option value="NP">Não possuo</option>
+                    </select>
+                    <span class="inptRadio">
+                        Escolha sua linguagem de preferência <br>
+                        Inglês<input type="radio" name="linguagem" id="inglesForm" />
+                        Português<input type="radio" name="linguagem" id="portuguesForm" />
+                    </span>
+                    Digite seu senha
+                    <input type="password" id="senhaForm" />
+                    <span id="erroSenha"></span>
+                    Confirme sua senha
+                    <input type="password" id="confirmaSenhaForm" />
+                    <span id="erroSenhaConfirma"></span>
+                    <span id="mensagem_erro"></span>
+                    <button onclick="cadastrar()">Cadastrar</button>
+                    <div id="div_aguardar">
+                        <img src="assets/aguardar.gif" alt="aguardando">
+                    </div>
+                    <p>Já possui cadastro? Faça login <a href="login.html">aqui</a></p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer">
+            © WEARMY
+        </div>
+        
+    </body>
+</html>
+<script>
+    var exibir_menu = false
+    div_aguardar.innerHTML = ``
+function mostrarmenu() {
+    if (exibir_menu == true) {
+        exibir_menu = false
+        child_dropdown.style.display = 'none'
+    } else {
+        exibir_menu = true
+        child_dropdown.style.display = 'block'
+    }
+}
+function cadastrar() {
+        aguardar();
+
+        //Recupere o valor da nova input pelo nome do id
+        // Agora vá para o método fetch logo abaixo
+        var nomeVar = nomeForm.value;
+        var userVar = usernameForm.value;
+        var emailVar = emailForm.value;
+        var integranteVar = membroBTS.value;
+        var senhaVar = senhaForm.value;
+        var confirmaSenhaVar = confirmaSenhaForm.value;
+        var linguagemVar = ``;
+        if (inglesForm.checked == true){
+            linguagemVar = `Inglês`;
+        } else if(portuguesForm.checked == true){
+            linguagemVar = `Português`;
+        } else{
+            mensagem_erro.innerHTML = `Selecione uma linguagem para continuar`
+            finalizarAguardar();
+            return false;
+        }
+        
+        if (nomeVar == "" || userVar == "" || emailVar == "" || integranteVar == "" || senhaVar == "" || confirmaSenhaVar == "") {
+            mensagem_erro.innerHTML = `Preencha todos os campos`;
+            finalizarAguardar();
+            return false;
+        } else if( senhaVar != confirmaSenhaVar){
+            mensagem_erro.innerHTML = `As senhas não correspondem`;
+            finalizarAguardar();
+            return false;
+        }
+        else {
+            setInterval(sumirMensagem, 5000)
+        }
+
+        // Enviando o valor da nova input
+        fetch("/usuarios/cadastrar", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                // crie um atributo que recebe o valor recuperado aqui
+                // Agora vá para o arquivo routes/usuario.js
+                nomeServer: nomeVar,
+                userServer: userVar,
+                emailServer: emailVar,
+                integranteServer: integranteVar,
+                linguagemServer: linguagemVar,
+                senhaServer: senhaVar
+            })
+        }).then(function (resposta) {
+
+            console.log("resposta: ", resposta);
+
+            if (resposta.ok) {
+                mensagem_erro.innerHTML = "Cadastro realizado com sucesso! Redirecionando para tela de Login...";
+
+                setTimeout(() => {
+                    window.location = "login.html";
+                }, "2000")
+                
+                finalizarAguardar();
+            } else {
+                throw ("Houve um erro ao tentar realizar o cadastro!");
+            }
+        }).catch(function (resposta) {
+            console.log(`#ERRO: ${resposta}`);
+            finalizarAguardar();
+        });
+
+        return false;
+    }
+
+    function sumirMensagem() {
+        mensagem_erro.innerHTML = ``;
+    }
+
+</script>
