@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
     <link rel="shortcut icon" href="assets/BTS-Logo.png" type="image/x-icon">
+    <script src="js/funcoes.js"></script>
     <title>WEARMY - Home</title>
 </head>
 
@@ -42,7 +43,9 @@
                 Digite sua senha
                 <input type="password" id="senhaForm" />
                 <span id="mensagem_erro"></span>
-                <button>Login</button>
+                <button onclick="entrar()">Login</button>
+                <div id="div_aguardar">
+                </div>
                 <p>Não possui conta? Cadastre-se <a href="cadastro.html">aqui</a></p>
             </div>
         </div>
@@ -66,4 +69,74 @@
             child_dropdown.style.display = 'block'
         }
     }
+
+    function entrar() {
+        aguardar();
+
+        var loginVar = loginForm.value;
+        var senhaVar = senhaForm.value;
+
+        if (loginVar == "" || senhaVar == "") {
+            mensagem_erro.innerHTML = "Preencha todos os campos!";
+            finalizarAguardar();
+            return false;
+        }
+        else {
+            setInterval(sumirMensagem, 5000)
+        }
+
+        console.log("FORM LOGIN: ", loginVar);
+        console.log("FORM SENHA: ", senhaVar);
+
+        fetch("/usuarios/autenticar", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                emailServer: loginVar,
+                senhaServer: senhaVar
+            })
+        }).then(function (resposta) {
+            console.log("ESTOU NO THEN DO entrar()!")
+
+            if (resposta.ok) {
+                console.log(resposta);
+
+                resposta.json().then(json => {
+                    console.log(json);
+                    console.log(JSON.stringify(json));
+
+                    sessionStorage.EMAIL_USUARIO = json.email;
+                    sessionStorage.NOME_USUARIO = json.nome;
+                    sessionStorage.ID_USUARIO = json.id;
+                    finalizarAguardar()
+                    setTimeout(function () {
+                        window.location = "logado/home.html";
+                    }, 1000); // apenas para exibir o loading
+
+                });
+                
+            } else {
+                
+                mensagem_erro.innerHTML = "Login ou senha incorretos";
+                console.log("Houve um erro ao tentar realizar o login!");
+                
+                resposta.text().then(texto => {
+                    console.error(texto);
+                    finalizarAguardar(texto);
+                });
+            }
+
+        }).catch(function (erro) {
+            console.log(erro);
+        })
+
+        return false;
+    }
+
+    function sumirMensagem() {
+        mensagem_erro.innerHTML = ""
+    }
+
 </script>

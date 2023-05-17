@@ -44,8 +44,8 @@
         <img src="assets/close.png" alt="fechar" onclick="fecharCompra()">
         <h1>Finalizando sua coleção</h1>
         <p class="texto-total">
-            Somando o items que falta para fechar sua coleção você vai gastar $<span id="totalCompra">0</span>
-            Convertendo o valor para reais o total é $<span id="totalCompra">0</span>
+            Somando o items que falta para fechar sua coleção você vai gastar $<span id="totalCompra">0</span> <br>
+            Convertendo o valor para reais o total é R$<span id="totalCompraReal">0</span>
         </p>
     </div>
     <div class="container" id="BoxCatalogo">
@@ -57,14 +57,14 @@
                         Single Album [2 COOL 4 SKOOL] <span class="valorItem">$9.66</span>
                         <span class="precoAlbum">
                             Quantidade de itens
-                            <span id="qtdItem">
+                            <span id="qtdItemAlbum1">
                                 0
                             </span>
                             <div class="btnCart">
-                                <button>
+                                <button onclick="somarAlbum1()">
                                     +
                                 </button>
-                                <button>
+                                <button onclick="subAlbum1()">
                                     —
                                 </button>
                             </div>
@@ -77,74 +77,74 @@
                         BTS 1st Mini Album[O!RUL8,2?] <span class="valorItem">$11.05</span>
                         <span class="precoAlbum">
                             Quantidade de itens
-                            <span id="qtdItem">
+                            <span id="qtdItemAlbum2">
                                 0
                             </span>
                             <div class="btnCart">
-                                <button>
+                                <button onclick="somarAlbum2()">
                                     +
                                 </button>
-                                <button>
+                                <button onclick="subAlbum2()">
                                     —
                                 </button>
                             </div>
                         </span>
                     </div>
                 </div>
-                <div class="box-catalogo"  >
+                <div class="box-catalogo">
                     <img src="assets/img/bts-skoolluvaffair.jpg" alt="skool luv affair" />
                     <div class="texto-album">
                         BTS 2nd Mini Album[Skool Luv Affair] <span class="valorItem">$11.05</span>
                         <span class="precoAlbum">
                             Quantidade de itens
-                            <span id="qtdItem">
+                            <span id="qtdItemAlbum3">
                                 0
                             </span>
                             <div class="btnCart">
-                                <button>
+                                <button onclick="somarAlbum3()">
                                     +
                                 </button>
-                                <button>
+                                <button onclick="subAlbum3()">
                                     —
                                 </button>
                             </div>
                         </span>
                     </div>
                 </div>
-                <div class="box-catalogo"  >
+                <div class="box-catalogo">
                     <img src="assets/img/bts-skoolluvaffairspecial.jpg" alt="skool luv affair special" />
                     <div class="texto-album">
                         Skool Luv Affair Special Addition <span class="valorItem">$36.60</span>
                         <span class="precoAlbum">
                             Quantidade de itens
-                            <span id="qtdItem">
+                            <span id="qtdItemAlbum4">
                                 0
                             </span>
                             <div class="btnCart">
-                                <button>
+                                <button onclick="somarAlbum4()">
                                     +
                                 </button>
-                                <button>
+                                <button onclick="subAlbum4()">
                                     —
                                 </button>
                             </div>
                         </span>
                     </div>
                 </div>
-                <div class="box-catalogo"  >
+                <div class="box-catalogo">
                     <img src="assets/img/bts-dark&wild.jpg" alt="dark & wild">
                     <div class="texto-album">
                         BTS 1st Album [Dark & Wild] <span class="valorItem">$13.84</span>
                         <span class="precoAlbum">
                             Quantidade de itens
-                            <span id="qtdItem">
+                            <span id="qtdItemAlbum5">
                                 0
                             </span>
                             <div class="btnCart">
-                                <button>
+                                <button onclick="somarAlbum5()">
                                     +
                                 </button>
-                                <button>
+                                <button onclick="subAlbum5()">
                                     —
                                 </button>
                             </div>
@@ -155,608 +155,605 @@
         </div>
         <!-- SEGUNDA LINHA DE CATALOGO -->
         <!-- <div class="catalogo"> -->
-            <div class="catalogo-linha">
-                <div class="box-catalogo"  >
-                    <img src="assets/img/hyyhpt1.jpg" alt="the most beatifull moment in life pt1">
-                    <div class="texto-album">
-                        BTS 3rd Mini Album[The Most Beautiful Moment in Life PT.1] <span class="valorItem">$12.44</span>
-                        <span class="precoAlbum">
-                            Quantidade de itens
-                            <span id="qtdItem">
-                                0
-                            </span>
-                            <div class="btnCart">
-                                <button>
-                                    +
-                                </button>
-                                <button>
-                                    —
-                                </button>
-                            </div>
+        <div class="catalogo-linha">
+            <div class="box-catalogo">
+                <img src="assets/img/hyyhpt1.jpg" alt="the most beatifull moment in life pt1">
+                <div class="texto-album">
+                    BTS 3rd Mini Album[The Most Beautiful Moment in Life PT.1] <span class="valorItem">$12.44</span>
+                    <span class="precoAlbum">
+                        Quantidade de itens
+                        <span id="qtdItemAlbum6">
+                            0
                         </span>
-                    </div>
-                </div>
-                <div class="box-catalogo"  >
-                    <img src="assets/img/hyyhpt3.jpg" alt="the most beatifull moment in life pt3" />
-                    <div class="texto-album">
-                        BTS Young Forever in The Most Beautiful Moment in Life <span class="valorItem">$19.32</span>
-                        <span class="precoAlbum">
-                            Quantidade de itens
-                            <span id="qtdItem">
-                                0
-                            </span>
-                            <div class="btnCart">
-                                <button>
-                                    +
-                                </button>
-                                <button>
-                                    —
-                                </button>
-                            </div>
-                        </span>
-                    </div>
-                </div>
-                <div class="box-catalogo"  >
-                    <img src="assets/img/wings.jpg" alt="WINGS" />
-                    <div class="texto-album">
-                        BTS 2nd Album [WINGS] <span class="valorItem">$13.84</span>
-                        <span class="precoAlbum">
-                            Quantidade de itens
-                            <span id="qtdItem">
-                                0
-                            </span>
-                            <div class="btnCart">
-                                <button>
-                                    +
-                                </button>
-                                <button>
-                                    —
-                                </button>
-                            </div>
-                        </span>
-                    </div>
-                </div>
-                <div class="box-catalogo"   >
-                    <img src="assets/img/bts-YNWA.jpg" alt="you never walk alone" />
-                    <div class="texto-album">
-                        YOU NEVER WALK ALONE <span class="valorItem">$16.53</span>
-                        <span class="precoAlbum">
-                            Quantidade de itens
-                            <span id="qtdItem">
-                                0
-                            </span>
-                            <div class="btnCart">
-                                <button>
-                                    +
-                                </button>
-                                <button>
-                                    —
-                                </button>
-                            </div>
-                        </span>
-                    </div>
-                </div>
-                <div class="box-catalogo"  >
-                    <img src="assets/img/bts-lyher.jpg" alt="love yourself: her">
-                    <div class="texto-album">
-                        LOVE YOURSELF 承 'Her' <span class="valorItem">$13.84</span>
-                        <span class="precoAlbum">
-                            Quantidade de itens
-                            <span id="qtdItem">
-                                0
-                            </span>
-                            <div class="btnCart">
-                                <button>
-                                    +
-                                </button>
-                                <button>
-                                    —
-                                </button>
-                            </div>
-                        </span>
-                    </div>
+                        <div class="btnCart">
+                            <button onclick="somarAlbum6()">
+                                +
+                            </button>
+                            <button onclick="subAlbum6()">
+                                —
+                            </button>
+                        </div>
+                    </span>
                 </div>
             </div>
-            <!-- TERCEIRA LINHA DE CATALOGO -->
-            <!-- <div class="catalogo"> -->
-                <div class="catalogo-linha">
-                    <div class="box-catalogo"  >
-                        <img src="assets/img/bts-lytear.jpeg" alt="love yourself:tear">
-                        <div class="texto-album">
-                            LOVE YOURSELF 轉 'Tear' <span class="valorItem">$15.14</span>
-                            <span class="precoAlbum">
-                                Quantidade de itens
-                                <span id="qtdItem">
-                                    0
-                                </span>
-                                <div class="btnCart">
-                                    <button>
-                                        +
-                                    </button>
-                                    <button>
-                                        —
-                                    </button>
-                                </div>
-                            </span>
+            <div class="box-catalogo">
+                <img src="assets/img/hyyhpt3.jpg" alt="the most beatifull moment in life pt3" />
+                <div class="texto-album">
+                    BTS Young Forever in The Most Beautiful Moment in Life <span class="valorItem">$19.32</span>
+                    <span class="precoAlbum">
+                        Quantidade de itens
+                        <span id="qtdItemAlbum7">
+                            0
+                        </span>
+                        <div class="btnCart">
+                            <button onclick="somarAlbum7()">
+                                +
+                            </button>
+                            <button onclick="subAlbum7()">
+                                —
+                            </button>
                         </div>
-                    </div>
-                    <div class="box-catalogo"  >
-                        <img src="assets/img/bts-lyanswer.png" alt="love yourself:answer" />
-                        <div class="texto-album">
-                            LOVE YOURSELF 結 ´Answer´ <span class="valorItem">$16.53</span>
-                            <span class="precoAlbum">
-                                Quantidade de itens
-                                <span id="qtdItem">
-                                    0
-                                </span>
-                                <div class="btnCart">
-                                    <button>
-                                        +
-                                    </button>
-                                    <button>
-                                        —
-                                    </button>
-                                </div>
-                            </span>
-                        </div>
-                    </div>
-                    <div class="box-catalogo"  >
-                        <img src="assets/img/bts-motspersona.jpg" alt="Map of Soul: Persona" />
-                        <div class="texto-album">
-                            MAP OF THE SOUL : PERSONA<span class="valorItem">$13.74</span>
-                            <span class="precoAlbum">
-                                Quantidade de itens
-                                <span id="qtdItem">
-                                    0
-                                </span>
-                                <div class="btnCart">
-                                    <button>
-                                        +
-                                    </button>
-                                    <button>
-                                        —
-                                    </button>
-                                </div>
-                            </span>
-                        </div>
-                    </div>
-                    <div class="box-catalogo"  >
-                        <img src="assets/img/bts-mots7.jpg" alt="Map of Soul: 7" />
-                        <div class="texto-album">
-                            Map Of The Soul : 7 <span class="valorItem">$18.02</span>
-                            <span class="precoAlbum">
-                                Quantidade de itens
-                                <span id="qtdItem">
-                                    0
-                                </span>
-                                <div class="btnCart">
-                                    <button>
-                                        +
-                                    </button>
-                                    <button>
-                                        —
-                                    </button>
-                                </div>
-                            </span>
-                        </div>
-                    </div>
-                    <div class="box-catalogo"  >
-                        <img src="assets/img/bts-dynamite1.png" alt="bts dynamite day version">
-                        <div class="texto-album">
-                            Dynamite - Limited Edition Cassette <span class="valorItem">$8.26</span>
-                            <span class="precoAlbum">
-                                Quantidade de itens
-                                <span id="qtdItem">
-                                    0
-                                </span>
-                                <div class="btnCart">
-                                    <button>
-                                        +
-                                    </button>
-                                    <button>
-                                        —
-                                    </button>
-                                </div>
-                            </span>
-                        </div>
-                    </div>
+                    </span>
                 </div>
+            </div>
+            <div class="box-catalogo">
+                <img src="assets/img/wings.jpg" alt="WINGS" />
+                <div class="texto-album">
+                    BTS 2nd Album [WINGS] <span class="valorItem">$13.84</span>
+                    <span class="precoAlbum">
+                        Quantidade de itens
+                        <span id="qtdItemAlbum8">
+                            0
+                        </span>
+                        <div class="btnCart">
+                            <button onclick="somarAlbum8()">
+                                +
+                            </button>
+                            <button  onclick="subAlbum8()">
+                                —
+                            </button>
+                        </div>
+                    </span>
+                </div>
+            </div>
+            <div class="box-catalogo">
+                <img src="assets/img/bts-YNWA.jpg" alt="you never walk alone" />
+                <div class="texto-album">
+                    YOU NEVER WALK ALONE <span class="valorItem">$16.53</span>
+                    <span class="precoAlbum">
+                        Quantidade de itens
+                        <span id="qtdItemAlbum9">
+                            0
+                        </span>
+                        <div class="btnCart">
+                            <button onclick="somarAlbum9()">
+                                +
+                            </button>
+                            <button onclick="subAlbum9()">
+                                —
+                            </button>
+                        </div>
+                    </span>
+                </div>
+            </div>
+            <div class="box-catalogo">
+                <img src="assets/img/bts-lyher.jpg" alt="love yourself: her">
+                <div class="texto-album">
+                    LOVE YOURSELF 承 'Her' <span class="valorItem">$13.84</span>
+                    <span class="precoAlbum">
+                        Quantidade de itens
+                        <span id="qtdItemAlbum10">
+                            0
+                        </span>
+                        <div class="btnCart">
+                            <button onclick="somarAlbum10()">
+                                +
+                            </button>
+                            <button onclick="subAlbum10()">
+                                —
+                            </button>
+                        </div>
+                    </span>
+                </div>
+            </div>
+        </div>
+        <!-- TERCEIRA LINHA DE CATALOGO -->
+        <!-- <div class="catalogo"> -->
+        <div class="catalogo-linha">
+            <div class="box-catalogo">
+                <img src="assets/img/bts-lytear.jpeg" alt="love yourself:tear">
+                <div class="texto-album">
+                    LOVE YOURSELF 轉 'Tear' <span class="valorItem">$15.14</span>
+                    <span class="precoAlbum">
+                        Quantidade de itens
+                        <span id="qtdItemAlbum11">
+                            0
+                        </span>
+                        <div class="btnCart">
+                            <button onclick="somarAlbum11()">
+                                +
+                            </button>
+                            <button onclick="subAlbum11()">
+                                —
+                            </button>
+                        </div>
+                    </span>
+                </div>
+            </div>
+            <div class="box-catalogo">
+                <img src="assets/img/bts-lyanswer.png" alt="love yourself:answer" />
+                <div class="texto-album">
+                    LOVE YOURSELF 結 ´Answer´ <span class="valorItem">$16.53</span>
+                    <span class="precoAlbum">
+                        Quantidade de itens
+                        <span id="qtdItemAlbum12">
+                            0
+                        </span>
+                        <div class="btnCart">
+                            <button onclick="somarAlbum12()">
+                                +
+                            </button>
+                            <button onclick="subAlbum12()">
+                                —
+                            </button>
+                        </div>
+                    </span>
+                </div>
+            </div>
+            <div class="box-catalogo">
+                <img src="assets/img/bts-motspersona.jpg" alt="Map of Soul: Persona" />
+                <div class="texto-album">
+                    MAP OF THE SOUL : PERSONA<span class="valorItem">$13.74</span>
+                    <span class="precoAlbum">
+                        Quantidade de itens
+                        <span id="qtdItemAlbum13">
+                            0
+                        </span>
+                        <div class="btnCart">
+                            <button onclick="somarAlbum13()">
+                                +
+                            </button>
+                            <button onclick="subAlbum13()">
+                                —
+                            </button>
+                        </div>
+                    </span>
+                </div>
+            </div>
+            <div class="box-catalogo">
+                <img src="assets/img/bts-mots7.jpg" alt="Map of Soul: 7" />
+                <div class="texto-album">
+                    Map Of The Soul : 7 <span class="valorItem">$18.02</span>
+                    <span class="precoAlbum">
+                        Quantidade de itens
+                        <span id="qtdItemAlbum14">
+                            0
+                        </span>
+                        <div class="btnCart">
+                            <button onclick="somarAlbum14()">
+                                +
+                            </button>
+                            <button onclick="subAlbum14()">
+                                —
+                            </button>
+                        </div>
+                    </span>
+                </div>
+            </div>
+            <div class="box-catalogo">
+                <img src="assets/img/bts-dynamite1.png" alt="bts dynamite day version">
+                <div class="texto-album">
+                    Dynamite - Limited Edition Cassette <span class="valorItem">$8.26</span>
+                    <span class="precoAlbum">
+                        Quantidade de itens
+                        <span id="qtdItemAlbum15">
+                            0
+                        </span>
+                        <div class="btnCart">
+                            <button onclick="somarAlbum15()">
+                                +
+                            </button>
+                            <button onclick="subAlbum15()">
+                                —
+                            </button>
+                        </div>
+                    </span>
+                </div>
+            </div>
+        </div>
 
-                <!-- TERCEIRA LINHA DE CATALOGO  -->
-                <!-- <div class="catalogo"> -->
-                    <div class="catalogo-linha">
-                        <div class="box-catalogo"  >
-                            <img src="assets/img/bts-dynamite2.png" alt="bts dynamite night version">
-                            <div class="texto-album">
-                                Dynamite - Limited Edition 7 Vinyl <span class="valorItem">$9.66</span>
-                                <span class="precoAlbum">
-                                    Quantidade de itens
-                                    <span id="qtdItem">
-                                        0
-                                    </span>
-                                    <div class="btnCart">
-                                        <button>
-                                            +
-                                        </button>
-                                        <button>
-                                            —
-                                        </button>
-                                    </div>
-                                </span>
-                            </div>
+        <!-- TERCEIRA LINHA DE CATALOGO  -->
+        <!-- <div class="catalogo"> -->
+        <div class="catalogo-linha">
+            <div class="box-catalogo">
+                <img src="assets/img/bts-dynamite2.png" alt="bts dynamite night version">
+                <div class="texto-album">
+                    Dynamite - Limited Edition 7 Vinyl <span class="valorItem">$9.66</span>
+                    <span class="precoAlbum">
+                        Quantidade de itens
+                        <span id="qtdItemAlbum16">
+                            0
+                        </span>
+                        <div class="btnCart">
+                            <button onclick="somarAlbum16()">
+                                +
+                            </button>
+                            <button onclick="subAlbum16()">
+                                —
+                            </button>
                         </div>
-                        <div class="box-catalogo"  >
-                            <img src="assets/img/bts-be.jpg" alt="bts be" />
-                            <div class="texto-album">
-                                BE (Deluxe Edition) <span class="valorItem">$36.60</span>
-                                <span class="precoAlbum">
-                                    Quantidade de itens
-                                    <span id="qtdItem">
-                                        0
-                                    </span>
-                                    <div class="btnCart">
-                                        <button>
-                                            +
-                                        </button>
-                                        <button>
-                                            —
-                                        </button>
-                                    </div>
-                                </span>
-                            </div>
+                    </span>
+                </div>
+            </div>
+            <div class="box-catalogo">
+                <img src="assets/img/bts-be.jpg" alt="bts be" />
+                <div class="texto-album">
+                    BE (Deluxe Edition) <span class="valorItem">$36.60</span>
+                    <span class="precoAlbum">
+                        Quantidade de itens
+                        <span id="qtdItemAlbum17">
+                            0
+                        </span>
+                        <div class="btnCart">
+                            <button onclick="somarAlbum17()">
+                                +
+                            </button>
+                            <button onclick="subAlbum17()">
+                                —
+                            </button>
                         </div>
-                        <div class="box-catalogo" id="">
-                            <img src="assets/img/bts-be-essencials.png" alt="BE: Essencials" />
-                            <div class="texto-album">
-                                BE (Essential Edition)<span class="valorItem">$17.92</span>
-                                <span class="precoAlbum">
-                                    Quantidade de itens
-                                    <span id="qtdItem">
-                                        0
-                                    </span>
-                                    <div class="btnCart">
-                                        <button>
-                                            +
-                                        </button>
-                                        <button>
-                                            —
-                                        </button>
-                                    </div>
-                                </span>
-                            </div>
+                    </span>
+                </div>
+            </div>
+            <div class="box-catalogo" id="">
+                <img src="assets/img/bts-be-essencials.png" alt="BE: Essencials" />
+                <div class="texto-album">
+                    BE (Essential Edition)<span class="valorItem">$17.92</span>
+                    <span class="precoAlbum">
+                        Quantidade de itens
+                        <span id="qtdItemAlbum18">
+                            0
+                        </span>
+                        <div class="btnCart">
+                            <button onclick="somarAlbum18()">
+                                +
+                            </button>
+                            <button onclick="subAlbum18()">
+                                —
+                            </button>
                         </div>
-                        <div class="box-catalogo" id="">
-                            <img src="assets/img/bts-butter-vinyl.png" alt="BTS Butter Vynil" />
-                            <div class="texto-album">
-                                BTS Butter 7 Vinyl <span class="valorItem">$10.96</span>
-                                <span class="precoAlbum">
-                                    Quantidade de itens
-                                    <span id="qtdItem">
-                                        0
-                                    </span>
-                                    <div class="btnCart">
-                                        <button>
-                                            +
-                                        </button>
-                                        <button>
-                                            —
-                                        </button>
-                                    </div>
-                                </span>
-                            </div>
+                    </span>
+                </div>
+            </div>
+            <div class="box-catalogo" id="">
+                <img src="assets/img/bts-butter-vinyl.png" alt="BTS Butter Vynil" />
+                <div class="texto-album">
+                    BTS Butter 7 Vinyl <span class="valorItem">$10.96</span>
+                    <span class="precoAlbum">
+                        Quantidade de itens
+                        <span id="qtdItemAlbum19">
+                            0
+                        </span>
+                        <div class="btnCart">
+                            <button onclick="somarAlbum19()">
+                                +
+                            </button>
+                            <button onclick="subAlbum19()">
+                                —
+                            </button>
                         </div>
-                        <div class="box-catalogo" id="">
-                            <img src="assets/img/bts-butter-cassete.png" alt="BTS Butter Cassete">
-                            <div class="texto-album">
-                                BTS Butter Cassette <span class="valorItem">$9.10</span>
-                                <span class="precoAlbum">
-                                    Quantidade de itens
-                                    <span id="qtdItem">
-                                        0
-                                    </span>
-                                    <div class="btnCart">
-                                        <button>
-                                            +
-                                        </button>
-                                        <button>
-                                            —
-                                        </button>
-                                    </div>
-                                </span>
-                            </div>
+                    </span>
+                </div>
+            </div>
+            <div class="box-catalogo" id="">
+                <img src="assets/img/bts-butter-cassete.png" alt="BTS Butter Cassete">
+                <div class="texto-album">
+                    BTS Butter Cassette <span class="valorItem">$9.10</span>
+                    <span class="precoAlbum">
+                        Quantidade de itens
+                        <span id="qtdItemAlbum20">
+                            0
+                        </span>
+                        <div class="btnCart">
+                            <button onclick="somarAlbum20()">
+                                +
+                            </button>
+                            <button onclick="subAlbum20()">
+                                —
+                            </button>
                         </div>
-                    </div>
-                    <!-- QUARTA LINHA DE CATALOGO -->
-                    <!-- <div class="catalogo"> -->
-                        <div class="catalogo-linha">
-                            <div class="box-catalogo" id="">
-                                <img src="assets/img/butter.png" alt="bts butter">
-                                <div class="texto-album">
-                                    BTS Butter <span class="valorItem">$16.53</span>
-                                    <span class="precoAlbum">
-                                        Quantidade de itens
-                                        <span id="qtdItem">
-                                            0
-                                        </span>
-                                        <div class="btnCart">
-                                            <button>
-                                                +
-                                            </button>
-                                            <button>
-                                                —
-                                            </button>
-                                        </div>
-                                    </span>
-                                </div>
-                            </div>
-                            <div class="box-catalogo" id="">
-                                <img src="assets/img/bts-proofStandard.jpg" alt="BTS Proof" />
-                                <div class="texto-album">
-                                    Proof (Standard Edition) <span class="valorItem">$51.00</span>
-                                    <span class="precoAlbum">
-                                        Quantidade de itens
-                                        <span id="qtdItem">
-                                            0
-                                        </span>
-                                        <div class="btnCart">
-                                            <button>
-                                                +
-                                            </button>
-                                            <button>
-                                                —
-                                            </button>
-                                        </div>
-                                    </span>
-                                </div>
-                            </div>
-                            <div class="box-catalogo" id="">
-                                <img src="assets/img/bts-proofCompact.jpg" alt="BTS Proof Compact" />
-                                <div class="texto-album">
-                                    Proof (Compact Edition)<span class="valorItem">$17.92</span>
-                                    <span class="precoAlbum">
-                                        Quantidade de itens
-                                        <span id="qtdItem">
-                                            0
-                                        </span>
-                                        <div class="btnCart">
-                                            <button>
-                                                +
-                                            </button>
-                                            <button>
-                                                —
-                                            </button>
-                                        </div>
-                                    </span>
-                                </div>
-                            </div>
-                            <div class="box-catalogo" id="">
-                                <img src="assets/img/bts-myuniverse.jpg" alt="BTS MyUniverse" />
-                                <div class="texto-album">
-                                    COLDPLAY CD SINGLE MY UNIVERSE (feat.BTS) <span class="valorItem">$5.38</span>
-                                    <span class="precoAlbum">
-                                        Quantidade de itens
-                                        <span id="qtdItem">
-                                            0
-                                        </span>
-                                        <div class="btnCart">
-                                            <button>
-                                                +
-                                            </button>
-                                            <button>
-                                                —
-                                            </button>
-                                        </div>
-                                    </span>
-                                </div>
-                            </div>
-                            <div class="box-catalogo" id="">
-                                <img src="assets/img/bts-myuniverseEpiphane.png" alt="BTS MyUniverse Epiphane">
-                                <div class="texto-album">
-                                    My Universe (Epiphane Edition) - Alternate CD Single <span
-                                        class="valorItem">$7.24</span>
-                                    <span class="precoAlbum">
-                                        Quantidade de itens
-                                        <span id="qtdItem">
-                                            0
-                                        </span>
-                                        <div class="btnCart">
-                                            <button>
-                                                +
-                                            </button>
-                                            <button>
-                                                —
-                                            </button>
-                                        </div>
-                                    </span>
-                                </div>
-                            </div>
+                    </span>
+                </div>
+            </div>
+        </div>
+        <!-- QUARTA LINHA DE CATALOGO -->
+        <!-- <div class="catalogo"> -->
+        <div class="catalogo-linha">
+            <div class="box-catalogo" id="">
+                <img src="assets/img/butter.png" alt="bts butter">
+                <div class="texto-album">
+                    BTS Butter <span class="valorItem">$16.53</span>
+                    <span class="precoAlbum">
+                        Quantidade de itens
+                        <span id="qtdItemAlbum21">
+                            0
+                        </span>
+                        <div class="btnCart">
+                            <button onclick="somarAlbum21()">
+                                +
+                            </button>
+                            <button onclick="subAlbum21()">
+                                —
+                            </button>
                         </div>
-                        <!-- QUINTA LINHA DE CATALOGO -->
-                        <!-- <div class="catalogo"> -->
-                            <div class="catalogo-linha">
-                                <div class="box-catalogo" id="">
-                                    <img src="assets/img/jimin-face.jpg" alt="Jimin Face Album">
-                                    <div class="texto-album">
-                                        Jimin (BTS) 'FACE' <span class="valorItem">$17.18</span>
-                                        <span class="precoAlbum">
-                                            Quantidade de itens
-                                            <span id="qtdItem">
-                                                0
-                                            </span>
-                                            <div class="btnCart">
-                                                <button>
-                                                    +
-                                                </button>
-                                                <button>
-                                                    —
-                                                </button>
-                                            </div>
-                                        </span>
-                                    </div>
-                                </div>
-                                <div class="box-catalogo" id="">
-                                    <img src="assets/img/Indigo_RM.jpg" alt="BTS RM Indigo" />
-                                    <div class="texto-album">
-                                        RM (BTS) 'Indigo' (Book Edition) <span class="valorItem">$16.53</span>
-                                        <span class="precoAlbum">
-                                            Quantidade de itens
-                                            <span id="qtdItem">
-                                                0
-                                            </span>
-                                            <div class="btnCart">
-                                                <button>
-                                                    +
-                                                </button>
-                                                <button>
-                                                    —
-                                                </button>
-                                            </div>
-                                        </span>
-                                    </div>
-                                </div>
-                                <div class="box-catalogo" id="">
-                                    <img src="assets/img/bts-jin-astronaut.jpg" alt="BTS Jin Astronaut" />
-                                    <div class="texto-album">
-                                        Jin (BTS) The Astronaut<span class="valorItem">$15.79</span>
-                                        <span class="precoAlbum">
-                                            Quantidade de itens
-                                            <span id="qtdItem">
-                                                0
-                                            </span>
-                                            <div class="btnCart">
-                                                <button>
-                                                    +
-                                                </button>
-                                                <button>
-                                                    —
-                                                </button>
-                                            </div>
-                                        </span>
-                                    </div>
-                                </div>
-                                <div class="box-catalogo" id="">
-                                    <img src="assets/img/bts-baddecisions.png" alt="BTS Bad Decisions" />
-                                    <div class="texto-album">
-                                        Bad Decisions CD <span class="valorItem">$9.10</span>
-                                        <span class="precoAlbum">
-                                            Quantidade de itens
-                                            <span id="qtdItem">
-                                                0
-                                            </span>
-                                            <div class="btnCart">
-                                                <button>
-                                                    +
-                                                </button>
-                                                <button>
-                                                    —
-                                                </button>
-                                            </div>
-                                        </span>
-                                    </div>
-                                </div>
-                                <div class="box-catalogo" id="">
-                                    <img src="assets/img/bts-jackinthebox.png" alt="BTS Jack in the box">
-                                    <div class="texto-album">
-                                        j-hope (BTS) Jack In The Box (Weverse Albums) <span
-                                            class="valorItem">$9.75</span>
-                                        <span class="precoAlbum">
-                                            Quantidade de itens
-                                            <span id="qtdItem">
-                                                0
-                                            </span>
-                                            <div class="btnCart">
-                                                <button>
-                                                    +
-                                                </button>
-                                                <button>
-                                                    —
-                                                </button>
-                                            </div>
-                                        </span>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- SEXTA LINHA DE CATALOGO -->
-                            <!-- <div class="catalogo"> -->
-                                <div class="catalogo-linha">
-                                    <div class="box-catalogo" id="">
-                                        <img src="assets/img/bts-DDay.jpg" alt="Agust D - D Day">
-                                        <div class="texto-album">
-                                            Agust D (BTS) 'D-DAY' <span class="valorItem">$17.18</span>
-                                            <span class="precoAlbum">
-                                                Quantidade de itens
-                                                <span id="qtdItem">
-                                                    0
-                                                </span>
-                                                <div class="btnCart">
-                                                    <button>
-                                                        +
-                                                    </button>
-                                                    <button>
-                                                        —
-                                                    </button>
-                                                </div>
-                                            </span>
-                                        </div>
-                                    </div>
-                                    <div class="box-catalogo" id="">
-                                        <img src="assets/img/bts-btswordost.png" alt="BTS Word OST" />
-                                        <div class="texto-album">
-                                            BTS WORLD Soundtrack <span class="valorItem">$15.14</span>
-                                            <span class="precoAlbum">
-                                                Quantidade de itens
-                                                <span id="qtdItem">
-                                                    0
-                                                </span>
-                                                <div class="btnCart">
-                                                    <button>
-                                                        +
-                                                    </button>
-                                                    <button>
-                                                        —
-                                                    </button>
-                                                </div>
-                                            </span>
-                                        </div>
-                                    </div>
-                                    <div class="box-catalogo" id="">
-                                        <img src="assets/img/bts-jin-astronaut.jpg" alt="BTS Jin Astronaut" />
-                                        <div class="texto-album">
-                                            Jin (BTS) The Astronaut<span class="valorItem">$15.79</span>
-                                            <span class="precoAlbum">
-                                                Quantidade de itens
-                                                <span id="qtdItem">
-                                                    0
-                                                </span>
-                                                <div class="btnCart">
-                                                    <button>
-                                                        +
-                                                    </button>
-                                                    <button>
-                                                        —
-                                                    </button>
-                                                </div>
-                                            </span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="texto-album" id="finalCompra">
-                                    <h1>Já selecionou todos os items que faltam para completar sua coleção?</h1>
-                                    <div class="btnCart">
-                                        <button>
-                                            Limpar items
-                                        </button>
-                                        <button onclick="finalizarCompra()">
-                                            Finalizar
-                                        </button>
-                                    </span>
-                                </div>
-                                </div>
-                            </div>
-                            <div class="footer">
-                                © WEARMY
+                    </span>
+                </div>
+            </div>
+            <div class="box-catalogo" id="">
+                <img src="assets/img/bts-proofStandard.jpg" alt="BTS Proof" />
+                <div class="texto-album">
+                    Proof (Standard Edition) <span class="valorItem">$51.00</span>
+                    <span class="precoAlbum">
+                        Quantidade de itens
+                        <span id="qtdItemAlbum22">
+                            0
+                        </span>
+                        <div class="btnCart">
+                            <button onclick="somarAlbum22()">
+                                +
+                            </button>
+                            <button onclick="subAlbum22()">
+                                —
+                            </button>
                         </div>
-                            
+                    </span>
+                </div>
+            </div>
+            <div class="box-catalogo" id="">
+                <img src="assets/img/bts-proofCompact.jpg" alt="BTS Proof Compact" />
+                <div class="texto-album">
+                    Proof (Compact Edition)<span class="valorItem">$17.92</span>
+                    <span class="precoAlbum">
+                        Quantidade de itens
+                        <span id="qtdItemAlbum23">
+                            0
+                        </span>
+                        <div class="btnCart">
+                            <button onclick="somarAlbum23()">
+                                +
+                            </button>
+                            <button onclick="subAlbum23()">
+                                —
+                            </button>
+                        </div>
+                    </span>
+                </div>
+            </div>
+            <div class="box-catalogo" id="">
+                <img src="assets/img/bts-myuniverse.jpg" alt="BTS MyUniverse" />
+                <div class="texto-album">
+                    COLDPLAY CD SINGLE MY UNIVERSE (feat.BTS) <span class="valorItem">$5.38</span>
+                    <span class="precoAlbum">
+                        Quantidade de itens
+                        <span id="qtdItemAlbum24">
+                            0
+                        </span>
+                        <div class="btnCart">
+                            <button onclick="somarAlbum24()">
+                                +
+                            </button>
+                            <button onclick="subAlbum24()">
+                                —
+                            </button>
+                        </div>
+                    </span>
+                </div>
+            </div>
+            <div class="box-catalogo" id="">
+                <img src="assets/img/bts-myuniverseEpiphane.png" alt="BTS MyUniverse Epiphane">
+                <div class="texto-album">
+                    My Universe (Epiphane Edition) - Alternate CD Single <span class="valorItem">$7.24</span>
+                    <span class="precoAlbum">
+                        Quantidade de itens
+                        <span id="qtdItemAlbum25">
+                            0
+                        </span>
+                        <div class="btnCart">
+                            <button onclick="somarAlbum25()">
+                                +
+                            </button>
+                            <button onclick="subAlbum25()">
+                                —
+                            </button>
+                        </div>
+                    </span>
+                </div>
+            </div>
+        </div>
+        <!-- QUINTA LINHA DE CATALOGO -->
+        <!-- <div class="catalogo"> -->
+        <div class="catalogo-linha">
+            <div class="box-catalogo" id="">
+                <img src="assets/img/jimin-face.jpg" alt="Jimin Face Album">
+                <div class="texto-album">
+                    Jimin (BTS) 'FACE' <span class="valorItem">$17.18</span>
+                    <span class="precoAlbum">
+                        Quantidade de itens
+                        <span id="qtdItemAlbum26">
+                            0
+                        </span>
+                        <div class="btnCart">
+                            <button onclick="somarAlbum26()">
+                                +
+                            </button>
+                            <button onclick="subAlbum26()">
+                                —
+                            </button>
+                        </div>
+                    </span>
+                </div>
+            </div>
+            <div class="box-catalogo" id="">
+                <img src="assets/img/Indigo_RM.jpg" alt="BTS RM Indigo" />
+                <div class="texto-album">
+                    RM (BTS) 'Indigo' (Book Edition) <span class="valorItem">$16.53</span>
+                    <span class="precoAlbum">
+                        Quantidade de itens
+                        <span id="qtdItemAlbum27">
+                            0
+                        </span>
+                        <div class="btnCart">
+                            <button onclick="somarAlbum27()">
+                                +
+                            </button>
+                            <button onclick="subAlbum27()">
+                                —
+                            </button>
+                        </div>
+                    </span>
+                </div>
+            </div>
+            <div class="box-catalogo" id="">
+                <img src="assets/img/bts-jin-astronaut.jpg" alt="BTS Jin Astronaut" />
+                <div class="texto-album">
+                    Jin (BTS) The Astronaut<span class="valorItem">$15.79</span>
+                    <span class="precoAlbum">
+                        Quantidade de itens
+                        <span id="qtdItemAlbum28">
+                            0
+                        </span>
+                        <div class="btnCart">
+                            <button onclick="somarAlbum28()">
+                                +
+                            </button>
+                            <button onclick="subAlbum28()">
+                                —
+                            </button>
+                        </div>
+                    </span>
+                </div>
+            </div>
+            <div class="box-catalogo" id="">
+                <img src="assets/img/bts-baddecisions.png" alt="BTS Bad Decisions" />
+                <div class="texto-album">
+                    Bad Decisions CD <span class="valorItem">$9.10</span>
+                    <span class="precoAlbum">
+                        Quantidade de itens
+                        <span id="qtdItemAlbum29">
+                            0
+                        </span>
+                        <div class="btnCart">
+                            <button onclick="somarAlbum29()">
+                                +
+                            </button>
+                            <button onclick="subAlbum29()">
+                                —
+                            </button>
+                        </div>
+                    </span>
+                </div>
+            </div>
+            <div class="box-catalogo" id="">
+                <img src="assets/img/bts-jackinthebox.png" alt="BTS Jack in the box">
+                <div class="texto-album">
+                    j-hope (BTS) Jack In The Box (Weverse Albums) <span class="valorItem">$9.75</span>
+                    <span class="precoAlbum">
+                        Quantidade de itens
+                        <span id="qtdItemAlbum30">
+                            0
+                        </span>
+                        <div class="btnCart">
+                            <button onclick="somarAlbum30()">
+                                +
+                            </button>
+                            <button onclick="subAlbum30()">
+                                —
+                            </button>
+                        </div>
+                    </span>
+                </div>
+            </div>
+        </div>
+        <!-- SEXTA LINHA DE CATALOGO -->
+        <!-- <div class="catalogo"> -->
+        <div class="catalogo-linha">
+            <div class="box-catalogo" id="">
+                <img src="assets/img/bts-DDay.jpg" alt="Agust D - D Day">
+                <div class="texto-album">
+                    Agust D (BTS) 'D-DAY' <span class="valorItem">$17.18</span>
+                    <span class="precoAlbum">
+                        Quantidade de itens
+                        <span id="qtdItemAlbum31">
+                            0
+                        </span>
+                        <div class="btnCart">
+                            <button onclick="somarAlbum31()">
+                                +
+                            </button>
+                            <button onclick="subAlbum31()">
+                                —
+                            </button>
+                        </div>
+                    </span>
+                </div>
+            </div>
+            <div class="box-catalogo" id="">
+                <img src="assets/img/bts-btswordost.png" alt="BTS Word OST" />
+                <div class="texto-album">
+                    BTS WORLD Soundtrack <span class="valorItem">$15.14</span>
+                    <span class="precoAlbum">
+                        Quantidade de itens
+                        <span id="qtdItemAlbum32">
+                            0
+                        </span>
+                        <div class="btnCart">
+                            <button onclick="somarAlbum32()">
+                                +
+                            </button>
+                            <button onclick="subAlbum32()">
+                                —
+                            </button>
+                        </div>
+                    </span>
+                </div>
+            </div>
+            <div class="box-catalogo" id="">
+                <img src="assets/img/bts-jin-astronaut.jpg" alt="BTS Jin Astronaut" />
+                <div class="texto-album">
+                    Jin (BTS) The Astronaut<span class="valorItem">$15.79</span>
+                    <span class="precoAlbum">
+                        Quantidade de itens
+                        <span id="qtdItemAlbum33">
+                            0
+                        </span>
+                        <div class="btnCart">
+                            <button onclick="somarAlbum33()">
+                                +
+                            </button>
+                            <button onclick="subAlbum33()">
+                                —
+                            </button>
+                        </div>
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class="texto-album" id="finalCompra">
+            <h1>Já selecionou todos os items que faltam para completar sua coleção?</h1>
+            <div class="btnCart">
+                <button onclick="limparItems()">
+                    Limpar items
+                </button>
+                <button onclick="finalizarCompra()">
+                    Finalizar
+                </button>
+                </span>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        © WEARMY
+    </div>
 </body>
 
 </html>
@@ -773,15 +770,851 @@
             child_dropdown.style.display = 'block'
         }
     }
-    function finalizarCompra(){
+    function finalizarCompra() {
         // BoxCatalogo.style.transitionProperty = 'opacity, 0.3';
         // BoxCatalogo.style.transitionDuration = '2s';
         BoxCatalogo.style.opacity = "0.3";
         msgTotal.style.display = 'flex';
         document.getElementById('msgTotal').scrollIntoView({ behavior: 'smooth', block: 'center' });
+        totalCompra.innerHTML = total.toFixed(2);
+        totalCompraReal.innerHTML = `${(total * 4.94).toFixed(2)}`;
     }
-    function fecharCompra(){
+    function fecharCompra() {
         BoxCatalogo.style.opacity = "1";
         msgTotal.style.display = 'none';
+    }
+
+    function limparItems(){
+        total = 0
+        listaPreco = [9.66, 11.05, 11.05, 36.60, 13.84, 12.44, 19.32, 13.84, 16.53, 13.84, 15.14, 16.53, 13.74, 18.02, 8.26, 9.66, 36.60, 17.92, 10.96, 9.10, 16.53, 51.00, 17.92, 5.38, 7.24, 17.18, 16.53, 15.79, 9.10, 9.75, 17.18, 15.14, 15.79]
+        cliqueAlbum = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+        qtdItemAlbum1.innerHTML = `0`;
+        qtdItemAlbum2.innerHTML = `0`;
+        qtdItemAlbum3.innerHTML = `0`;
+        qtdItemAlbum4.innerHTML = `0`;
+        qtdItemAlbum5.innerHTML = `0`;
+        qtdItemAlbum6.innerHTML = `0`;
+        qtdItemAlbum7.innerHTML = `0`;
+        qtdItemAlbum8.innerHTML = `0`;
+        qtdItemAlbum9.innerHTML = `0`;
+        qtdItemAlbum10.innerHTML = `0`;
+        qtdItemAlbum11.innerHTML = `0`;
+        qtdItemAlbum12.innerHTML = `0`;
+        qtdItemAlbum13.innerHTML = `0`;
+        qtdItemAlbum14.innerHTML = `0`;
+        qtdItemAlbum15.innerHTML = `0`;
+        qtdItemAlbum16.innerHTML = `0`;
+        qtdItemAlbum17.innerHTML = `0`;
+        qtdItemAlbum18.innerHTML = `0`;
+        qtdItemAlbum19.innerHTML = `0`;
+        qtdItemAlbum20.innerHTML = `0`;
+        qtdItemAlbum21.innerHTML = `0`;
+        qtdItemAlbum22.innerHTML = `0`;
+        qtdItemAlbum23.innerHTML = `0`;
+        qtdItemAlbum24.innerHTML = `0`;
+        qtdItemAlbum25.innerHTML = `0`;
+        qtdItemAlbum26.innerHTML = `0`;
+        qtdItemAlbum27.innerHTML = `0`;
+        qtdItemAlbum28.innerHTML = `0`;
+        qtdItemAlbum29.innerHTML = `0`;
+        qtdItemAlbum30.innerHTML = `0`;
+        qtdItemAlbum31.innerHTML = `0`;
+        qtdItemAlbum32.innerHTML = `0`;
+        qtdItemAlbum33.innerHTML = `0`;
+    }
+
+    var listaPreco = [9.66, 11.05, 11.05, 36.60, 13.84, 12.44, 19.32, 13.84, 16.53, 13.84, 15.14, 16.53, 13.74, 18.02, 8.26, 9.66, 36.60, 17.92, 10.96, 9.10, 16.53, 51.00, 17.92, 5.38, 7.24, 17.18, 16.53, 15.79, 9.10, 9.75, 17.18, 15.14, 15.79
+    ]
+    var cliqueAlbum = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+    
+    var total = 0;
+    var sum = 0;
+
+    function somarAlbum1(){
+        cliqueAlbum[0] += 1
+        for(i = 0; i <= cliqueAlbum[0]; i++){
+            total += listaPreco[0]
+            sum = cliqueAlbum[0];
+            qtdItemAlbum1.innerHTML = sum;
+            if(i = cliqueAlbum[0]){
+                sum = 0;
+            }
+        }
+    }
+
+    function subAlbum1(){
+        cliqueAlbum[0] -= 1
+        sum = cliqueAlbum[0];
+        if(sum < 0){
+            return false
+        } else{            
+            total -= listaPreco[0]
+            qtdItemAlbum1.innerHTML = sum;
+        }
+    }
+    
+    function somarAlbum2(){
+        cliqueAlbum[1] += 1
+        
+        for(i = 0; i <= cliqueAlbum[1]; i++){
+            total += listaPreco[1]
+            sum = cliqueAlbum[1];
+            qtdItemAlbum2.innerHTML = sum;
+            if(i = cliqueAlbum[1]){
+                sum = 0;
+            }
+        }
+    }
+
+    function subAlbum2(){
+        cliqueAlbum[1] -= 1
+        sum = cliqueAlbum[1];
+        if(sum < 0){
+            return false
+        } else{            
+            total -= listaPreco[1]
+            qtdItemAlbum2.innerHTML = sum;
+        }
+    }
+    
+    function somarAlbum3(){
+        cliqueAlbum[2] += 1
+        
+        for(i = 0; i <= cliqueAlbum[2]; i++){
+            total += listaPreco[2]
+            sum = cliqueAlbum[2];
+            qtdItemAlbum3.innerHTML = sum;
+            if(i = cliqueAlbum[2]){
+                sum = 0;
+            }
+        }
+    }
+
+    function subAlbum3(){
+        cliqueAlbum[2] -= 1
+        sum = cliqueAlbum[2];
+        if(sum < 0){
+            return false
+        } else{            
+            total -= listaPreco[2]
+            qtdItemAlbum3.innerHTML = sum;
+        }
+    }
+    
+    function somarAlbum4(){
+        cliqueAlbum[3] += 1
+        
+        for(i = 0; i <= cliqueAlbum[3]; i++){
+            total += listaPreco[3]
+            sum = cliqueAlbum[3];
+            qtdItemAlbum4.innerHTML = sum;
+            if(i = cliqueAlbum[3]){
+                sum = 0;
+            }
+        }
+    }
+
+    function subAlbum4(){
+        cliqueAlbum[3] -= 1
+        sum = cliqueAlbum[3];
+        if(sum < 0){
+            return false
+        } else{            
+            total -= listaPreco[3]
+            qtdItemAlbum4.innerHTML = sum;
+        }
+    }
+
+    function somarAlbum5(){
+        cliqueAlbum[4] += 1
+        
+        for(i = 0; i <= cliqueAlbum[4]; i++){
+            total += listaPreco[4]
+            sum = cliqueAlbum[4];
+            qtdItemAlbum5.innerHTML = sum;
+            if(i = cliqueAlbum[4]){
+                sum = 0;
+            }
+        }
+    }
+
+    function subAlbum5(){
+        cliqueAlbum[4] -= 1
+        sum = cliqueAlbum[4];
+        if(sum < 0){
+            return false
+        } else{            
+            total -= listaPreco[4]
+            qtdItemAlbum5.innerHTML = sum;
+        }
+    }
+
+    function somarAlbum6(){
+        cliqueAlbum[5] += 1
+        
+        for(i = 0; i <= cliqueAlbum[5]; i++){
+            total += listaPreco[5]
+            sum = cliqueAlbum[5];
+            qtdItemAlbum6.innerHTML = sum;
+            if(i = cliqueAlbum[5]){
+                sum = 0;
+            }
+        }
+    }
+
+    function subAlbum6(){
+        cliqueAlbum[5] -= 1
+        sum = cliqueAlbum[5];
+        if(sum < 0){
+            return false
+        } else{            
+            total -= listaPreco[5]
+            qtdItemAlbum6.innerHTML = sum;
+        }
+    }
+
+    function somarAlbum7(){
+        cliqueAlbum[6] += 1
+        
+        for(i = 0; i <= cliqueAlbum[6]; i++){
+            total += listaPreco[6]
+            sum = cliqueAlbum[6];
+            qtdItemAlbum7.innerHTML = sum;
+            if(i = cliqueAlbum[6]){
+                sum = 0;
+            }
+        }
+    }
+
+    function subAlbum7(){
+        cliqueAlbum[6] -= 1
+        sum = cliqueAlbum[6];
+        if(sum < 0){
+            return false
+        } else{            
+            total -= listaPreco[6]
+            qtdItemAlbum7.innerHTML = sum;
+        }
+    }
+
+    function somarAlbum8(){
+        cliqueAlbum[7] += 1
+        
+        for(i = 0; i <= cliqueAlbum[7]; i++){
+            total += listaPreco[7]
+            sum = cliqueAlbum[7];
+            qtdItemAlbum8.innerHTML = sum;
+            if(i = cliqueAlbum[7]){
+                sum = 0;
+            }
+        }
+    }
+
+    function subAlbum8(){
+        cliqueAlbum[7] -= 1
+        sum = cliqueAlbum[7];
+        if(sum < 0){
+            return false
+        } else{            
+            total -= listaPreco[7]
+            qtdItemAlbum8.innerHTML = sum;
+        }
+    }
+
+    function somarAlbum9(){
+        cliqueAlbum[8] += 1
+        
+        for(i = 0; i <= cliqueAlbum[8]; i++){
+            total += listaPreco[8]
+            sum = cliqueAlbum[8];
+            qtdItemAlbum9.innerHTML = sum;
+            if(i = cliqueAlbum[8]){
+                sum = 0;
+            }
+        }
+    }
+
+    function subAlbum9(){
+        cliqueAlbum[8] -= 1
+        sum = cliqueAlbum[8];
+        if(sum < 0){
+            return false
+        } else{            
+            total -= listaPreco[8]
+            qtdItemAlbum9.innerHTML = sum;
+        }
+    }
+
+    function somarAlbum10(){
+        cliqueAlbum[9] += 1
+        
+        for(i = 0; i <= cliqueAlbum[9]; i++){
+            total += listaPreco[9]
+            sum = cliqueAlbum[9];
+            qtdItemAlbum10.innerHTML = sum;
+            if(i = cliqueAlbum[9]){
+                sum = 0;
+            }
+        }
+    }
+
+    function subAlbum10(){
+        cliqueAlbum[9] -= 1
+        sum = cliqueAlbum[9];
+        if(sum < 0){
+            return false
+        } else{            
+            total -= listaPreco[9]
+            qtdItemAlbum10.innerHTML = sum;
+        }
+    }
+
+    function somarAlbum11(){
+        cliqueAlbum[10] += 1
+        
+        for(i = 0; i <= cliqueAlbum[10]; i++){
+            total += listaPreco[10]
+            sum = cliqueAlbum[10];
+            qtdItemAlbum11.innerHTML = sum;
+            if(i = cliqueAlbum[10]){
+                sum = 0;
+            }
+        }
+    }
+
+    function subAlbum11(){
+        cliqueAlbum[10] -= 1
+        sum = cliqueAlbum[10];
+        if(sum < 0){
+            return false
+        } else{            
+            total -= listaPreco[10]
+            qtdItemAlbum11.innerHTML = sum;
+        }
+    }
+
+    function somarAlbum12(){
+        cliqueAlbum[11] += 1
+        
+        for(i = 0; i <= cliqueAlbum[11]; i++){
+            total += listaPreco[11]
+            sum = cliqueAlbum[11];
+            qtdItemAlbum12.innerHTML = sum;
+            if(i = cliqueAlbum[11]){
+                sum = 0;
+            }
+        }
+    }
+
+    function subAlbum12(){
+        cliqueAlbum[11] -= 1
+        sum = cliqueAlbum[11];
+        if(sum < 0){
+            return false
+        } else{            
+            total -= listaPreco[11]
+            qtdItemAlbum12.innerHTML = sum;
+        }
+    }
+
+    function somarAlbum13(){
+        cliqueAlbum[12] += 1
+        
+        for(i = 0; i <= cliqueAlbum[12]; i++){
+            total += listaPreco[12]
+            sum = cliqueAlbum[12];
+            qtdItemAlbum13.innerHTML = sum;
+            if(i = cliqueAlbum[12]){
+                sum = 0;
+            }
+        }
+    }
+
+    function subAlbum13(){
+        cliqueAlbum[12] -= 1
+        sum = cliqueAlbum[12];
+        if(sum < 0){
+            return false
+        } else{            
+            total -= listaPreco[12]
+            qtdItemAlbum13.innerHTML = sum;
+        }
+    }
+
+    function somarAlbum14(){
+        cliqueAlbum[13] += 1
+        
+        for(i = 0; i <= cliqueAlbum[13]; i++){
+            total += listaPreco[13]
+            sum = cliqueAlbum[13];
+            qtdItemAlbum14.innerHTML = sum;
+            if(i = cliqueAlbum[13]){
+                sum = 0;
+            }
+        }
+    }
+
+    function subAlbum14(){
+        cliqueAlbum[13] -= 1
+        sum = cliqueAlbum[13];
+        if(sum < 0){
+            return false
+        } else{            
+            total -= listaPreco[13]
+            qtdItemAlbum14.innerHTML = sum;
+        }
+    }
+
+    function somarAlbum15(){
+        cliqueAlbum[14] += 1
+        
+        for(i = 0; i <= cliqueAlbum[14]; i++){
+            total += listaPreco[14]
+            sum = cliqueAlbum[14];
+            qtdItemAlbum15.innerHTML = sum;
+            if(i = cliqueAlbum[14]){
+                sum = 0;
+            }
+        }
+    }
+
+    function subAlbum15(){
+        cliqueAlbum[14] -= 1
+        sum = cliqueAlbum[14];
+        if(sum < 0){
+            return false
+        } else{            
+            total -= listaPreco[14]
+            qtdItemAlbum15.innerHTML = sum;
+        }
+    }
+
+    function somarAlbum16(){
+        cliqueAlbum[15] += 1
+        
+        for(i = 0; i <= cliqueAlbum[15]; i++){
+            total += listaPreco[15]
+            sum = cliqueAlbum[15];
+            qtdItemAlbum16.innerHTML = sum;
+            if(i = cliqueAlbum[15]){
+                sum = 0;
+            }
+        }
+    }
+
+    function subAlbum16(){
+        cliqueAlbum[15] -= 1
+        sum = cliqueAlbum[15];
+        if(sum < 0){
+            return false
+        } else{            
+            total -= listaPreco[15]
+            qtdItemAlbum16.innerHTML = sum;
+        }
+    }
+
+    function somarAlbum17(){
+        cliqueAlbum[16] += 1
+        
+        for(i = 0; i <= cliqueAlbum[16]; i++){
+            total += listaPreco[16]
+            sum = cliqueAlbum[16];
+            qtdItemAlbum17.innerHTML = sum;
+            if(i = cliqueAlbum[16]){
+                sum = 0;
+            }
+        }
+    }
+
+    function subAlbum17(){
+        cliqueAlbum[16] -= 1
+        sum = cliqueAlbum[16];
+        if(sum < 0){
+            return false
+        } else{            
+            total -= listaPreco[16]
+            qtdItemAlbum17.innerHTML = sum;
+        }
+    }
+
+    function somarAlbum18(){
+        cliqueAlbum[17] += 1
+        
+        for(i = 0; i <= cliqueAlbum[17]; i++){
+            total += listaPreco[17]
+            sum = cliqueAlbum[17];
+            qtdItemAlbum18.innerHTML = sum;
+            if(i = cliqueAlbum[17]){
+                sum = 0;
+            }
+        }
+    }
+
+    function subAlbum18(){
+        cliqueAlbum[17] -= 1
+        sum = cliqueAlbum[17];
+        if(sum < 0){
+            return false
+        } else{            
+            total -= listaPreco[17]
+            qtdItemAlbum18.innerHTML = sum;
+        }
+    }
+
+    function somarAlbum19(){
+        cliqueAlbum[18] += 1
+        
+        for(i = 0; i <= cliqueAlbum[18]; i++){
+            total += listaPreco[18]
+            sum = cliqueAlbum[18];
+            qtdItemAlbum19.innerHTML = sum;
+            if(i = cliqueAlbum[18]){
+                sum = 0;
+            }
+        }
+    }
+
+    function subAlbum19(){
+        cliqueAlbum[18] -= 1
+        sum = cliqueAlbum[18];
+        if(sum < 0){
+            return false
+        } else{            
+            total -= listaPreco[18]
+            qtdItemAlbum19.innerHTML = sum;
+        }
+    }
+
+    function somarAlbum20(){
+        cliqueAlbum[19] += 1
+        
+        for(i = 0; i <= cliqueAlbum[19]; i++){
+            total += listaPreco[19]
+            sum = cliqueAlbum[19];
+            qtdItemAlbum20.innerHTML = sum;
+            if(i = cliqueAlbum[19]){
+                sum = 0;
+            }
+        }
+    }
+
+    function subAlbum20(){
+        cliqueAlbum[19] -= 1
+        sum = cliqueAlbum[19];
+        if(sum < 0){
+            return false
+        } else{            
+            total -= listaPreco[19]
+            qtdItemAlbum20.innerHTML = sum;
+        }
+    }
+
+    function somarAlbum21(){
+        cliqueAlbum[20] += 1
+        
+        for(i = 0; i <= cliqueAlbum[20]; i++){
+            total += listaPreco[20]
+            sum = cliqueAlbum[20];
+            qtdItemAlbum21.innerHTML = sum;
+            if(i = cliqueAlbum[20]){
+                sum = 0;
+            }
+        }
+    }
+
+    function subAlbum21(){
+        cliqueAlbum[20] -= 1
+        sum = cliqueAlbum[20];
+        if(sum < 0){
+            return false
+        } else{            
+            total -= listaPreco[20]
+            qtdItemAlbum21.innerHTML = sum;
+        }
+    }
+
+    function somarAlbum22(){
+        cliqueAlbum[21] += 1
+        
+        for(i = 0; i <= cliqueAlbum[21]; i++){
+            total += listaPreco[21]
+            sum = cliqueAlbum[21];
+            qtdItemAlbum22.innerHTML = sum;
+            if(i = cliqueAlbum[21]){
+                sum = 0;
+            }
+        }
+    }
+
+    function subAlbum22(){
+        cliqueAlbum[21] -= 1
+        sum = cliqueAlbum[21];
+        if(sum < 0){
+            return false
+        } else{            
+            total -= listaPreco[21]
+            qtdItemAlbum22.innerHTML = sum;
+        }
+    }
+
+    function somarAlbum23(){
+        cliqueAlbum[22] += 1
+        
+        for(i = 0; i <= cliqueAlbum[22]; i++){
+            total += listaPreco[22]
+            sum = cliqueAlbum[22];
+            qtdItemAlbum23.innerHTML = sum;
+            if(i = cliqueAlbum[22]){
+                sum = 0;
+            }
+        }
+    }
+
+    function subAlbum23(){
+        cliqueAlbum[22] -= 1
+        sum = cliqueAlbum[22];
+        if(sum < 0){
+            return false
+        } else{            
+            total -= listaPreco[22]
+            qtdItemAlbum23.innerHTML = sum;
+        }
+    }
+
+    function somarAlbum24(){
+        cliqueAlbum[23] += 1
+        
+        for(i = 0; i <= cliqueAlbum[23]; i++){
+            total += listaPreco[23]
+            sum = cliqueAlbum[23];
+            qtdItemAlbum24.innerHTML = sum;
+            if(i = cliqueAlbum[23]){
+                sum = 0;
+            }
+        }
+    }
+
+    function subAlbum24(){
+        cliqueAlbum[23] -= 1
+        sum = cliqueAlbum[23];
+        if(sum < 0){
+            return false
+        } else{            
+            total -= listaPreco[23]
+            qtdItemAlbum24.innerHTML = sum;
+        }
+    }
+
+    function somarAlbum25(){
+        cliqueAlbum[24] += 1
+        
+        for(i = 0; i <= cliqueAlbum[24]; i++){
+            total += listaPreco[24]
+            sum = cliqueAlbum[24];
+            qtdItemAlbum25.innerHTML = sum;
+            if(i = cliqueAlbum[24]){
+                sum = 0;
+            }
+        }
+    }
+
+    function subAlbum25(){
+        cliqueAlbum[24] -= 1
+        sum = cliqueAlbum[24];
+        if(sum < 0){
+            return false
+        } else{            
+            total -= listaPreco[24]
+            qtdItemAlbum25.innerHTML = sum;
+        }
+    }
+
+    function somarAlbum26(){
+        cliqueAlbum[25] += 1
+        
+        for(i = 0; i <= cliqueAlbum[25]; i++){
+            total += listaPreco[25]
+            sum = cliqueAlbum[25];
+            qtdItemAlbum26.innerHTML = sum;
+            if(i = cliqueAlbum[25]){
+                sum = 0;
+            }
+        }
+    }
+
+    function subAlbum26(){
+        cliqueAlbum[25] -= 1
+        sum = cliqueAlbum[25];
+        if(sum < 0){
+            return false
+        } else{            
+            total -= listaPreco[25]
+            qtdItemAlbum26.innerHTML = sum;
+        }
+    }
+
+    function somarAlbum27(){
+        cliqueAlbum[26] += 1
+        
+        for(i = 0; i <= cliqueAlbum[26]; i++){
+            total += listaPreco[26]
+            sum = cliqueAlbum[26];
+            qtdItemAlbum27.innerHTML = sum;
+            if(i = cliqueAlbum[26]){
+                sum = 0;
+            }
+        }
+    }
+
+    function subAlbum27(){
+        cliqueAlbum[26] -= 1
+        sum = cliqueAlbum[26];
+        if(sum < 0){
+            return false
+        } else{            
+            total -= listaPreco[26]
+            qtdItemAlbum27.innerHTML = sum;
+        }
+    }
+
+    function somarAlbum28(){
+        cliqueAlbum[27] += 1
+        
+        for(i = 0; i <= cliqueAlbum[27]; i++){
+            total += listaPreco[27]
+            sum = cliqueAlbum[27];
+            qtdItemAlbum28.innerHTML = sum;
+            if(i = cliqueAlbum[27]){
+                sum = 0;
+            }
+        }
+    }
+
+    function subAlbum28(){
+        cliqueAlbum[27] -= 1
+        sum = cliqueAlbum[27];
+        if(sum < 0){
+            return false
+        } else{            
+            total -= listaPreco[27]
+            qtdItemAlbum28.innerHTML = sum;
+        }
+    }
+
+    function somarAlbum29(){
+        cliqueAlbum[28] += 1
+        
+        for(i = 0; i <= cliqueAlbum[28]; i++){
+            total += listaPreco[28]
+            sum = cliqueAlbum[28];
+            qtdItemAlbum29.innerHTML = sum;
+            if(i = cliqueAlbum[28]){
+                sum = 0;
+            }
+        }
+    }
+
+    function subAlbum29(){
+        cliqueAlbum[28] -= 1
+        sum = cliqueAlbum[28];
+        if(sum < 0){
+            return false
+        } else{            
+            total -= listaPreco[28]
+            qtdItemAlbum29.innerHTML = sum;
+        }
+    }
+
+    function somarAlbum30(){
+        cliqueAlbum[29] += 1
+        
+        for(i = 0; i <= cliqueAlbum[29]; i++){
+            total += listaPreco[29]
+            sum = cliqueAlbum[29];
+            qtdItemAlbum30.innerHTML = sum;
+            if(i = cliqueAlbum[29]){
+                sum = 0;
+            }
+        }
+    }
+
+    function subAlbum30(){
+        cliqueAlbum[29] -= 1
+        sum = cliqueAlbum[29];
+        if(sum < 0){
+            return false
+        } else{            
+            total -= listaPreco[29]
+            qtdItemAlbum30.innerHTML = sum;
+        }
+    }
+    function somarAlbum31(){
+        cliqueAlbum[30] += 1
+        
+        for(i = 0; i <= cliqueAlbum[30]; i++){
+            total += listaPreco[30]
+            sum = cliqueAlbum[30];
+            qtdItemAlbum31.innerHTML = sum;
+            if(i = cliqueAlbum[30]){
+                sum = 0;
+            }
+        }
+    }
+
+    function subAlbum31(){
+        cliqueAlbum[30] -= 1
+        sum = cliqueAlbum[30];
+        if(sum < 0){
+            return false
+        } else{            
+            total -= listaPreco[30]
+            qtdItemAlbum31.innerHTML = sum;
+        }
+    }
+    function somarAlbum32(){
+        cliqueAlbum[31] += 1
+        
+        for(i = 0; i <= cliqueAlbum[31]; i++){
+            total += listaPreco[31]
+            sum = cliqueAlbum[31];
+            qtdItemAlbum32.innerHTML = sum;
+            if(i = cliqueAlbum[31]){
+                sum = 0;
+            }
+        }
+    }
+
+    function subAlbum32(){
+        cliqueAlbum[31] -= 1
+        sum = cliqueAlbum[31];
+        if(sum < 0){
+            return false
+        } else{            
+            total -= listaPreco[31]
+            qtdItemAlbum32.innerHTML = sum;
+        }
+    }
+    function somarAlbum33(){
+        cliqueAlbum[32] += 1
+        
+        for(i = 0; i <= cliqueAlbum[32]; i++){
+            total += listaPreco[32]
+            sum = cliqueAlbum[32];
+            qtdItemAlbum33.innerHTML = sum;
+            if(i = cliqueAlbum[32]){
+                sum = 0;
+            }
+        }
+    }
+
+    function subAlbum33(){
+        cliqueAlbum[32] -= 1
+        sum = cliqueAlbum[32];
+        if(sum < 0){
+            return false
+        } else{            
+            total -= listaPreco[32]
+            qtdItemAlbum33.innerHTML = sum;
+        }
     }
 </script>
