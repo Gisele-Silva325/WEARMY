@@ -1,12 +1,191 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="../assets/logo-army.png" type="image/x-icon">
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script src="../js/funcoes.js"></script>
+    <title>Homepage</title>
 </head>
+
 <body>
-    sim.
+    <div class="container">
+        <div class="navBar">
+            <div class="profile">
+                <img src="../assets/profile/profile1.png" alt="foto perfil">
+                <span id="username">username</span>
+            </div>
+            <div class="menu-navegacao">
+                <ul>
+                    <li id="opcao_nav">home</li>
+                    <li id="opcao_nav">perfil</li>
+                    <li id="opcao_nav" onclick="logout()">logout</li>
+                </ul>
+            </div>
+        </div>
+        <div class="feed-post">
+            <div class="criar-post">
+                <div class="form-post">
+                    <h3>Criar uma postagem</h3>
+                    <textarea name="postagem" id="postagem" cols="30" rows="10"
+                        placeholder="O que você quer compartilhar?"></textarea>
+                    <span id="mensagem_erro"></span>
+                </div>
+                <button onclick="postar()">Publicar</button>
+                <div id="div_aguardar"></div>
+            </div>
+            <div class="feedPostagems">
+                <h3>Postagens</h3>
+                <div class="box-post">
+                    <div class="post">
+                        <span class="username_post">username</span>
+                        <textarea name="postagem" id="novo_post" cols="30" rows="10"
+                            readonly>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut tristique pulvinar condimentum. In eu tellus eget mi sagittis lobortis. Aliquam ultrices dolor nec orci congue, nec sodales libero bibendum. Nulla bibendum eros nec eros commodo pellentesque. Praesent vel luctus odio, vitae congue neque. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nulla tempus mattis justo non dictum. Etiam pretium pretium eros, vel gravida erat imperdiet sed. Curabitur ut ex commodo, rhoncus nisi non, eleifend ante. Vivamus pellentesque eros a urna ornare aliquam. Mauris et feugiat arcu. Phasellus ut laoreet lorem. Integer eu aliquam nisl. Phasellus fringilla felis id diam condimentum, id blandit lectus pellentesque. Nam facilisis, mi ac rhoncus aliquam, sem arcu tincidunt odio, quis tincidunt nibh nulla eu neque. Aliquam erat volutpat.</textarea>
+                        <ion-icon name="heart-outline" onclick="like()"></ion-icon>
+                        <ion-icon name="chatbox-outline"></ion-icon>
+                    </div>
+                    <div class="post">
+                        <span class="username_post">username</span>
+                        <textarea name="postagem" id="novo_post" cols="30" rows="10"
+                            readonly>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut tristique pulvinar condimentum. In eu tellus eget mi sagittis lobortis. Aliquam ultrices dolor nec orci congue, nec sodales libero bibendum. Nulla bibendum eros nec eros commodo pellentesque. Praesent vel luctus odio, vitae congue neque. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nulla tempus mattis justo non dictum. Etiam pretium pretium eros, vel gravida erat imperdiet sed. Curabitur ut ex commodo, rhoncus nisi non, eleifend ante. Vivamus pellentesque eros a urna ornare aliquam. Mauris et feugiat arcu. Phasellus ut laoreet lorem. Integer eu aliquam nisl. Phasellus fringilla felis id diam condimentum, id blandit lectus pellentesque. Nam facilisis, mi ac rhoncus aliquam, sem arcu tincidunt odio, quis tincidunt nibh nulla eu neque. Aliquam erat volutpat.</textarea>
+                        <ion-icon name="heart-outline" onclick="like()"></ion-icon>
+                        <ion-icon name="chatbox-outline"></ion-icon>
+                    </div>
+                    <div class="post">
+                        <span class="username_post">username</span>
+                        <textarea name="postagem" id="novo_post" cols="30" rows="10"
+                            readonly>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut tristique pulvinar condimentum. In eu tellus eget mi sagittis lobortis. Aliquam ultrices dolor nec orci congue, nec sodales libero bibendum. Nulla bibendum eros nec eros commodo pellentesque. Praesent vel luctus odio, vitae congue neque. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nulla tempus mattis justo non dictum. Etiam pretium pretium eros, vel gravida erat imperdiet sed. Curabitur ut ex commodo, rhoncus nisi non, eleifend ante. Vivamus pellentesque eros a urna ornare aliquam. Mauris et feugiat arcu. Phasellus ut laoreet lorem. Integer eu aliquam nisl. Phasellus fringilla felis id diam condimentum, id blandit lectus pellentesque. Nam facilisis, mi ac rhoncus aliquam, sem arcu tincidunt odio, quis tincidunt nibh nulla eu neque. Aliquam erat volutpat.</textarea>
+                        <ion-icon name="heart-outline" onclick="like()"></ion-icon>
+                        <ion-icon name="chatbox-outline"></ion-icon>
+                    </div>
+                    <div class="post">
+                        <span class="username_post">username</span>
+                        <textarea name="postagem" id="novo_post" cols="30" rows="10"
+                            readonly>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut tristique pulvinar condimentum. In eu tellus eget mi sagittis lobortis. Aliquam ultrices dolor nec orci congue, nec sodales libero bibendum. Nulla bibendum eros nec eros commodo pellentesque. Praesent vel luctus odio, vitae congue neque. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nulla tempus mattis justo non dictum. Etiam pretium pretium eros, vel gravida erat imperdiet sed. Curabitur ut ex commodo, rhoncus nisi non, eleifend ante. Vivamus pellentesque eros a urna ornare aliquam. Mauris et feugiat arcu. Phasellus ut laoreet lorem. Integer eu aliquam nisl. Phasellus fringilla felis id diam condimentum, id blandit lectus pellentesque. Nam facilisis, mi ac rhoncus aliquam, sem arcu tincidunt odio, quis tincidunt nibh nulla eu neque. Aliquam erat volutpat.</textarea>
+                        <ion-icon name="heart-outline" onclick="like()"></ion-icon>
+                        <ion-icon name="chatbox-outline"></ion-icon>
+                    </div>
+                    <div class="post">
+                        <span class="username_post">username</span>
+                        <textarea name="postagem" id="novo_post" cols="30" rows="10"
+                            readonly>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut tristique pulvinar condimentum. In eu tellus eget mi sagittis lobortis. Aliquam ultrices dolor nec orci congue, nec sodales libero bibendum. Nulla bibendum eros nec eros commodo pellentesque. Praesent vel luctus odio, vitae congue neque. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nulla tempus mattis justo non dictum. Etiam pretium pretium eros, vel gravida erat imperdiet sed. Curabitur ut ex commodo, rhoncus nisi non, eleifend ante. Vivamus pellentesque eros a urna ornare aliquam. Mauris et feugiat arcu. Phasellus ut laoreet lorem. Integer eu aliquam nisl. Phasellus fringilla felis id diam condimentum, id blandit lectus pellentesque. Nam facilisis, mi ac rhoncus aliquam, sem arcu tincidunt odio, quis tincidunt nibh nulla eu neque. Aliquam erat volutpat.</textarea>
+                        <ion-icon name="heart-outline" onclick="like()"></ion-icon>
+                        <ion-icon name="chatbox-outline"></ion-icon>
+                    </div>
+                    <div class="post">
+                        <span class="username_post">username</span>
+                        <textarea name="postagem" id="novo_post" cols="30" rows="10"
+                            readonly>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut tristique pulvinar condimentum. In eu tellus eget mi sagittis lobortis. Aliquam ultrices dolor nec orci congue, nec sodales libero bibendum. Nulla bibendum eros nec eros commodo pellentesque. Praesent vel luctus odio, vitae congue neque. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nulla tempus mattis justo non dictum. Etiam pretium pretium eros, vel gravida erat imperdiet sed. Curabitur ut ex commodo, rhoncus nisi non, eleifend ante. Vivamus pellentesque eros a urna ornare aliquam. Mauris et feugiat arcu. Phasellus ut laoreet lorem. Integer eu aliquam nisl. Phasellus fringilla felis id diam condimentum, id blandit lectus pellentesque. Nam facilisis, mi ac rhoncus aliquam, sem arcu tincidunt odio, quis tincidunt nibh nulla eu neque. Aliquam erat volutpat.</textarea>
+                        <ion-icon name="heart-outline" onclick="like()"></ion-icon>
+                        <ion-icon name="chatbox-outline"></ion-icon>
+                    </div>
+                    <div class="post">
+                        <span class="username_post">username</span>
+                        <textarea name="postagem" id="novo_post" cols="30" rows="10"
+                            readonly>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut tristique pulvinar condimentum. In eu tellus eget mi sagittis lobortis. Aliquam ultrices dolor nec orci congue, nec sodales libero bibendum. Nulla bibendum eros nec eros commodo pellentesque. Praesent vel luctus odio, vitae congue neque. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nulla tempus mattis justo non dictum. Etiam pretium pretium eros, vel gravida erat imperdiet sed. Curabitur ut ex commodo, rhoncus nisi non, eleifend ante. Vivamus pellentesque eros a urna ornare aliquam. Mauris et feugiat arcu. Phasellus ut laoreet lorem. Integer eu aliquam nisl. Phasellus fringilla felis id diam condimentum, id blandit lectus pellentesque. Nam facilisis, mi ac rhoncus aliquam, sem arcu tincidunt odio, quis tincidunt nibh nulla eu neque. Aliquam erat volutpat.</textarea>
+                        <ion-icon name="heart-outline" onclick="like()"></ion-icon>
+                        <ion-icon name="chatbox-outline"></ion-icon>
+                    </div>
+                    <div class="post">
+                        <span class="username_post">username</span>
+                        <textarea name="postagem" id="novo_post" cols="30" rows="10"
+                            readonly>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut tristique pulvinar condimentum. In eu tellus eget mi sagittis lobortis. Aliquam ultrices dolor nec orci congue, nec sodales libero bibendum. Nulla bibendum eros nec eros commodo pellentesque. Praesent vel luctus odio, vitae congue neque. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nulla tempus mattis justo non dictum. Etiam pretium pretium eros, vel gravida erat imperdiet sed. Curabitur ut ex commodo, rhoncus nisi non, eleifend ante. Vivamus pellentesque eros a urna ornare aliquam. Mauris et feugiat arcu. Phasellus ut laoreet lorem. Integer eu aliquam nisl. Phasellus fringilla felis id diam condimentum, id blandit lectus pellentesque. Nam facilisis, mi ac rhoncus aliquam, sem arcu tincidunt odio, quis tincidunt nibh nulla eu neque. Aliquam erat volutpat.</textarea>
+                        <ion-icon name="heart-outline" onclick="like()"></ion-icon>
+                        <ion-icon name="chatbox-outline"></ion-icon>
+                    </div>
+                    <div class="post">
+                        <span class="username_post">username</span>
+                        <textarea name="postagem" id="novo_post" cols="30" rows="10"
+                            readonly>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut tristique pulvinar condimentum. In eu tellus eget mi sagittis lobortis. Aliquam ultrices dolor nec orci congue, nec sodales libero bibendum. Nulla bibendum eros nec eros commodo pellentesque. Praesent vel luctus odio, vitae congue neque. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nulla tempus mattis justo non dictum. Etiam pretium pretium eros, vel gravida erat imperdiet sed. Curabitur ut ex commodo, rhoncus nisi non, eleifend ante. Vivamus pellentesque eros a urna ornare aliquam. Mauris et feugiat arcu. Phasellus ut laoreet lorem. Integer eu aliquam nisl. Phasellus fringilla felis id diam condimentum, id blandit lectus pellentesque. Nam facilisis, mi ac rhoncus aliquam, sem arcu tincidunt odio, quis tincidunt nibh nulla eu neque. Aliquam erat volutpat.</textarea>
+                        <ion-icon name="heart-outline" onclick="like()"></ion-icon>
+                        <ion-icon name="chatbox-outline"></ion-icon>
+                    </div>
+                    <div class="post">
+                        <span class="username_post">username</span>
+                        <textarea name="postagem" id="novo_post" cols="30" rows="10"
+                            readonly>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut tristique pulvinar condimentum. In eu tellus eget mi sagittis lobortis. Aliquam ultrices dolor nec orci congue, nec sodales libero bibendum. Nulla bibendum eros nec eros commodo pellentesque. Praesent vel luctus odio, vitae congue neque. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nulla tempus mattis justo non dictum. Etiam pretium pretium eros, vel gravida erat imperdiet sed. Curabitur ut ex commodo, rhoncus nisi non, eleifend ante. Vivamus pellentesque eros a urna ornare aliquam. Mauris et feugiat arcu. Phasellus ut laoreet lorem. Integer eu aliquam nisl. Phasellus fringilla felis id diam condimentum, id blandit lectus pellentesque. Nam facilisis, mi ac rhoncus aliquam, sem arcu tincidunt odio, quis tincidunt nibh nulla eu neque. Aliquam erat volutpat.</textarea>
+                        <ion-icon name="heart-outline" onclick="like()"></ion-icon>
+                        <ion-icon name="chatbox-outline"></ion-icon>
+                    </div>
+                    <div class="post">
+                        <span class="username_post">username</span>
+                        <textarea name="postagem" id="novo_post" cols="30" rows="10"
+                            readonly>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut tristique pulvinar condimentum. In eu tellus eget mi sagittis lobortis. Aliquam ultrices dolor nec orci congue, nec sodales libero bibendum. Nulla bibendum eros nec eros commodo pellentesque. Praesent vel luctus odio, vitae congue neque. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nulla tempus mattis justo non dictum. Etiam pretium pretium eros, vel gravida erat imperdiet sed. Curabitur ut ex commodo, rhoncus nisi non, eleifend ante. Vivamus pellentesque eros a urna ornare aliquam. Mauris et feugiat arcu. Phasellus ut laoreet lorem. Integer eu aliquam nisl. Phasellus fringilla felis id diam condimentum, id blandit lectus pellentesque. Nam facilisis, mi ac rhoncus aliquam, sem arcu tincidunt odio, quis tincidunt nibh nulla eu neque. Aliquam erat volutpat.</textarea>
+                        <ion-icon name="heart-outline" onclick="like()"></ion-icon>
+                        <ion-icon name="chatbox-outline"></ion-icon>
+                    </div>
+                </div>
+            </div>
+            <div class="kpi-home">
+                A,MSBVSDFNSDAVBHLSDABHJVASDGBFHVNASDBNBASVN
+            </div>
+        </div>
 </body>
+
 </html>
+<script>
+    username.innerHTML = sessionStorage.username_USUARIO;
+    function logout() {
+        sessionStorage.clear()
+        window.location = "../index.html";
+    }
+
+    var liked = 0;
+    function like(heartless) {
+        var icon = document.querySelector("ion-icon");
+        if (liked == 0) {
+            icon.setAttribute("name", "heart");
+            liked++
+        } else {
+            icon.setAttribute("name", "heart-outline");
+            liked--
+        }
+    }
+
+    function postar(){
+        var postVar = postagem.value;
+        var idUsuarioVar = sessionStorage.ID_USUARIO;
+        var idUsuario = sessionStorage.ID_USUARIO;
+        
+        fetch(`/avisos/publicar/${idUsuario}`, {
+            method: "post",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                postServer: postVar,
+                idUsuarioServer: idUsuarioVar
+            })
+        }).then(function (resposta) {
+
+            console.log("resposta: ", resposta);
+
+            if (resposta.ok) {
+                window.alert("Post realizado com sucesso pelo usuario de ID: " + idUsuario + "!");
+                window.location = "/logado/home.html";
+                limparFormulario();
+                finalizarAguardar();
+            } else if (resposta.status == 404) {
+                window.alert("Deu 404!");
+            } else {
+                throw ("Houve um erro ao tentar realizar a postagem! Código da resposta: " + resposta.status);
+            }
+        }).catch(function (resposta) {
+            console.log(`#ERRO: ${resposta}`);
+            finalizarAguardar();
+        });
+
+        return false;
+
+    }
+
+    function limparFormulario(){
+        novo_post.innerHTML = ``;
+    }
+    
+</script>

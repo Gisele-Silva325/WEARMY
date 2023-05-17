@@ -1,0 +1,133 @@
+@font-face {
+    font-family: 'Solano Gothic MVB Rg';
+    src: url(../fonts/SolanoGothicMVB-Rg.ttf);
+}
+
+@font-face {
+    font-family: 'Solano Gothic MVB Bd';
+    src: url(../fonts/SolanoGothicMVB-Bd.ttf);
+}
+
+* {
+    font-family: 'Solano Gothic MVB Rg' !important;
+}
+
+body {
+    margin: 0;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    height: 100vh;
+    width: 98vw;
+}
+
+/* MENU LATERAL */
+.navBar {
+    display: flex;
+    position: fixed;
+    padding-top: 2vb;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #3F2D6F;
+    color: white;
+    width: 15%;
+    height: 100%;
+    left: -4vw;
+    z-index: 99;
+    font-size: large;
+}
+
+.profile img {
+    width: 90px;
+    height: 90px;
+    position: relative;
+    left: -15%;
+}
+
+.profile {
+    position: relative;
+    align-self: center;
+    color: white;
+    width: 50%;
+    height: 10%;
+    left: 30%;
+    margin-bottom: 4vh;
+    font-family: 'Solano Gothic MVB Bd' !important;
+    font-size: larger;
+}
+
+.menu-navegacao{
+    width: 20%;
+}
+.menu-navegacao ul {
+    list-style: none;
+    align-self: center;
+}
+#opcao_nav:hover{
+    cursor: pointer;
+    font-weight: 600;
+    color: #b37eb5;
+}
+    
+    /* FEED DE CONTEUDO */
+    .feed-post {
+        position: relative;
+        left: 11%;
+        display: flex;
+        flex-direction: column;
+        padding: 2vb;
+        background-color: #DFDEDE;
+        width: 75%;
+        height: fit-content;
+        align-items: center;
+    }
+    .criar-post{
+        width: 80%;
+    }
+    .form-post textarea{
+        width: 100%;
+    }
+    .form-post h3{
+        margin-top: 1vh;
+        font-family: 'Solano Gothic MVB Bd' !important;
+        color: #3F2D6F;
+        font-weight: 900;
+    }
+    .feedPostagems{
+        width: 80%;
+        height: auto;
+    }
+    .feedPostagems textarea{
+        width: 100%;
+    }
+    .box-post h3{
+        margin-top: 1vh;
+        font-family: 'Solano Gothic MVB Bd' !important;
+        color: #3F2D6F;
+        font-weight: 900;
+    }
+    .box-post{
+        background-color: #DED6D3;
+        height: 100%;
+        padding: 2%;
+    }
+    .post span{
+        font-size: larger;
+        font-weight: 600;
+    }
+    .post ion-icon{
+        color: #3F2D6F;
+    }
+
+
+    /* KPIS DINAMICAS */
+    
+ .kpi-home{
+        display: flex;
+        flex-direction: column;
+        background-color: blueviolet;
+        height: 100%;
+    } 
