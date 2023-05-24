@@ -776,8 +776,8 @@
         BoxCatalogo.style.opacity = "0.3";
         msgTotal.style.display = 'flex';
         document.getElementById('msgTotal').scrollIntoView({ behavior: 'smooth', block: 'center' });
-        totalCompra.innerHTML = total.toFixed(2);
-        totalCompraReal.innerHTML = `${(total * 4.94).toFixed(2)}`;
+        totalCompra.innerHTML = Number(total.toFixed(2));
+        totalCompraReal.innerHTML = `${(Number(total.toFixed(2)) * 4.94).toFixed(2)}`;
     }
     function fecharCompra() {
         BoxCatalogo.style.opacity = "1";

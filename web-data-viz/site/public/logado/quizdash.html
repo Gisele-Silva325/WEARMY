@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="../assets/logo-army.png" type="image/x-icon">
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script src="../js/funcoes.js"></script>
+    <title>Homepage</title>
+</head>
+
+<body onload="validarSessao()">
+    <div class="container">
+        <div class="navBar">
+            <div class="profile">
+                <img src="../assets/profile/profile1.png" alt="foto perfil">
+                <span id="username">username</span>
+            </div>
+            <div class="menu-navegacao">
+                <ul>
+                    <li id="opcao_nav">home</li>
+                    <li id="opcao_nav">perfil</li>
+                    <li id="opcao_nav">quizz</li>
+                    <li id="opcao_nav" onclick="logout()">logout</li>
+                </ul>
+            </div>
+        </div>
+        <div class="dash-quizz">
+            <h1>Confira os nossos quizzes!</h1>
+            <div class="linha-quiz">
+                <div class="box-quiz">
+                    <img src="../../../../../../teste.png" alt="eba">
+                    <div class="quiz-texto">
+                        <h4>Conhecimento sobre trajetoria</h4>
+                        <span>Teste seu conhecimento sobre a tragetoria musical do BTS.
+                            Veja o ranking de pontuação aqui.
+                        </span>
+                        <a href="">Começar quizz</a>
+                    </div>
+                    <div class="box-quiz">
+                        <img src="../../../../../../teste.png">
+                        <div class="quiz-texto">
+                            <h4>Reconheça o integrante</h4>
+                            <span>Será que você é capaz de reconhecer o integrante por um pedaço da foto cortada.
+                                Veja o ranking de pontuação aqui.
+                            </span>
+                            <a href="">Começar quizz</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="linha-quiz">
+                <div class="box-quiz">
+                    <img src="../../../../../../teste.png" alt="eba">
+                    <div class="quiz-texto">
+                        <h4>Quantas músicas do BTS você consegue listar em 3 minutos</h4>
+                        <span>Você conhece mesmo todas as músicas?.
+                            Veja o ranking de pontuação aqui.
+                        </span>
+                        <a href="">Começar quizz</a>
+                    </div>
+                    <div class="box-quiz">
+                        <img src="../../../../../../teste.png">
+                        <div class="quiz-texto">
+                            <h4>Reconhecimento de música</h4>
+                            <span>Será que você é capaz de identificar a música apenas pelos primeiros segundos?
+                                Veja o ranking de pontuação aqui.
+                            </span>
+                            <a href="">Começar quizz</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+</body>
+
+</html>
+<script>
+    function logout() {
+        sessionStorage.clear()
+        window.location = "../index.html";
+    }
+
+
+</script>

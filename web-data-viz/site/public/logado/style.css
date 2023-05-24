@@ -131,3 +131,108 @@ body {
         background-color: blueviolet;
         height: 100%;
     } 
+
+    /* DASH DE QUIZZ */
+    .dash-quizz {
+        position: relative;
+        left: 11%;
+        display: flex;
+        flex-direction: column;
+        padding: 2vb;
+        background-color: #DFDEDE;
+        width: 89%;
+        height: 96vh;
+        align-items: center;
+    }
+
+    .linha-quiz{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        width: 100%;
+        margin-top: 5%;
+    }
+
+    .box-quiz{
+        display: flex;
+        flex-direction: row;
+        height: 20%;
+        width: 80vw;
+        margin-left: 2%;
+    }
+
+    .box-quiz h4{
+        margin: 0%;
+    }
+
+    .box-quiz img{
+        width: 400px;
+        height: 200px;
+        margin-right: 2%;
+    }
+
+    .quiz-texto a{
+        display: flex;
+        font-family: 'Solano Gothic MVB Bd' !important;
+        color: #3F2D6F;
+    }
+    
+    /* QUIZ 1 */
+    
+    .quizz-pergunta {
+        display: none;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        border: 2px #3F2D6F solid;
+        background-color: #DED6D3;
+        width: 50vw;
+        height: 30vw;
+        font-size: large;
+        padding: 5%;
+    }
+
+
+    .quizz-pergunta h4{
+        margin: 0;
+        font-size: 25px;
+        font-family: 'Solano Gothic MVB Bd' !important;
+        color: #3F2D6F;
+    }
+
+    .quizz-pergunta img{
+        align-self: center;
+        width: 40vw;
+        height: 15vw;
+        margin-bottom: 2%;
+    }
+
+    .pergunta{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .respostas{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        margin-bottom: 4%;
+    }
+
+    #quizz1{
+        color: #cfc5c1;
+    }
+
+    .quizz-pergunta button{
+        margin-right: 15px;
+        width: 8vw;
+        height: 3vh;
+    }
+    .botoes{
+        display: flex;
+        flex-direction: row;
+        align-self: flex-end;
+    }
+    .quizz-pergunta input{
+        margin-left: 20px;
+    }

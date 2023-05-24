@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="../assets/logo-army.png" type="image/x-icon">
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script src="../js/funcoes.js"></script>
+    <title>Homepage</title>
+</head>
+
+<body onload="validarSessao()">
+    <div class="container">
+        <div class="navBar">
+            <div class="profile">
+                <img src="../assets/profile/profile1.png" alt="foto perfil">
+                <span id="username">username</span>
+            </div>
+            <div class="menu-navegacao">
+                <ul>
+                    <li id="opcao_nav">home</li>
+                    <li id="opcao_nav">perfil</li>
+                    <li id="opcao_nav">quizz</li>
+                    <li id="opcao_nav" onclick="logout()">logout</li>
+                </ul>
+            </div>
+        </div>
+        <div class="dash-quizz">
+            <h1 id="quizz1">Conhecimento sobre trajetoria</h1>
+
+            <div class="quizz-pergunta" id="pergunta_1">
+                <h1>Pergunta 1 / 5</h1>
+                <div class="pergunta">
+                    <img src="../assets/bts-no-more-dreams.png" alt="">
+                    <h4>Quando que o BTS debutou?</h4>
+                    <span class=respostas>
+                        <input type="radio" id="P1_R1" name="q1" value="11/06/13"> <label for="P1_R1">11 de junho de
+                            2013</label>
+                        <input type="radio" id="P1_R2" name="q1" value="11/07/13"> <label for="P1_R2">11 de julho de
+                            2013</label>
+                        <input type="radio" id="P1_R3" name="q1" value="10/06/13"> <label for="P1_R3">10 de junho de
+                            2013</label>
+                        <input type="radio" id="P1_R4" name="q1" value="10/07/13"> <label for="P1_R4">10 de julho de
+                            2013</label>
+                    </span>
+                </div>
+                <span class="botoes">
+                    <button onclick="avancar()">Proxima</button>
+                </span>
+            </div>
+            <!-- Pergunta 2 -->
+            <div class="quizz-pergunta" id="pergunta_2">
+                <h1>Pergunta 2 / 5</h1>
+                <div class="pergunta">
+                    <img src="../assets/bts-dna.png" alt="bts dna teaser">
+                    <h4>Qual foi a primeira música do BTS a atingir 1 bilhão de visualizações no YouTube?</h4>
+                    <span class=respostas>
+                        <input type="radio" id="P2_R1" name="q2" value="Dynamite"> <label for="P2_R1">Dynamite</label>
+                        <input type="radio" id="P2_R2" name="q2" value="Butter"> <label for="P2_R2">Butter</label>
+                        <input type="radio" id="P2_R3" name="q2" value="DNA"> <label for="P2_R3">DNA</label>
+                        <input type="radio" id="P2_R4" name="q2" value="Fake Love"> <label for="P2_R4">Fake Love</label>
+                    </span>
+                </div>
+                <span class="botoes">
+                    <button onclick="retornar()">Voltar</button>
+                    <button onclick="avancar()">Proxima</button>
+                </span>
+            </div>
+            <!-- Pergunta 3 -->
+            <div class="quizz-pergunta" id="pergunta_3">
+                <h1>Pergunta 3 / 5</h1>
+                <div class="pergunta">
+                    <img src="../assets/BTS_Dynamite.jpg" alt="bts Dynamite">
+                    <h4>Qual música do BTS recebeu uma indicação ao Grammy Awards</h4>
+                    <span class=respostas>
+                        <input type="radio" id="P3_R1" name="q3" value="Permission to Dance"> <label
+                            for="P3_R1">Permission to Dance</label>
+                        <input type="radio" id="P3_R2" name="q3" value="Dynamite"> <label for="P3_R2">Dynamite</label>
+                        <input type="radio" id="P3_R3" name="q3" value="Butter"> <label for="P3_R3">Butter</label>
+                        <input type="radio" id="P3_R4" name="q3" value="Life Goes On"> <label for="P3_R4">Life Goes
+                            On</label>
+                    </span>
+                </div>
+                <span class="botoes">
+                    <button onclick="retornar()">Voltar</button>
+                    <button onclick="avancar()">Proxima</button>
+                </span>
+            </div>
+            <!-- Pergunta 4 -->
+            <div class="quizz-pergunta" id="pergunta_4">
+                <h1>Pergunta 4 / 5</h1>
+                <div class="pergunta">
+                    <img src="../assets/bts-burn-the-stage.jpg" alt="">
+                    <h4>Qual foi o nome do primeiro documentário lançado sobre o BTS?</h4>
+                    <span class=respostas>
+                        <input type="radio" id="P4_R1" name="q4" value="Burn the Stage"> <label for="P4_R1">Burn the
+                            Stage: The Movie</label>
+                        <input type="radio" id="P4_R2" name="q4" value="Bring the Soul"> <label for="P4_R2">Bring the
+                            Soul: The Movie</label>
+                        <input type="radio" id="P4_R3" name="q4" value="Break the Silence"> <label for="P4_R3">Break the
+                            Silence: The Movie</label>
+                        <input type="radio" id="P4_R4" name="q4" value="Suga DDay"> <label for="P4_R4">SUGA: Road to
+                            D-Day</label>
+                    </span>
+                </div>
+                <span class="botoes">
+                    <button onclick="retornar()">Voltar</button>
+                    <button onclick="avancar()">Proxima</button>
+                </span>
+            </div>
+            <!-- Pergunta 5 -->
+            <div class="quizz-pergunta" id="pergunta_5">
+                <h1>Pergunta 5 / 5</h1>
+                <div class="pergunta">
+                    <img src="../assets/bts_rio.jpg" alt="">
+                    <h4>Em que cidade brasileira o BTS realizou seu primeiro show solo no país?</h4>
+                    <span class=respostas>
+                        <input type="radio" id="P5_R1" name="q5" value="SP"> <label for="P5_R1">São Paulo</label>
+                        <input type="radio" id="P5_R2" name="q5" value="Fortaleza"> <label for="P5_R2">Fortaleza</label>
+                        <input type="radio" id="P5_R3" name="q5" value="Campinas"> <label for="P5_R3">Campinas</label>
+                        <input type="radio" id="P5_R4" name="q5" value="RJ"> <label for="P5_R4">Rio de Janeiro</label>
+                    </span>
+                </div>
+                <span class="botoes">
+                    <button onclick="retornar()">Voltar</button>
+                    <button onclick="finalizar()">Finalizar</button>
+                </span>
+            </div>
+            <!-- Pergunta 5 -->
+            <div class="quizz-pergunta" id="tela_final">
+                <h1>Resultado</h1>
+                    <img src="../assets/resultados-quiz1.png">
+                    <h4>Você acertou <span id='resultado'>x</span> questões</h4>
+                    <span class=respostas>
+                        <button onclick="refazer()">Refazer</button>
+                        <button onclick="salvar()">Salvar resultado</button>
+                    </span>
+            </div>
+
+        </div>
+
+</body>
+
+</html>
+<script>
+    pergunta_1.style.display = "flex";
+    function logout() {
+        sessionStorage.clear()
+        window.location = "../index.html";
+    }
+
+    var resposta1 = ``
+    var resposta2 = ``
+    var resposta3 = ``
+    var resposta4 = ``
+    var resposta5 = ``
+    var pontos = 0
+
+    function avancar() {
+        var validacao1 = P1_R1.checked == true || P1_R2.checked == true || P1_R3.checked == true || P1_R4.checked == true
+        var validacao2 = P2_R1.checked == true || P2_R2.checked == true || P2_R3.checked == true || P2_R4.checked == true
+        var validacao3 = P3_R1.checked == true || P3_R2.checked == true || P3_R3.checked == true || P3_R4.checked == true
+        var validacao4 = P4_R1.checked == true || P4_R2.checked == true || P4_R3.checked == true || P4_R4.checked == true
+
+        if (pergunta_1.style.display === "flex") {
+            if (validacao1) {
+                resposta1 = document.querySelector('input[name="q1"]:checked').value;
+                pergunta_1.style.display = "none";
+                pergunta_2.style.display = "flex";
+            } else {
+                alert(`Selecione alguma alternativa`)
+            }
+        } else if (pergunta_2.style.display === "flex") {
+            if (validacao2) {
+                resposta2 = document.querySelector('input[name="q2"]:checked').value;
+                pergunta_2.style.display = "none";
+                pergunta_3.style.display = "flex";
+            } else {
+                alert(`Selecione alguma alternativa`)
+            }
+        } else if (pergunta_3.style.display === "flex") {
+            if (validacao3) {
+                resposta3 = document.querySelector('input[name="q3"]:checked').value;
+                pergunta_3.style.display = "none";
+                pergunta_4.style.display = "flex";
+            } else {
+                alert(`Selecione alguma alternativa`)
+            }
+        } else if (pergunta_4.style.display === "flex") {
+            if (validacao4) {
+                resposta4 = document.querySelector('input[name="q4"]:checked').value;
+                pergunta_4.style.display = "none";
+                pergunta_5.style.display = "flex";
+            } else {
+                alert(`Selecione alguma alternativa`)
+            }
+        }
+    }
+
+    function finalizar() {
+        var validacao5 = P5_R1.checked == true || P5_R2.checked == true || P5_R3.checked == true || P5_R4.checked == true
+        if (validacao5) {
+            pergunta_5.style.display = "none";
+            tela_final.style.display = "flex";
+            var gabarito = ['11/06/13', 'DNA', 'Dynamite', 'Burn the Stage', 'RJ'];
+            var respostas = [resposta1, resposta2, resposta3, resposta4, resposta5];
+            for (var i = 0; i <= gabarito.length; i++) {
+                if (respostas[i] === gabarito[i]) {
+                    pontos++
+                }
+            }
+            resultado.innerHTML = pontos
+        } else {
+            alert(`Selecione alguma alternativa`)
+        }
+    }
+    
+    function refazer(){
+        pontos = 0;
+        pergunta_1.style.display = "flex";
+        pergunta_2.style.display = "none";
+        pergunta_3.style.display = "none";
+        pergunta_4.style.display = "none";
+        pergunta_5.style.display = "none";
+        tela_final.style.display = "none";
+        resposta1 = ``
+        resposta2 = ``
+        resposta3 = ``
+        resposta4 = ``
+        resposta5 = ``
+        document.querySelector('input[name="q1"]:checked').checked = false;
+        document.querySelector('input[name="q2"]:checked').checked = false;
+        document.querySelector('input[name="q3"]:checked').checked = false;
+        document.querySelector('input[name="q4"]:checked').checked = false;
+        document.querySelector('input[name="q5"]:checked').checked = false;
+    }
+
+    function finalizar(){
+        fetch("/usuarios/resultadoquiz", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                // crie um atributo que recebe o valor recuperado aqui
+                // Agora vá para o arquivo routes/usuario.js
+                pontoServer: pontos,
+                userServer: userVar
+            })
+        }).then(function (resposta) {
+
+            console.log("resposta: ", resposta);
+
+            if (resposta.ok) {
+                pontos = 0;
+                mensagem_erro.innerHTML = "Cadastro realizado com sucesso! Redirecionando para tela de Login...";
+                finalizarAguardar()
+
+                setTimeout(() => {
+                    window.location = "login.html";
+                }, "2000")
+
+                finalizarAguardar();
+            } else {
+                throw ("Houve um erro ao tentar realizar o cadastro!");
+            }
+        }).catch(function (resposta) {
+            console.log(`#ERRO: ${resposta}`);
+            finalizarAguardar();
+        });
+
+        return false;
+    }
+
+    function sumirMensagem() {
+        mensagem_erro.innerHTML = ``;
+    }
+
+    }
+</script>
