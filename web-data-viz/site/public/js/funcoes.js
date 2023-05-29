@@ -6,7 +6,7 @@ function validarSessao() {
     var nome = sessionStorage.NOME_USUARIO;
 
     var b_usuario = document.getElementById("username");
-        b_usuario.innerHTML = sessionStorage.username_USUARIO;;
+        b_usuario.innerHTML = sessionStorage.username_USUARIO;
 }
 
 function limparSessao() {

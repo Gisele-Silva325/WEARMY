@@ -22,9 +22,10 @@
             </div>
             <div class="menu-navegacao">
                 <ul>
-                    <li id="opcao_nav">home</li>
+                    <li id="opcao_nav"><a href="home.html">home</a></li>
                     <li id="opcao_nav">perfil</li>
-                    <li id="opcao_nav">quizz</li>
+                    <li id="opcao_nav"><a href="quizdash.html">quizz</a></li>
+                    <li id="opcao_nav"><a href="">dashboardz</a></li>
                     <li id="opcao_nav" onclick="logout()">logout</li>
                 </ul>
             </div>
@@ -130,7 +131,7 @@
                     <button onclick="finalizar()">Finalizar</button>
                 </span>
             </div>
-            <!-- Pergunta 5 -->
+            <!-- Resultado 5 -->
             <div class="quizz-pergunta" id="tela_final">
                 <h1>Resultado</h1>
                 <img src="../assets/resultados-quiz1.png">
@@ -140,7 +141,6 @@
                     <button onclick="salvar()">Salvar resultado</button>
                 </span>
             </div>
-
         </div>
 
 </body>
@@ -239,8 +239,9 @@
         document.querySelector('input[name="q5"]:checked').checked = false;
     }
 
-    function finalizar() {
-        fetch("/usuarios/resultadoquiz", {
+    function salvar() {
+        var usernameVar = sessionStorage.username_USUARIO;
+        fetch("/quizz/resultadoquizum", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
@@ -248,20 +249,19 @@
             body: JSON.stringify({
                 // crie um atributo que recebe o valor recuperado aqui
                 // Agora vá para o arquivo routes/usuario.js
-                pontoServer: pontos,
-                userServer: userVar
+                pontosServer: pontos,
+                usernameServer: usernameVar
             })
         }).then(function (resposta) {
 
             console.log("resposta: ", resposta);
 
             if (resposta.ok) {
-                pontos = 0;
-                mensagem_erro.innerHTML = "Cadastro realizado com sucesso! Redirecionando para tela de Login...";
-                finalizarAguardar()
-
+                alert(`Foi registrada a pontuação de ${pontos}`);
+                finalizarAguardar();
+                refazer();
                 setTimeout(() => {
-                    window.location = "login.html";
+                    window.location = "logado/quizdash.html";
                 }, "2000")
 
                 finalizarAguardar();
@@ -270,15 +270,13 @@
             }
         }).catch(function (resposta) {
             console.log(`#ERRO: ${resposta}`);
-            finalizarAguardar();
+            // finalizarAguardar();
         });
 
         return false;
     }
 
     function sumirMensagem() {
-        mensagem_erro.innerHTML = ``;
-    }
-
+        // mensagem_erro.innerHTML = ``;
     }
 </script>

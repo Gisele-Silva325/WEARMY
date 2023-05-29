@@ -66,6 +66,11 @@ body {
     list-style: none;
     align-self: center;
 }
+a{
+    color: white;
+    cursor: pointer;
+    text-decoration: none;
+}
 #opcao_nav:hover{
     cursor: pointer;
     font-weight: 600;

@@ -22,9 +22,10 @@
             </div>
             <div class="menu-navegacao">
                 <ul>
-                    <li id="opcao_nav">home</li>
+                    <li id="opcao_nav"><a href="home.html">home</a></li>
                     <li id="opcao_nav">perfil</li>
-                    <li id="opcao_nav">quizz</li>
+                    <li id="opcao_nav"><a href="quizdash.html">quizz</a></li>
+                    <li id="opcao_nav"><a href="">dashboard</a></li>
                     <li id="opcao_nav" onclick="logout()">logout</li>
                 </ul>
             </div>
@@ -51,10 +52,10 @@
                 <img src="../assets/banner-quizz-musica.png">
                 <div class="listagem">
                     <div id="acertos_lista_final" class="lista-acertos"></div>
-                    <h4>Você acertou <span id="num_acertos">0</span>/118</h4>
+                    <h4>Você acertou <span id="num_acertos">0</span> de 118</h4>
                 </div>
                 <span class="botoes">
-                    <button onclick="comecarTimer()">Salvar resultado</button>
+                    <button onclick="salvar()">Salvar resultado</button>
                     <button onclick="refazer()">Tentar Novamente</button>
                 </span>
             </div>
@@ -150,4 +151,44 @@
 
     }
 
+    function salvar() {
+        var usernameVar = sessionStorage.username_USUARIO;
+        fetch("/quizz/resultadoquiztres", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                // crie um atributo que recebe o valor recuperado aqui
+                // Agora vá para o arquivo routes/usuario.js
+                pontosServer: pontuacao,
+                usernameServer: usernameVar
+            })
+        }).then(function (resposta) {
+
+            console.log("resposta: ", resposta);
+
+            if (resposta.ok) {
+                alert(`Foi registrada a pontuação de ${pontuacao}`);
+                finalizarAguardar();
+                refazer();
+                setTimeout(() => {
+                    window.location = "logado/quizdash.html";
+                }, "2000")
+
+                finalizarAguardar();
+            } else {
+                throw ("Houve um erro ao tentar realizar o cadastro!");
+            }
+        }).catch(function (resposta) {
+            console.log(`#ERRO: ${resposta}`);
+            // finalizarAguardar();
+        });
+
+        return false;
+    }
+
+    function sumirMensagem() {
+        // mensagem_erro.innerHTML = ``;
+    }
 </script>
