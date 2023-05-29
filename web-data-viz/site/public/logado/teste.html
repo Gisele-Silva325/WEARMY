@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" id="musica" oninput="quizzfoda()"> <br>
+    <span id="msgErro"></span>
+    <div id="acertosLista">
+    </div>
+</body>
+
+</html>
+<script>
+    var answer = ["Save Me", "Fire", "Not Today", "War of Hormone", "Idol", "DNA", "I Need U", "Fire", "Danger", "21st Century Girl", "Mic Drop", "Fake Love", "Blood Sweat \u0026 Tears", "Blood Sweat and Tears", "Blood Sweat Tears", "No More Dream", "Magic Shop", "Just One Day", "Dimple", "Waste It On Me", "Euphoria", "Trivia: Just Dance", "Just Dance", "Serendipity", "Her", "The Truth Untold", "Trivia: Love", "Love", "Trivia: Seesaw", "Seesaw", "Tear", "Answer: Love Myself", "Love Myself", "Best Of Me", "Airplane pt. 2", "airplane part 2", "Anpanman", "Go Go", "Run", "Dope", "Miss Right", "Coffee", "Boy In Luv", "Butterfly", "We Are Bulletproof Pt. 2", "I Like It", "I Like It Pt. 2", "Like", "N.O", "NO", "N.O.", "We On", "If I Ruled the World", "BTS Cypher Pt.1", "Cypher Pt.1", "Cypher 1", "Attack on Bangtan", "Attack on BTS", "Paldogangsan", "Satoori Rap", "Tomorrow", "Spine Breaker", "Where Did You Come From?", "Where You From", "Jump", "Converse High", "Ma City", "Autumn Leaves", "Dead Leaves", "Whalien 52", "Silver Spoon", "Baepsae", "Hold Me Tight", "Boyz with Fun", "Moving On", "Hip Hop Phile", "Hip Hop Lover", "Let Me Know", "Cypher Pt. 2: Triptych", "Cypher Pt. 2", "BTS Cypher 2", "Cypher Pt. 3: Killer", "Cypher Pt. 3", "BTS Cypher 3", "Rain", "Could You Turn Off Your Cell Phone", "Embarrassed", "24/7=Heaven", "24/7 Heaven", "2nd Grade", "Second Grade", "Look Here", "Begin", "Lie", "Stigma", "First Love", "Reflection", "MAMA", "Awake", "Lost", "BTS Cypher Pt. 4", "Cypher Pt. 4", "Cypher 4", "BTS Cypher 4", "Am I Wrong", "2! 3!", "A Supplementary Story: You Never Walk Alone", "You Never Walk Alone", "Pied Piper", "Paradise", "134340", "Love Maze", "I\u0027m Fine", "Epiphany", "Epilogue: Young Forever", "Young Forever", "Sea", "Blanket Kick"]
+    var listaAcerto = []
+    var pontuacao = 0
+    function quizzfoda() {
+        var respostaUser = musica.value
+    //     document.addEventListener("keypress", function (event) {
+    //         if (event.keyCode == 13) {
+    //             for (var i = 0; i <= answer.length; i++) {
+    //                 var listaManipulada = answer[i].toLowerCase();
+    //                 var respostaManipulada = respostaUser.toLowerCase();
+    //                 if (respostaManipulada == listaManipulada) {
+    //                     if (listaAcerto.length > -1) {
+    //                         var acertosManipulada = listaAcerto.toLowerCase();
+    //                         if (acertosManipulada == respostaManipulada) {
+    //                             msgErro.innerHTML = 'Música já listada'
+    //                             musica.value = ``
+    //                         } else {
+    //                             listaAcerto.push(respostaUser)
+    //                             pontuacao++
+    //                             acertosLista.innerHTML += `${respostaUser} <br>`
+    //                             musica.value = ``
+    //                             msgErro.innerHTML = ``
+    //                         }
+    //                     } else {
+    //                         listaAcerto.push(respostaUser)
+    //                         pontuacao++
+    //                         acertosLista.innerHTML += `${respostaUser} <br>`
+    //                         musica.value = ``
+    //                         msgErro.innerHTML = ``
+    //                     }
+    //                 }
+    //             }
+    //         }
+    //     }
+    //     )
+    // };
+    // for (var i = 0; i <= answer.length; i++) {
+    //     if (answer[i].toUpperCase == respostaUser.toUpperCase) {
+    //         msgErro.innerHTML = 'Música já listada'
+    //         musica.value = ``
+    //     } else {
+    //         listaAcerto.push(respostaUser)
+    //         pontuacao++
+    //         acertosLista.innerHTML += `${respostaUser} <br>`
+    //         musica.value = ``
+    //         msgErro.innerHTML = ``
+    //     }
+    // if (answer.indexOf(respostaUser) > -1) {
+    //     if (listaAcerto.indexOf(respostaUser) > -1) {
+    //         msgErro.innerHTML = 'Música já listada'
+    //         musica.value = ``
+    //     } else {
+    //         listaAcerto.push(respostaUser)
+    //         pontuacao++
+    //         acertosLista.innerHTML += `${respostaUser} <br>`
+    //         musica.value = ``
+    //         msgErro.innerHTML = ``
+    //     }
+    // }
+    // }
+
+    /*
+        // if (imagens.length > 0) {
+        //     var limite = imagens.length - 1
+        //     var aleatorio = (Math.random() * limite).toFixed()
+        //     mensagem7.innerHTML = imagens[aleatorio]
+        //     imagens[aleatorio] = ""
+        //     var contador = 0
+        //     while (contador < imagens.length) {
+        //         if (imagens[contador] != "") {
+        //             imagens2.push(imagens[contador])
+        //         }
+        //         contador++
+        //     }
+        //     imagens = imagens2
+        //     imagens2 = []
+        // } else {
+        //     alert('acabou as imagens')
+        // }
+    */
+</script>

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="../assets/logo-army.png" type="image/x-icon">
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script src="../js/funcoes.js"></script>
+    <title>Homepage</title>
+</head>
+
+<body onload="validarSessao()">
+    <div class="container">
+        <div class="navBar">
+            <div class="profile">
+                <img src="../assets/profile/profile1.png" alt="foto perfil">
+                <span id="username">username</span>
+            </div>
+            <div class="menu-navegacao">
+                <ul>
+                    <li id="opcao_nav">home</li>
+                    <li id="opcao_nav">perfil</li>
+                    <li id="opcao_nav">quizz</li>
+                    <li id="opcao_nav" onclick="logout()">logout</li>
+                </ul>
+            </div>
+        </div>
+        <div class="dash-quizz">
+            <h1 id="quizz1">Listagem de músicas</h1>
+
+            <div class="quizz-listagem" id="listagem">
+                <h1>Liste todas as músicas que você consegue em 3 minutos</h1>
+                <div class="listagem">
+                    <span id="timer_jogo" class="timer"><span id="minutos_contador">3</span>:<span
+                            id="segundos_contador">00</span></span>
+                    <div id="acertos_lista" class="lista-acertos"></div>
+                    <div id="mensagem_Erro" class="lista-acertos"></div>
+                    <input type="text" id="musica" oninput="listagemMusica()" readonly placeholder="Clique em Começar para poder inicializar o jogo">
+                </div>
+                <span class="botoes">
+                    <button onclick="comecarTimer()">Começar</button>
+                    <button onclick="finalizar()">Desistir</button>
+                </span>
+            </div>
+            <div class="quizz-listagem" id="tela_final">
+                <h1>Resultados</h1>
+                <img src="../assets/banner-quizz-musica.png">
+                <div class="listagem">
+                    <div id="acertos_lista_final" class="lista-acertos"></div>
+                    <h4>Você acertou <span id="num_acertos">0</span>/118</h4>
+                </div>
+                <span class="botoes">
+                    <button onclick="comecarTimer()">Salvar resultado</button>
+                    <button onclick="refazer()">Tentar Novamente</button>
+                </span>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
+<script>
+    tela_final.style.display = 'none';
+    var answer = ["Save Me", "Fire", "Not Today", "War of Hormone", "Idol", "DNA", "I Need U", "Fire", "Danger", "21st Century Girl", "Mic Drop", "Fake Love", "Blood Sweat \u0026 Tears", "Blood Sweat and Tears", "Blood Sweat Tears", "No More Dream", "Magic Shop", "Just One Day", "Dimple", "Waste It On Me", "Euphoria", "Trivia: Just Dance", "Just Dance", "Serendipity", "Her", "The Truth Untold", "Trivia: Love", "Love", "Trivia: Seesaw", "Seesaw", "Tear", "Answer: Love Myself", "Love Myself", "Best Of Me", "Airplane pt. 2", "airplane part 2", "Anpanman", "Go Go", "Run", "Dope", "Miss Right", "Coffee", "Boy In Luv", "Butterfly", "We Are Bulletproof Pt. 2", "I Like It", "I Like It Pt. 2", "Like", "N.O", "NO", "N.O.", "We On", "If I Ruled the World", "BTS Cypher Pt.1", "Cypher Pt.1", "Cypher 1", "Attack on Bangtan", "Attack on BTS", "Paldogangsan", "Satoori Rap", "Tomorrow", "Spine Breaker", "Where Did You Come From?", "Where You From", "Jump", "Converse High", "Ma City", "Autumn Leaves", "Dead Leaves", "Whalien 52", "Silver Spoon", "Baepsae", "Hold Me Tight", "Boyz with Fun", "Moving On", "Hip Hop Phile", "Hip Hop Lover", "Let Me Know", "Cypher Pt. 2: Triptych", "Cypher Pt. 2", "BTS Cypher 2", "Cypher Pt. 3: Killer", "Cypher Pt. 3", "BTS Cypher 3", "Rain", "Could You Turn Off Your Cell Phone", "Embarrassed", "24/7=Heaven", "24/7 Heaven", "2nd Grade", "Second Grade", "Look Here", "Begin", "Lie", "Stigma", "First Love", "Reflection", "MAMA", "Awake", "Lost", "BTS Cypher Pt. 4", "Cypher Pt. 4", "Cypher 4", "BTS Cypher 4", "Am I Wrong", "2! 3!", "A Supplementary Story: You Never Walk Alone", "You Never Walk Alone", "Pied Piper", "Paradise", "134340", "Love Maze", "I\u0027m Fine", "Epiphany", "Epilogue: Young Forever", "Young Forever", "Sea", "Blanket Kick"]
+    var listaAcerto = []
+    var pontuacao = 0
+
+    function listagemMusica() {
+        var respostaUser = musica.value
+        if (answer.indexOf(respostaUser) > -1) {
+            if (listaAcerto.indexOf(respostaUser) > -1) {
+                mensagem_Erro.innerHTML = 'Música já listada'
+                musica.value = ``
+            } else {
+                listaAcerto.push(respostaUser)
+                pontuacao++
+                acertos_lista.innerHTML += `${respostaUser} | `
+                acertos_lista_final.innerHTML += `${respostaUser} | `
+                musica.value = ``
+                mensagem_Erro.innerHTML = ``
+            }
+        }
+    }
+    /*
+    var score = 0
+    */
+    var timerInt = 03
+    var timerSen = 00
+
+    function comecarTimer() {
+        document.getElementById("musica").readOnly = false;
+        document.getElementById("musica").placeholder = '';
+        
+        interval = setInterval(function () {
+            if (timerInt == 03 && timerSen == 00) {
+                timerSen = 59
+                timerInt = 2
+                minutos_contador.innerHTML = timerInt
+                segundos_contador.innerHTML = timerSen
+            } if (timerInt == 02 && timerSen == 00) {
+                timerSen = 59
+                timerInt = 01
+                minutos_contador.innerHTML = timerInt
+                segundos_contador.innerHTML = timerSen
+            } if (timerInt == 01 && timerSen == 00) {
+                timerSen = 59
+                timerInt = 00
+                minutos_contador.innerHTML = timerInt
+                segundos_contador.innerHTML = timerSen
+            }
+            if (timerInt == 00 && timerSen <= 10) {
+                timer_jogo.style.color = "red";
+            }
+            if (timerInt === 00 && timerSen === 00) {
+                timer_jogo.style.color = "#3F2D6F";
+                clearInterval(interval)
+                alert("Acabou o tempo!")
+                finalizar()
+            }
+            minutos_contador.innerHTML = timerInt
+            segundos_contador.innerHTML = timerSen
+            timerSen--
+        }, 1000)
+    }
+    
+    function finalizar() {
+        document.getElementById("musica").readOnly = true;
+        document.getElementById("musica").placeholder = 'Clique em Começar para poder inicializar o jogo ';
+        listagem.style.display = 'none';
+        tela_final.style.display = 'flex';
+        num_acertos.innerHTML = pontuacao;
+        clearInterval(interval);
+        listaAcerto = []
+    }
+    
+    function refazer() {
+        listagem.style.display = 'flex';
+        tela_final.style.display = 'none';
+        pontuacao = 0;
+        listaAcerto = []
+        acertos_lista.innerHTML = ``
+        acertos_lista_final.innerHTML = ``
+        minutos_contador.innerHTML = '3'
+        segundos_contador.innerHTML = '00'
+
+    }
+
+</script>

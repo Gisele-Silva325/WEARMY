@@ -11,11 +11,15 @@ function listar() {
 
 function entrar(login, senha) {
     console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function entrar(): ", login, senha)
-    var instrucao = `
+    var instrucao1 = `
+        INSERT INTO quizz (fkUsuario) value = '${login}';
+    `; 
+    var instrucao2 = `
         SELECT * FROM usuario WHERE email = '${login}' or username = '${login}' AND senha = '${senha}';
     `;  
     console.log("Executando a instrução SQL: \n" + instrucao);
-    return database.executar(instrucao);
+     database.executar(instrucao1);
+    return database.executar(instrucao2);
 }
 
 // Coloque os mesmos parâmetros aqui. Vá para a var instrucao

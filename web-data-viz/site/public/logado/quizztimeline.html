@@ -133,12 +133,12 @@
             <!-- Pergunta 5 -->
             <div class="quizz-pergunta" id="tela_final">
                 <h1>Resultado</h1>
-                    <img src="../assets/resultados-quiz1.png">
-                    <h4>Você acertou <span id='resultado'>x</span> questões</h4>
-                    <span class=respostas>
-                        <button onclick="refazer()">Refazer</button>
-                        <button onclick="salvar()">Salvar resultado</button>
-                    </span>
+                <img src="../assets/resultados-quiz1.png">
+                <h4>Você acertou <span id='resultado'>x</span> questões</h4>
+                <span class=respostas>
+                    <button onclick="refazer()">Refazer</button>
+                    <button onclick="salvar()">Salvar resultado</button>
+                </span>
             </div>
 
         </div>
@@ -218,8 +218,8 @@
             alert(`Selecione alguma alternativa`)
         }
     }
-    
-    function refazer(){
+
+    function refazer() {
         pontos = 0;
         pergunta_1.style.display = "flex";
         pergunta_2.style.display = "none";
@@ -239,7 +239,7 @@
         document.querySelector('input[name="q5"]:checked').checked = false;
     }
 
-    function finalizar(){
+    function finalizar() {
         fetch("/usuarios/resultadoquiz", {
             method: "POST",
             headers: {

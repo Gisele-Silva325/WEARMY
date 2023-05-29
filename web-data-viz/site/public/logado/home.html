@@ -33,7 +33,7 @@
             <div class="criar-post">
                 <div class="form-post">
                     <h3>Criar uma postagem</h3>
-                    <textarea name="postagem" id="postagem" cols="30" rows="10"
+                    <textarea name="postagem" id="postagem" cols="30" rows="4"
                         placeholder="O que você quer compartilhar?"></textarea>
                     <span id="mensagem_erro"></span>
                 </div>
@@ -45,12 +45,11 @@
                 <div class="box-post" id="feedPost">
                     <div class="post">
                         <span class="username_post">username</span>
-                        <textarea name="postagem" id="novo_post" cols="30" rows="10"
+                        <textarea name="postagem" id="novo_post" cols="30" rows="4"
                             readonly>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut tristique pulvinar condimentum. In eu tellus eget mi sagittis lobortis. Aliquam ultrices dolor nec orci congue, nec sodales libero bibendum. Nulla bibendum eros nec eros commodo pellentesque. Praesent vel luctus odio, vitae congue neque. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nulla tempus mattis justo non dictum. Etiam pretium pretium eros, vel gravida erat imperdiet sed. Curabitur ut ex commodo, rhoncus nisi non, eleifend ante. Vivamus pellentesque eros a urna ornare aliquam. Mauris et feugiat arcu. Phasellus ut laoreet lorem. Integer eu aliquam nisl. Phasellus fringilla felis id diam condimentum, id blandit lectus pellentesque. Nam facilisis, mi ac rhoncus aliquam, sem arcu tincidunt odio, quis tincidunt nibh nulla eu neque. Aliquam erat volutpat.</textarea>
                         <ion-icon name="heart-outline" onclick="like()"></ion-icon>
                         <ion-icon name="chatbox-outline"></ion-icon>
                     </div>
-                    
                 </div>
             </div>
             <div class="kpi-home">
@@ -79,11 +78,11 @@
         }
     }
 
-    function postar(){
+    function postar() {
         var postVar = postagem.value;
         var idUsuarioVar = sessionStorage.ID_USUARIO;
         var idUsuario = sessionStorage.ID_USUARIO;
-        
+
         fetch(`/avisos/publicar/${idUsuario}`, {
             method: "post",
             headers: {
@@ -116,7 +115,7 @@
 
     }
 
-    function limparFormulario(){
+    function limparFormulario() {
         novo_post.innerHTML = ``;
     }
 
@@ -139,49 +138,63 @@
                     feed.innerHTML = "";
                     for (let i = 0; i < resposta.length; i++) {
                         var publicacao = resposta[i];
+                        // var horaPublicacao = publicacao.dtHora
+                        // var horaFormatado = `${horaPublicacao.getUTCMonth()}\${horaPublicacao.getUTCFullYear()}`
+
+                        /*
+                        <div class="post">
+                        <span class="username_post">username</span>
+                        <textarea name="postagem" id="novo_post" cols="30" rows="10"
+                            readonly>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut tristique pulvinar condimentum. In eu tellus eget mi sagittis lobortis. Aliquam ultrices dolor nec orci congue, nec sodales libero bibendum. Nulla bibendum eros nec eros commodo pellentesque. Praesent vel luctus odio, vitae congue neque. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nulla tempus mattis justo non dictum. Etiam pretium pretium eros, vel gravida erat imperdiet sed. Curabitur ut ex commodo, rhoncus nisi non, eleifend ante. Vivamus pellentesque eros a urna ornare aliquam. Mauris et feugiat arcu. Phasellus ut laoreet lorem. Integer eu aliquam nisl. Phasellus fringilla felis id diam condimentum, id blandit lectus pellentesque. Nam facilisis, mi ac rhoncus aliquam, sem arcu tincidunt odio, quis tincidunt nibh nulla eu neque. Aliquam erat volutpat.</textarea>
+                        <ion-icon name="heart-outline" onclick="like()"></ion-icon>
+                        <ion-icon name="chatbox-outline"></ion-icon>
+                        </div>
+                        */
 
                         // criando e manipulando elementos do HTML via JavaScript
                         var divPublicacao = document.createElement("div");
                         var spanID = document.createElement("span");
-                        var spanTitulo = document.createElement("span");
                         var spanNome = document.createElement("span");
-                        var divDescricao = document.createElement("div");
-                        var divButtons = document.createElement("div");
-                        var btnEditar = document.createElement("button");
-                        var btnDeletar = document.createElement("button");
+                        var divDescricao = document.createElement("textarea");
+                        var spanHoras = document.createElement("span");
+                        divDescricao.setAttribute('rows', '4');
+                        divDescricao.setAttribute('cols', '30');
+                        divDescricao.setAttribute('readonly', 'readonly');
+                        // var divButtons = document.createElement("div");
+                        // var btnEditar = document.createElement("button");
+                        // var btnDeletar = document.createElement("button");
 
 
-                        spanID.innerHTML = publicacao.username + "<br>";
-                        spanTitulo.innerHTML = publicacao.post + "<br>";
-                        spanNome.innerHTML = publicacao.dtHora + "<br>";
-                        divDescricao.innerHTML = publicacao.likes + "<br>";
-                        divDescricao.innerHTML = publicacao.fkPost + "<br>";
-                        btnEditar.innerHTML = "Editar";
-                        btnDeletar.innerHTML = "Deletar";
+                        spanID.innerHTML = publicacao.username;
+                        // spanTitulo.innerHTML = publicacao. + "<br>";
+                        // spanHoras.innerHTML = horaFormatado;
+                        // divDescricao.innerHTML = publicacao.likes + "<br>";
+                        divDescricao.innerHTML = publicacao.post;
+                        // btnEditar.innerHTML = "Editar";
+                        // btnDeletar.innerHTML = "Deletar";
 
-                        divPublicacao.className = "publicacao";
-                        spanTitulo.id = "inputNumero" + publicacao.idAviso;
-                        spanNome.className = "publicacao-nome";
-                        spanTitulo.className = "publicacao-titulo";
+                        divPublicacao.className = "post";
+                        // spanTitulo.id = "username_post" + publicacao.idAviso;
+                        // spanNome.className = "publicacao-nome";
+                        // spanTitulo.className = "publicacao-titulo";
                         divDescricao.className = "publicacao-descricao";
+                        // divButtons.className = "div-buttons"
 
-                        divButtons.className = "div-buttons"
+                        // btnEditar.className = "publicacao-btn-editar"
+                        // btnEditar.id = "btnEditar" + publicacao.idAviso;
+                        // btnEditar.setAttribute("onclick", `editar(${publicacao.idAviso})`);
 
-                        btnEditar.className = "publicacao-btn-editar"
-                        btnEditar.id = "btnEditar" + publicacao.idAviso;
-                        btnEditar.setAttribute("onclick", `editar(${publicacao.idAviso})`);
-
-                        btnDeletar.className = "publicacao-btn-editar"
-                        btnDeletar.id = "btnDeletar" + publicacao.idAviso;
-                        btnDeletar.setAttribute("onclick", `deletar(${publicacao.idAviso})`);
+                        // btnDeletar.className = "publicacao-btn-editar"
+                        // btnDeletar.id = "btnDeletar" + publicacao.idAviso;
+                        // btnDeletar.setAttribute("onclick", `deletar(${publicacao.idAviso})`);
 
                         divPublicacao.appendChild(spanID);
-                        divPublicacao.appendChild(spanNome);
-                        divPublicacao.appendChild(spanTitulo);
+                        // divPublicacao.appendChild(spanNome);
                         divPublicacao.appendChild(divDescricao);
-                        divPublicacao.appendChild(divButtons);
-                        divButtons.appendChild(btnEditar);
-                        divButtons.appendChild(btnDeletar);
+                        // divPublicacao.appendChild(spanHoras);
+                        // divPublicacao.appendChild(divButtons);
+                        // divButtons.appendChild(btnEditar);
+                        // divButtons.appendChild(btnDeletar);
                         feed.appendChild(divPublicacao);
                     }
 
@@ -195,5 +208,5 @@
             finalizarAguardar();
         });
     }
-    
+
 </script>

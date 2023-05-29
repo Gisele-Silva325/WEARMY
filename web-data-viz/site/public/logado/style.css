@@ -236,3 +236,79 @@ body {
     .quizz-pergunta input{
         margin-left: 20px;
     }
+
+    /* QUIZZ 2 */
+    /* QUIZ 1 */
+    
+    .quizz-listagem {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        border: 2px #3F2D6F solid;
+        background-color: #DED6D3;
+        width: 50vw;
+        height: 30vw;
+        font-size: large;
+        padding: 5%;
+    }
+
+
+    .quizz-listagem h4{
+        margin: 0;
+        font-size: 25px;
+        font-family: 'Solano Gothic MVB Bd' !important;
+        color: #3F2D6F;
+    }
+
+    .quizz-listagem img{
+        align-self: center;
+        width: 40vw;
+        height: 15vw;
+        margin-bottom: 2%;
+    }
+
+    .listagem{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .respostas{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        margin-bottom: 4%;
+    }
+
+    #quizz1{
+        color: #cfc5c1;
+    }
+
+    .quizz-listagem button{
+        margin-right: 15px;
+        width: 8vw;
+        height: 3vh;
+    }
+    .botoes{
+        display: flex;
+        flex-direction: row;
+        align-self: flex-end;
+    }
+    .quizz-listagem input{
+        margin-bottom: 4%;
+    }
+    .timer{
+        font-weight: bolder;
+        font-size: 150px;
+        color:  #3F2D6F;
+        align-self: center;
+    }
+    .lista-acertos{
+        display: flex;
+        margin-bottom: 5px;
+        font-weight: bold;
+        height: fit-content;
+        width: 40vw;
+        align-self: center;
+        justify-content: center;
+    }
