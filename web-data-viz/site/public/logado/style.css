@@ -242,8 +242,7 @@ a{
         margin-left: 20px;
     }
 
-    /* QUIZZ 2 */
-    /* QUIZ 1 */
+    /* QUIZZ 3 */
     
     .quizz-listagem {
         display: flex;
@@ -317,3 +316,122 @@ a{
         align-self: center;
         justify-content: center;
     }
+        /* QUIZ 2 */
+    
+        .quizz-musica {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            border: 2px #3F2D6F solid;
+            background-color: #DED6D3;
+            width: 50vw;
+            height: 30vw;
+            font-size: large;
+            padding: 5%;
+        }
+    
+    
+        .quizz-musica h4{
+            margin: 0;
+            font-size: 25px;
+            font-family: 'Solano Gothic MVB Bd' !important;
+            color: #3F2D6F;
+        }
+    
+        .quizz-musica audio{
+            justify-content: center;
+            width: 40vw;
+            margin-bottom: 2%;
+        }
+    
+        .musica{
+            display: flex;
+            flex-direction: column;
+        }
+    
+        .respostas{
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            margin-bottom: 4%;
+        }
+    
+        #quizz1{
+            color: #cfc5c1;
+        }
+    
+        .quizz-musica button{
+            margin-right: 15px;
+            width: 8vw;
+            height: 3vh;
+        }
+        .botoes{
+            display: flex;
+            flex-direction: row;
+            align-self: flex-end;
+        }
+        .quizz-musica input{
+            margin-left: 20px;
+        }
+
+        /* QUIZ 4 */
+    
+        .quizz-foto {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            border: 2px #3F2D6F solid;
+            background-color: #DED6D3;
+            width: 50vw;
+            height: 30vw;
+            font-size: large;
+            padding: 5%;
+        }
+    
+    
+        .quizz-foto h4{
+            align-self: center;
+            margin: 0;
+            font-size: 25px;
+            font-family: 'Solano Gothic MVB Bd' !important;
+            color: #3F2D6F;
+        }
+    
+        .quizz-foto img{
+            align-self: center;
+            width: 15vw;
+            height: 15vw;
+            margin-bottom: 2%;
+        }
+    
+        .foto{
+            display: flex;
+            flex-direction: column;
+        }
+    
+        .respostas{
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            margin-bottom: 4%;
+        }
+    
+        #quizz1{
+            color: #cfc5c1;
+        }
+    
+        .quizz-foto button{
+            margin-right: 15px;
+            width: 8vw;
+            height: 3vh;
+        }
+        .botoes{
+            display: flex;
+            flex-direction: row;
+            align-self: flex-end;
+        }
+        .quizz-foto input{
+            margin-left: 20px;
+        }
