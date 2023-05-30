@@ -20,6 +20,10 @@ router.post("/resultadoquizum", function (req, res) {
     usuarioController.resultadoquizum(req, res);
 })
 
+router.post("/resultadoquizdois", function (req, res) {
+    usuarioController.resultadoquizdois(req, res);
+})
+
 router.post("/resultadoquiztres", function (req, res) {
     usuarioController.resultadoquiztres(req, res);
 })

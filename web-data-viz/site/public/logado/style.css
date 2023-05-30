@@ -105,6 +105,14 @@ a{
         width: 80%;
         height: auto;
     }
+    .detalhes-post{
+        display: flex;
+        flex-direction: column;
+    }
+    .user_post{
+        display: flex;
+        flex-direction: row;
+    }
     .feedPostagems textarea{
         width: 100%;
     }
@@ -319,7 +327,7 @@ a{
         /* QUIZ 2 */
     
         .quizz-musica {
-            display: flex;
+            display: none;
             flex-direction: column;
             justify-content: center;
             align-items: center;
@@ -341,6 +349,7 @@ a{
     
         .quizz-musica audio{
             justify-content: center;
+            height: 5vh;
             width: 40vw;
             margin-bottom: 2%;
         }
@@ -356,7 +365,7 @@ a{
             align-items: center;
             margin-bottom: 4%;
         }
-    
+        
         #quizz1{
             color: #cfc5c1;
         }
@@ -372,7 +381,7 @@ a{
             align-self: flex-end;
         }
         .quizz-musica input{
-            margin-left: 20px;
+            width: 40vw;
         }
 
         /* QUIZ 4 */

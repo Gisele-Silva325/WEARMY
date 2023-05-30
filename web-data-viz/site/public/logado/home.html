@@ -45,11 +45,14 @@
                 <h3>Postagens</h3>
                 <div class="box-post" id="feedPost">
                     <div class="post">
-                        <span class="username_post">username</span>
+                        <div class="detalhes-post">
+                            <span id="user_post">@<span id="username_post">username</span></span>
+                            <span id="hora_post">18/05/2023 16:32</span>
+                        </div>
                         <textarea name="postagem" id="novo_post" cols="30" rows="4"
                             readonly>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut tristique pulvinar condimentum. In eu tellus eget mi sagittis lobortis. Aliquam ultrices dolor nec orci congue, nec sodales libero bibendum. Nulla bibendum eros nec eros commodo pellentesque. Praesent vel luctus odio, vitae congue neque. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nulla tempus mattis justo non dictum. Etiam pretium pretium eros, vel gravida erat imperdiet sed. Curabitur ut ex commodo, rhoncus nisi non, eleifend ante. Vivamus pellentesque eros a urna ornare aliquam. Mauris et feugiat arcu. Phasellus ut laoreet lorem. Integer eu aliquam nisl. Phasellus fringilla felis id diam condimentum, id blandit lectus pellentesque. Nam facilisis, mi ac rhoncus aliquam, sem arcu tincidunt odio, quis tincidunt nibh nulla eu neque. Aliquam erat volutpat.</textarea>
-                        <ion-icon name="heart-outline" onclick="like()"></ion-icon>
-                        <ion-icon name="chatbox-outline"></ion-icon>
+                        0 <ion-icon name="heart-outline" onclick=""></ion-icon> Curtidas
+                        0 <ion-icon name="chatbox-outline"></ion-icon>Comentarios
                     </div>
                 </div>
             </div>
@@ -154,31 +157,37 @@
 
                         // criando e manipulando elementos do HTML via JavaScript
                         var divPublicacao = document.createElement("div");
-                        var spanID = document.createElement("span");
-                        var spanNome = document.createElement("span");
+                        var divDetalhes = document.createElement("div");
+                        var spanUsuario = document.createElement("span");
+                        var spanHorario = document.createElement("span");
                         var divDescricao = document.createElement("textarea");
-                        var spanHoras = document.createElement("span");
+                        var iconeCurtir = document.createElement("ion-icon");
+                        var iconeComentario = document.createElement("ion-icon");
                         divDescricao.setAttribute('rows', '4');
                         divDescricao.setAttribute('cols', '30');
                         divDescricao.setAttribute('readonly', 'readonly');
+                        iconeCurtir.setAttribute("name", "heart-outline");
+                        iconeComentario.setAttribute("name", "chatbox-outline");
                         // var divButtons = document.createElement("div");
                         // var btnEditar = document.createElement("button");
                         // var btnDeletar = document.createElement("button");
 
 
-                        spanID.innerHTML = publicacao.username;
+                        spanUsuario.innerHTML = '@' + publicacao.username + '<br>';
+                        spanHorario.innerHTML = publicacao.dtHora + "<br>";
+                        divDescricao.innerHTML = publicacao.post;
+                        divDetalhes.innerHTML = `${iconeCurtir} Curtidas`
                         // spanTitulo.innerHTML = publicacao. + "<br>";
                         // spanHoras.innerHTML = horaFormatado;
                         // divDescricao.innerHTML = publicacao.likes + "<br>";
-                        divDescricao.innerHTML = publicacao.post;
                         // btnEditar.innerHTML = "Editar";
                         // btnDeletar.innerHTML = "Deletar";
 
                         divPublicacao.className = "post";
+                        divDescricao.className = "publicacao-descricao" + "<br>";
                         // spanTitulo.id = "username_post" + publicacao.idAviso;
                         // spanNome.className = "publicacao-nome";
                         // spanTitulo.className = "publicacao-titulo";
-                        divDescricao.className = "publicacao-descricao";
                         // divButtons.className = "div-buttons"
 
                         // btnEditar.className = "publicacao-btn-editar"
@@ -189,7 +198,10 @@
                         // btnDeletar.id = "btnDeletar" + publicacao.idAviso;
                         // btnDeletar.setAttribute("onclick", `deletar(${publicacao.idAviso})`);
 
-                        divPublicacao.appendChild(spanID);
+                        spanHorario.appendChild(divDetalhes);
+                        divDetalhes.appendChild(iconeCurtir);
+                        spanUsuario.appendChild(spanHorario);
+                        divPublicacao.appendChild(spanUsuario);
                         // divPublicacao.appendChild(spanNome);
                         divPublicacao.appendChild(divDescricao);
                         // divPublicacao.appendChild(spanHoras);
