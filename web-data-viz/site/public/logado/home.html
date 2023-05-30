@@ -174,7 +174,9 @@
 
 
                         spanUsuario.innerHTML = '@' + publicacao.username + '<br>';
-                        spanHorario.innerHTML = publicacao.dtHora + "<br>";
+                        var diaDoPost = new Date( Date.parse(publicacao.dtHora) );
+                        console.log(publicacao.dtHora)
+                        spanHorario.innerHTML = `${diaDoPost.getDay()}/${diaDoPost.getMonth()}/${diaDoPost.getFullYear()} ${diaDoPost.getHours()}:${diaDoPost.getMinutes()}` + "<br>";
                         divDescricao.innerHTML = publicacao.post;
                         divDetalhes.innerHTML = `${iconeCurtir} Curtidas`
                         // spanTitulo.innerHTML = publicacao. + "<br>";
@@ -199,7 +201,7 @@
                         // btnDeletar.setAttribute("onclick", `deletar(${publicacao.idAviso})`);
 
                         spanHorario.appendChild(divDetalhes);
-                        divDetalhes.appendChild(iconeCurtir);
+                        divDescricao.appendChild(iconeCurtir);
                         spanUsuario.appendChild(spanHorario);
                         divPublicacao.appendChild(spanUsuario);
                         // divPublicacao.appendChild(spanNome);

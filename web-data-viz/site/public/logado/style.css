@@ -444,3 +444,15 @@ a{
         .quizz-foto input{
             margin-left: 20px;
         }
+        /* FEED DE CONTEUDO */
+    .feed-graphs {
+        position: relative;
+        left: 11%;
+        display: flex;
+        flex-direction: column;
+        padding: 2vb;
+        background-color: #DFDEDE;
+        width: 89%;
+        height: 96vh;
+        align-items: center;
+    }

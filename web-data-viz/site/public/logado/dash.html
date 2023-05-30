@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="../assets/logo-army.png" type="image/x-icon">
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script src="../js/funcoes.js"></script>
+    <title>Homepage</title>
+</head>
+
+<body onload="atualizarFeed();validarSessao()">
+    <div class="container">
+        <div class="navBar">
+            <div class="profile">
+                <img src="../assets/profile/profile1.png" alt="foto perfil">
+                <span id="username">username</span>
+            </div>
+            <div class="menu-navegacao">
+                <ul>
+                    <li id="opcao_nav"><a href="home.html">home</a></li>
+                    <li id="opcao_nav">perfil</li>
+                    <li id="opcao_nav"><a href="quizdash.html">quizz</a></li>
+                    <li id="opcao_nav"><a href="">dashboard</a></li>
+                    <li id="opcao_nav" onclick="logout()">logout</li>
+                </ul>
+            </div>
+        </div>
+        <div class="feed-graphs">
+            <h1>Dashboard de resultados dos quizzes feitos</h1>
+            <div id="graph">
+                <div id="grafico1" class="display-block">
+                    <h3 class="tituloGraficos">
+                        <span id="quizz1">Resultados do primeiro quizz</span>
+                    </h3>
+                    <div class="graph">
+                        <canvas id="myChartCanvas1"></canvas>
+                    </div>
+                    <div class="label-captura">
+                        <p id="avisoCaptura1" style="color: white"></p>
+                    </div>
+                </div>
+            </div>
+</body>
+
+</html>
+<script>
+    username.innerHTML = sessionStorage.username_USUARIO;
+    function logout() {
+        sessionStorage.clear()
+        window.location = "../index.html";
+    }
+
+    window.onload = obterDadosGrafico();
+
+    function obterDadosGrafico() {
+
+        // if (proximaAtualizacao != undefined) {
+        //     clearTimeout(proximaAtualizacao);
+        // }
+
+        fetch(`/medidas/ultimas/`, { cache: 'no-store' }).then(function (response) {
+            if (response.ok) {
+                response.json().then(function (resposta) {
+                    console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
+                    resposta.reverse();
+
+                    plotarGrafico(resposta);
+                });
+            } else {
+                console.error('Nenhum dado encontrado ou erro na API');
+            }
+        })
+            .catch(function (error) {
+                console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
+            });
+    }
+
+    // Esta função *plotarGrafico* usa os dados capturados na função anterior para criar o gráfico
+    // Configura o gráfico (cores, tipo, etc), materializa-o na página e, 
+    // A função *plotarGrafico* também invoca a função *atualizarGrafico*
+    function plotarGrafico(resposta) {
+
+        console.log('iniciando plotagem do gráfico...');
+
+        // Criando estrutura para plotar gráfico - labels
+        let labels = [];
+        let dados = {
+            labels: labels,
+            datasets: [{
+                label: 'reposta',
+                data: [],
+                fill: false,
+                borderColor: 'rgb(75, 192, 192)',
+                tension: 0.1
+            }]
+        };
+        // console.log('----------------------------------------------')
+        // console.log('Estes dados foram recebidos pela funcao "obterDadosGrafico" e passados para "plotarGrafico":')
+        // console.log(resposta)
+
+        // Inserindo valores recebidos em estrutura para plotar o gráfico
+        for (i = 0; i < resposta.length; i++) {
+            var registro = resposta[i];
+            labels.push(registro.fkUsuario);
+            dados.datasets[0].data.push(registro.resposta1);
+        }
+
+        // console.log('----------------------------------------------')
+        // console.log('O gráfico será plotado com os respectivos valores:')
+        // console.log('Labels:')
+        // console.log(labels)
+        // console.log('Dados:')
+        // console.log(dados.datasets)
+        // console.log('----------------------------------------------')
+
+        // Criando estrutura para plotar gráfico - config
+        const config = {
+            type: 'bar',
+            data: dados,
+        };
+
+        // Adicionando gráfico criado em div na tela
+        let myChart = new Chart(
+            document.getElementById(`myChartCanvas1`),
+            config
+        );
+
+        setTimeout(() => atualizarGrafico(dados, myChart), 2000);
+    }
+
+
+</script>

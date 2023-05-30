@@ -25,7 +25,7 @@ function cadastrar(nome, user, email, integrante, linguagem, senha) {
     // Insira exatamente a query do banco aqui, lembrando da nomenclatura exata nos valores
     //  e na ordem de inserção dos dados.
     var instrucao1 = `
-        INSERT INTO quizz (fkUsuario) value ('${user}');`; 
+        INSERT INTO quizz  value (0, 0, 0, 0, '${user}');`; 
     var instrucao2 = `
         INSERT INTO usuario (nome, username, email, integranteFav, senha, idioma1) VALUES ('${nome}', '${user}','${email}','${integrante}' , '${senha}', '${linguagem}');
     `;
