@@ -28,6 +28,10 @@ router.post("/resultadoquiztres", function (req, res) {
     usuarioController.resultadoquiztres(req, res);
 })
 
+router.post("/resultadoquizquatro", function (req, res) {
+    usuarioController.resultadoquizquatro(req, res);
+})
+
 router.post("/autenticar", function (req, res) {
     usuarioController.entrar(req, res);
 });

@@ -387,7 +387,7 @@ a{
         /* QUIZ 4 */
     
         .quizz-foto {
-            display: flex;
+            display: none;
             flex-direction: column;
             justify-content: center;
             align-items: center;
