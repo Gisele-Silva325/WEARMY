@@ -7,13 +7,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <link rel="shortcut icon" href="../assets/logo-army.png" type="image/x-icon">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
+    <script src="http://www.chartjs.org/dist/2.7.1/Chart.js"></script>
+    <script src="http://www.chartjs.org/samples/latest/utils.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
     <script src="../js/funcoes.js"></script>
     <title>Homepage</title>
 </head>
 
-<body onload="atualizarFeed();validarSessao()">
+<body onload="obterDadosGrafico(),validarSessao()">
     <div class="container">
         <div class="navBar">
             <div class="profile">
@@ -94,7 +98,7 @@
             datasets: [{
                 label: 'reposta',
                 data: [],
-                fill: false,
+                fill: true,
                 borderColor: 'rgb(75, 192, 192)',
                 tension: 0.1
             }]
@@ -125,12 +129,68 @@
         };
 
         // Adicionando gráfico criado em div na tela
-        let myChart = new Chart(
-            document.getElementById(`myChartCanvas1`),
+        let chartResultado1 = new Chart(
+            document.getElementById("myChartCanvas1"),
             config
         );
 
-        setTimeout(() => atualizarGrafico(dados, myChart), 2000);
+        setTimeout(() => atualizarGrafico(dados, chartResultado1), 2000);
+    }
+
+    function atualizarGrafico(dados, chartResultado1) {
+
+
+
+        fetch(`/medidas/tempo-real/`, { cache: 'no-store' }).then(function (response) {
+            if (response.ok) {
+                response.json().then(function (novoRegistro) {
+
+                    // obterdados();
+                    // alertar(novoRegistro, );
+                    // console.log(`Dados recebidos: ${JSON.stringify(novoRegistro)}`);
+                    // console.log(`Dados atuais do gráfico:`);
+                    // console.log(dados);
+
+                    // let avisoCaptura = document.getElementById(`avisoCaptura`)
+                    // avisoCaptura.innerHTML = ""
+
+
+                    // if (novoRegistro[0].momento_grafico == dados.labels[dados.labels.length - 1]) {
+                    //     // console.log("---------------------------------------------------------------")
+                    //     // console.log("Como não há dados novos para captura, o gráfico não atualizará.")
+                    //     // // avisoCaptura.innerHTML = "<i class='fa-solid fa-triangle-exclamation'></i> Foi trazido o dado mais atual capturado pelo sensor. <br> Como não há dados novos a exibir, o gráfico não atualizará."
+                    //     // // console.log("Horário do novo dado capturado:")
+                    //     // // console.log(novoRegistro[0].momento_grafico)
+                    //     // // console.log("Horário do último dado capturado:")
+                    //     // // console.log(dados.labels[dados.labels.length - 1])
+                    //     // console.log("---------------------------------------------------------------")
+                    // } else {
+                        // tirando e colocando valores no gráfico
+                        dados.labels.shift(); // apagar o primeiro
+                        dados.labels.push(novoRegistro[0].momento_grafico); // incluir um novo momento
+
+                        dados.datasets[0].data.shift();  // apagar o primeiro de umidade
+                        dados.datasets[0].data.push(novoRegistro[0].resultado1); // incluir uma nova medida de umidade
+
+                        // dados.datasets[1].data.shift();  // apagar o primeiro de temperatura
+                        // dados.datasets[1].data.push(novoRegistro[1].fkUsuario); // incluir uma nova medida de temperatura
+
+                        chartResultado1.update();
+                    //}
+
+                    // Altere aqui o valor em ms se quiser que o gráfico atualize mais rápido ou mais devagar
+                    proximaAtualizacao = setTimeout(() => atualizarGrafico(dados, chartResultado1), 2000);
+                });
+            } else {
+                console.error('Nenhum dado encontrado ou erro na API');
+                // Altere aqui o valor em ms se quiser que o gráfico atualize mais rápido ou mais devagar
+                proximaAtualizacao = setTimeout(() => atualizarGrafico(dados, chartResultado1), 2000);
+            }
+        })
+            .catch(function (error) {
+                console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
+            });
+
     }
 
 
