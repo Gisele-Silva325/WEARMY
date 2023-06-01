@@ -1,6 +1,6 @@
 var database = require("../database/config");
 
-function buscarUltimasMedidas() {
+function teste1() {
 
     instrucaoSql = 
      `select resultado1 as 'pontos', fkUsuario as 'username' from quizz order by fkUsuario desc ;`;
@@ -18,6 +18,24 @@ function teste2() {
     return database.executar(instrucaoSql);
 }
 
+function teste3() {
+
+    instrucaoSql = 
+     `select resultado3 as 'pontos', fkUsuario as 'username' from quizz order by fkUsuario desc ;`;
+
+    console.log("Executando a instrução SQL: \n" + instrucaoSql);
+    return database.executar(instrucaoSql);
+}
+
+function teste4() {
+
+    instrucaoSql = 
+     `select resultado4 as 'pontos', fkUsuario as 'username' from quizz order by fkUsuario desc ;`;
+
+    console.log("Executando a instrução SQL: \n" + instrucaoSql);
+    return database.executar(instrucaoSql);
+}
+
 function buscarMedidasEmTempoReal() {
         instrucaoSql = `select resultado1 as 'pontos', fkUsuario as 'username' from quizz order by fkUsuario desc`;
 
@@ -27,7 +45,9 @@ function buscarMedidasEmTempoReal() {
 
 
 module.exports = {
-    buscarUltimasMedidas,
+    teste1,
     teste2,
+    teste3,
+    teste4,
     buscarMedidasEmTempoReal
 }
