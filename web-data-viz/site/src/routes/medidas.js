@@ -7,6 +7,10 @@ router.get("/ultimas", function (req, res) {
     medidaController.buscarUltimasMedidas(req, res);
 });
 
+router.get("/teste2", function (req, res) {
+    medidaController.teste2(req, res);
+});
+
 router.get("/tempo-real", function (req, res) {
     medidaController.buscarMedidasEmTempoReal(req, res);
 })

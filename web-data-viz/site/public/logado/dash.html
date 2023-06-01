@@ -7,9 +7,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <link rel="shortcut icon" href="../assets/logo-army.png" type="image/x-icon">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
-    <script src="http://www.chartjs.org/dist/2.7.1/Chart.js"></script>
-    <script src="http://www.chartjs.org/samples/latest/utils.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
@@ -35,17 +32,42 @@
             </div>
         </div>
         <div class="feed-graphs">
-            <h1>Dashboard de resultados dos quizzes feitos</h1>
-            <div id="graph">
-                <div id="grafico1" class="display-block">
-                    <h3 class="tituloGraficos">
-                        <span id="quizz1">Resultados do primeiro quizz</span>
-                    </h3>
-                    <div class="graph">
-                        <canvas id="myChartCanvas1"></canvas>
+            <div id="graph" class="quizzes">
+                Pontuação dos Usuarios por Quizz
+                <div class="linha-quizz" id="linha-1">
+                    <div class="grafico">
+                        <h3 class="quizz">
+                            Ranking do 1° Quizz
+                        </h3>
+                        <div class="graph">
+                            <canvas id="myChartCanvas1"></canvas>
+                        </div>
                     </div>
-                    <div class="label-captura">
-                        <p id="avisoCaptura1" style="color: white"></p>
+                    <div class="grafico">
+                        <h3 class="quizz">
+                            Ranking do 2° Quizz
+                        </h3>
+                        <div class="graph">
+                            <canvas id="myChartCanvas2"></canvas>
+                        </div>
+                    </div>
+                </div>
+                <div class="linha-quizz" id="linha-2">
+                    <div class="grafico">
+                        <h3 class="quizz">
+                            Ranking do 3° Quizz
+                        </h3>
+                        <div class="graph">
+                            <canvas id="myChartCanvas3"></canvas>
+                        </div>
+                    </div>
+                    <div class="grafico">
+                        <h3 class="quizz">
+                            Ranking do 4° Quizz
+                        </h3>
+                        <div class="graph">
+                            <canvas id="myChartCanvas4"></canvas>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -54,6 +76,7 @@
 </html>
 <script>
     username.innerHTML = sessionStorage.username_USUARIO;
+
     function logout() {
         sessionStorage.clear()
         window.location = "../index.html";
@@ -63,17 +86,27 @@
 
     function obterDadosGrafico() {
 
-        // if (proximaAtualizacao != undefined) {
-        //     clearTimeout(proximaAtualizacao);
-        // }
-
         fetch(`/medidas/ultimas/`, { cache: 'no-store' }).then(function (response) {
             if (response.ok) {
                 response.json().then(function (resposta) {
                     console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
                     resposta.reverse();
-
                     plotarGrafico(resposta);
+                });
+            } else {
+                console.error('Nenhum dado encontrado ou erro na API');
+            }
+        })
+            .catch(function (error) {
+                console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
+            });
+
+        fetch(`/medidas/teste2/`, { cache: 'no-store' }).then(function (response) {
+            if (response.ok) {
+                response.json().then(function (resposta) {
+                    console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
+                    resposta.reverse();
+                    plotarGrafico2(resposta);
                 });
             } else {
                 console.error('Nenhum dado encontrado ou erro na API');
@@ -88,30 +121,23 @@
     // Configura o gráfico (cores, tipo, etc), materializa-o na página e, 
     // A função *plotarGrafico* também invoca a função *atualizarGrafico*
     function plotarGrafico(resposta) {
-        const graph_1 = document.getElementById("myChartCanvas1")
 
         console.log('iniciando plotagem do gráfico...');
 
         // Criando estrutura para plotar gráfico - labels
         let labels = [];
-        let data = {
+        let data = [];
+
+        let dado = {
             labels: labels,
             datasets: [{
-                label: 'reposta',
+                label: 'N° de Acertos',
                 data: [],
-                fill: true,
-                borderColor: 'rgb(75, 192, 192)',
-                tension: 0.1
+                borderWidth: 1,
+                backgroundColor: 'rgb(179, 126, 181)'
             }]
         };
 
-   /*     labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
-    datasets: [{
-      label: '# of Votes',
-      data: [12, 19, 3, 5, 2, 3],
-      borderWidth: 1
-    }]
-  }*/
         // console.log('----------------------------------------------')
         // console.log('Estes dados foram recebidos pela funcao "obterDadosGrafico" e passados para "plotarGrafico":')
         // console.log(resposta)
@@ -119,17 +145,23 @@
         // Inserindo valores recebidos em estrutura para plotar o gráfico
         for (i = 0; i < resposta.length; i++) {
             var registro = resposta[i];
-            labels.push(registro.fkUsuario);
-            data.datasets[0].data.push(registro.resposta1);
+            console.log(registro)
+            console.log(registro.pontos);
+            labels.push(registro.username);
+            dado.datasets[0].data.push(registro.pontos);
+            // // labels.push(registro.fkUsuario);
+            // console.log(registro.fkUsuario);
+            // dado.labels.push(registro.fkUsuario);
+            // data.push(registro.resultado1);
         }
 
-        // console.log('----------------------------------------------')
-        // console.log('O gráfico será plotado com os respectivos valores:')
-        // console.log('Labels:')
-        // console.log(labels)
-        // console.log('Dados:')
-        // console.log(dados.datasets)
-        // console.log('----------------------------------------------')
+        console.log('----------------------------------------------')
+        console.log('O gráfico será plotado com os respectivos valores:')
+        console.log('Labels:')
+        console.log(labels)
+        console.log('Dados:')
+        console.log(dado.datasets)
+        console.log('----------------------------------------------')
 
         // Criando estrutura para plotar gráfico - config
         // const config = {
@@ -138,10 +170,12 @@
         // };
 
         // Adicionando gráfico criado em div na tela
+        console.log(dado)
+        const graph_1 = document.getElementById("myChartCanvas1")
         let chartResultado1 = new Chart(graph_1,
-        {
+            {
                 type: 'bar',
-                data,
+                data: dado,
                 options: {
                     scales: {
                         y: {
@@ -150,65 +184,112 @@
                     }
                 }
             }
-        );
-
-        setTimeout(() => atualizarGrafico(data, chartResultado1), 2000);
+        )
+        // setTimeout(() => atualizarGrafico(dado, chartResultado1), 2000);
     }
 
-    function atualizarGrafico(data, chartResultado1) {
-        fetch(`/medidas/tempo-real/`, { cache: 'no-store' }).then(function (response) {
-            if (response.ok) {
-                response.json().then(function (novoRegistro) {
+    function plotarGrafico2(resposta) {
 
-                    // obterdados();
-                    // alertar(novoRegistro, );
-                    // console.log(`Dados recebidos: ${JSON.stringify(novoRegistro)}`);
-                    // console.log(`Dados atuais do gráfico:`);
-                    // console.log(dados);
+        console.log('iniciando plotagem do gráfico...');
 
-                    // let avisoCaptura = document.getElementById(`avisoCaptura`)
-                    // avisoCaptura.innerHTML = ""
+        // Criando estrutura para plotar gráfico - labels
+        let labels = [];
+        let data = [];
 
+        let dado = {
+            labels: labels,
+            datasets: [{
+                label: 'N° de Acertos',
+                data: [],
+                borderWidth: 1,
+                backgroundColor: 'rgb(179, 126, 181)'
+            }]
+        };
 
-                    // if (novoRegistro[0].momento_grafico == dados.labels[dados.labels.length - 1]) {
-                    //     // console.log("---------------------------------------------------------------")
-                    //     // console.log("Como não há dados novos para captura, o gráfico não atualizará.")
-                    //     // // avisoCaptura.innerHTML = "<i class='fa-solid fa-triangle-exclamation'></i> Foi trazido o dado mais atual capturado pelo sensor. <br> Como não há dados novos a exibir, o gráfico não atualizará."
-                    //     // // console.log("Horário do novo dado capturado:")
-                    //     // // console.log(novoRegistro[0].momento_grafico)
-                    //     // // console.log("Horário do último dado capturado:")
-                    //     // // console.log(dados.labels[dados.labels.length - 1])
-                    //     // console.log("---------------------------------------------------------------")
-                    // } else {
-                    // tirando e colocando valores no gráfico
-                    data.labels.shift(); // apagar o primeiro
-                    data.labels.push(novoRegistro[0].fkUsuario); // incluir um novo momento
-                    console.log(novoRegistro[0].momento_grafico); // incluir um novo momento
+        // console.log('----------------------------------------------')
+        // console.log('Estes dados foram recebidos pela funcao "obterDadosGrafico" e passados para "plotarGrafico":')
+        // console.log(resposta)
 
-                    data.datasets[0].data.shift();  // apagar o primeiro de umidade
-                    data.datasets[0].data.push(novoRegistro[0].resultado1); // incluir uma nova medida de umidade
-                    
-                    // console.log(data.datasets[1])
-                    // data.datasets[1].data.shift();  // apagar o primeiro de temperatura
-                    // data.datasets[1].data.push(novoRegistro[1].fkUsuario); // incluir uma nova medida de temperatura
+        // Inserindo valores recebidos em estrutura para plotar o gráfico
+        for (i = 0; i < resposta.length; i++) {
+            var registro = resposta[i];
+            console.log(registro)
+            console.log(registro.pontos);
+            labels.push(registro.username);
+            dado.datasets[0].data.push(registro.pontos);
+            // // labels.push(registro.fkUsuario);
+            // console.log(registro.fkUsuario);
+            // dado.labels.push(registro.fkUsuario);
+            // data.push(registro.resultado1);
+        }
 
-                    chartResultado1.update();
-                    //}
+        console.log('----------------------------------------------')
+        console.log('O gráfico será plotado com os respectivos valores:')
+        console.log('Labels:')
+        console.log(labels)
+        console.log('Dados:')
+        console.log(dado.datasets)
+        console.log('----------------------------------------------')
 
-                    // Altere aqui o valor em ms se quiser que o gráfico atualize mais rápido ou mais devagar
-                    proximaAtualizacao = setTimeout(() => atualizarGrafico(data, chartResultado1), 2000);
-                });
-            } else {
-                console.error('Nenhum dado encontrado ou erro na API');
-                // Altere aqui o valor em ms se quiser que o gráfico atualize mais rápido ou mais devagar
-                proximaAtualizacao = setTimeout(() => atualizarGrafico(data, chartResultado1), 2000);
+        // Criando estrutura para plotar gráfico - config
+        // const config = {
+        //     type: 'bar',
+        //     data: dados,
+        // };
+
+        // Adicionando gráfico criado em div na tela
+        console.log(dado)
+        const graph_2 = document.getElementById("myChartCanvas2")
+        let chartResultado1 = new Chart(graph_2,
+            {
+                type: 'bar',
+                data: dado,
+                options: {
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    }
+                }
             }
-        })
-            .catch(function (error) {
-                console.error(`Erro na obtenção dos data p/ gráfico: ${error.message}`);
-            });
-
+        )
+        // setTimeout(() => atualizarGrafico(dado, chartResultado1), 2000);
     }
+
+    /* function atualizarGrafico(dado, chartResultado1) {
+         fetch(`/medidas/tempo-real/`, { cache: 'no-store' }).then(function (response) {
+             if (response.ok) {
+                 response.json().then(function (novoRegistro) {
+                     // tirando e colocando valores no gráfico
+                     // console.log(response)
+                     
+                     dado.labels.shift(); // apagar o primeiro
+                     dado.labels.push(novoRegistro[0].username); // incluir um novo momento
+ 
+                     dado.datasets[0].data.shift();  // apagar o primeiro de umidade
+                     dado.datasets[0].data.push(novoRegistro[0].pontos); // incluir uma nova medida de umidade
+ 
+                     // console.log(dado.datasets[1])
+                     // dado.datasets[1].data.shift();  // apagar o primeiro de temperatura
+                     // dado.datasets[1].data.push(novoRegistro[1].fkUsuario); // incluir uma nova medida de temperatura
+ 
+                     chartResultado1.update();
+                     //}
+ 
+                     // Altere aqui o valor em ms se quiser que o gráfico atualize mais rápido ou mais devagar
+                     proximaAtualizacao = setTimeout(() => atualizarGrafico(dado, chartResultado1), 2000);
+                 });
+             } else {
+                 console.error('Nenhum dado encontrado ou erro na API');
+                 // Altere aqui o valor em ms se quiser que o gráfico atualize mais rápido ou mais devagar
+                 proximaAtualizacao = setTimeout(() => atualizarGrafico(dado, chartResultado1), 2000);
+             }
+         })
+             .catch(function (error) {
+                 console.error(`Erro na obtenção dos data p/ gráfico: ${error.message}`);
+             });
+ 
+     }*/
 
 
 </script>

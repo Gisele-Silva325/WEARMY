@@ -392,6 +392,7 @@ a{
             justify-content: center;
             align-items: center;
             border: 2px #3F2D6F solid;
+            /* border: 2px rgb(63, 45, 111) solid; */
             background-color: #DED6D3;
             width: 50vw;
             height: 30vw;
@@ -444,10 +445,10 @@ a{
         .quizz-foto input{
             margin-left: 20px;
         }
-        /* FEED DE CONTEUDO */
+        /* DASHBOARD */
     .feed-graphs {
         position: relative;
-        left: 11%;
+        left: -9%;
         display: flex;
         flex-direction: column;
         padding: 2vb;
@@ -455,4 +456,25 @@ a{
         width: 89%;
         height: 96vh;
         align-items: center;
+    }
+
+    .linha-quizz{
+        display: flex;
+        flex-direction: row;
+        width: 50vw;
+        justify-content: space-around;
+    }
+    .grafico{
+        display: flex;
+        flex-direction: column;
+    }
+    canvas{
+        background-color: #DED6D3;
+        color: rgb(179, 126, 181);
+        color: rgb(207, 197, 193);
+        color: rgb(63, 45, 111);
+    }
+    .quizzes{
+        display: flex;
+        flex-direction: column;
     }
