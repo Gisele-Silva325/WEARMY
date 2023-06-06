@@ -13,7 +13,7 @@
     <title>Homepage</title>
 </head>
 
-<body onload="atualizarFeed();validarSessao()">
+<body onload="pegarPost(),listarPorPost();validarSessao()">
     <div class="container">
         <div class="navBar">
             <div class="profile">
@@ -30,29 +30,27 @@
                 </ul>
             </div>
         </div>
-        <div class="feed-post" id="feed">
+        <div class="feed-post" id="comentario">
             <div class="criar-post">
-                <div class="form-post">
-                    <h3>Criar um post</h3>
+                <h3>Post</h3>
+                <div class="form-post" id="feedPost">
+                    <div class="post">
+                    </div>
+                </div>
+            </div>
+            <div class="feedPostagems">
+                <h3>Comentar</h3>
+                <div class="box-post" id="post_comentario">
                     <textarea name="postagem" id="postagem" cols="30" rows="4"
                         placeholder="O que você quer compartilhar?"></textarea>
                     <span id="mensagem_erro"></span>
+                    <button onclick="postarComentario()">Publicar</button>
                 </div>
-                <button onclick="postar()">Publicar</button>
                 <div id="div_aguardar"></div>
             </div>
             <div class="feedPostagems">
-                <h3>Postagens</h3>
-                <div class="box-post" id="feedPost">
-                    <div class="post">
-                        <div class="detalhes-post">
-                            <span id="user_post">@<span id="username_post">username</span></span>
-                            <span id="hora_post">18/05/2023 16:32</span>
-                        </div>
-                        <textarea name="postagem" id="novo_post" cols="30" rows="4"
-                            readonly>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut tristique pulvinar condimentum. In eu tellus eget mi sagittis lobortis. Aliquam ultrices dolor nec orci congue, nec sodales libero bibendum. Nulla bibendum eros nec eros commodo pellentesque. Praesent vel luctus odio, vitae congue neque. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nulla tempus mattis justo non dictum. Etiam pretium pretium eros, vel gravida erat imperdiet sed. Curabitur ut ex commodo, rhoncus nisi non, eleifend ante. Vivamus pellentesque eros a urna ornare aliquam. Mauris et feugiat arcu. Phasellus ut laoreet lorem. Integer eu aliquam nisl. Phasellus fringilla felis id diam condimentum, id blandit lectus pellentesque. Nam facilisis, mi ac rhoncus aliquam, sem arcu tincidunt odio, quis tincidunt nibh nulla eu neque. Aliquam erat volutpat.</textarea>
-                        0 <ion-icon name="heart-outline" onclick=""></ion-icon> Curtidas
-                        0 <ion-icon name="chatbox-outline"></ion-icon>Comentarios
+                <h3>Comentarios</h3>
+                <div class="box-post" id="feedComentario">
                     </div>
                 </div>
             </div>
@@ -61,56 +59,16 @@
 
 </html>
 <script>
+    var idPost = sessionStorage.getItem("ID_POSTAGEM_COMENTARIO")
     username.innerHTML = sessionStorage.username_USUARIO;
     function logout() {
         sessionStorage.clear()
         window.location = "../index.html";
     }
 
-    function postar() {
-        var postVar = postagem.value;
-        var idUsuarioVar = sessionStorage.ID_USUARIO;
-        var idUsuario = sessionStorage.ID_USUARIO;
-
-        fetch(`/avisos/publicar/${idUsuario}`, {
-            method: "post",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify({
-                postServer: postVar,
-                idUsuarioServer: idUsuarioVar
-            })
-        }).then(function (resposta) {
-
-            console.log("resposta: ", resposta);
-
-            if (resposta.ok) {
-                window.alert("Post realizado com sucesso !");
-                window.location = "/logado/home.html";
-                limparFormulario();
-                finalizarAguardar();
-            } else if (resposta.status == 404) {
-                window.alert("Deu 404!");
-            } else {
-                throw ("Houve um erro ao tentar realizar a postagem! Código da resposta: " + resposta.status);
-            }
-        }).catch(function (resposta) {
-            console.log(`#ERRO: ${resposta}`);
-            finalizarAguardar();
-        });
-
-        return false;
-
-    }
-
-    function limparFormulario() {
-        novo_post.innerHTML = ``;
-    }
-
-    function atualizarFeed() {
+    function pegarPost(idPost) {
         //aguardar();
-        fetch("/avisos/listar").then(function (resposta) {
+        fetch(`/avisos/pegarPost/${idPost = sessionStorage.getItem("ID_POSTAGEM_COMENTARIO")}`).then(function (resposta) {
             if (resposta.ok) {
                 if (resposta.status == 204) {
                     var feed = document.getElementById("feedPost");
@@ -119,11 +77,109 @@
                     feed.appendChild(mensagem);
                     throw "Nenhum resultado encontrado!!";
                 }
+                
+                resposta.json().then(function (resposta) {
+                    console.log("Dados recebidos: ", JSON.stringify(resposta));
+                    
+                    var feed = document.getElementById("feedPost");
+                    feed.innerHTML = "";
+                    for (let i = 0; i < resposta.length; i++) {
+                        var publicacao = resposta[i];
+                        // criando e manipulando elementos do HTML via JavaScript
+                        var divPublicacao = document.createElement("div");
+                        var divDetalhes = document.createElement("div");
+                        var spanUsuario = document.createElement("span");
+                        var spanHorario = document.createElement("span");
+                        var divDescricao = document.createElement("textarea");
+                        divDescricao.setAttribute('rows', '4');
+                        divDescricao.setAttribute('cols', '30');
+                        divDescricao.setAttribute('readonly', 'readonly');
+                        spanUsuario.innerHTML = '@' + publicacao.username + '<br>';
+                        var diaDoPost = new Date(Date.parse(publicacao.dtHora));
+                        console.log(publicacao.dtHora)
+                        spanHorario.innerHTML = `${diaDoPost.getDay()}/${diaDoPost.getMonth()}/${diaDoPost.getFullYear()} ${diaDoPost.getHours()}:${diaDoPost.getMinutes()}` + "<br>";
+                        divDescricao.innerHTML = publicacao.post;
+                        divPublicacao.className = "post";
+                        divDescricao.className = "publicacao-descricao" + "<br>";
+                        spanHorario.appendChild(divDetalhes);
+                        spanUsuario.appendChild(spanHorario);
+                        divPublicacao.appendChild(spanUsuario);
+                        divPublicacao.appendChild(divDescricao);
+                        feed.appendChild(divPublicacao);
+                    }
+
+                    finalizarAguardar();
+                });
+            } else {
+                throw ('Houve um erro na API!');
+            }
+
+        }).catch(function (resposta) {
+            console.error(resposta);
+            finalizarAguardar();
+        });
+    }
+
+
+    function postarComentario() {
+         var postVar = postagem.value;
+         var idUsuarioVar = sessionStorage.ID_USUARIO;
+         var idUsuario = sessionStorage.ID_USUARIO;
+         var idPostVar = idPost
+         
+         fetch(`/avisos/publicarComentario/${idUsuario}`, {
+             method: "post",
+             headers: {
+                 "Content-Type": "application/json"
+             },
+             body: JSON.stringify({
+                 postServer: postVar,
+                 idUsuarioServer: idUsuarioVar,
+                 idPostServer: idPostVar  
+             })
+            }).then(function (resposta) {
+                
+                console.log("resposta: ", resposta);
+ 
+             if (resposta.ok) {
+                 window.alert("Post realizado com sucesso !");
+                 window.location.reload();
+                 limparFormulario();
+                 finalizarAguardar();
+             } else if (resposta.status == 404) {
+                 window.alert("Deu 404!");
+             } else {
+                 throw ("Houve um erro ao tentar realizar a postagem! Código da resposta: " + resposta.status);
+             }
+         }).catch(function (resposta) {
+             console.log(`#ERRO: ${resposta}`);
+             finalizarAguardar();
+         });
+ 
+         return false;
+ 
+     }
+ 
+     function limparFormulario() {
+         novo_post.innerHTML = ``;
+     } 
+
+    function listarPorPost(idPost) {
+        //aguardar();
+        fetch(`/avisos/listar/${idPost = sessionStorage.getItem("ID_POSTAGEM_COMENTARIO")}`).then(function (resposta) {
+            if (resposta.ok) {
+                if (resposta.status == 204) {
+                    var feed = document.getElementById("feedComentario");
+                    var mensagem = document.createElement("span");
+                    mensagem.innerHTML = "Nenhum comentario encontrado."
+                    feed.appendChild(mensagem);
+                    throw "Nenhum resultado encontrado!!";
+                }
 
                 resposta.json().then(function (resposta) {
                     console.log("Dados recebidos: ", JSON.stringify(resposta));
 
-                    var feed = document.getElementById("feedPost");
+                    var feed = document.getElementById("feedComentario");
                     feed.innerHTML = "";
                     for (let i = 0; i < resposta.length; i++) {
                         var publicacao = resposta[i];
@@ -146,12 +202,10 @@
                         var spanUsuario = document.createElement("span");
                         var spanHorario = document.createElement("span");
                         var divDescricao = document.createElement("textarea");
-                        var iconeComentario = document.createElement("ion-icon");
                         divDescricao.setAttribute('rows', '4');
                         divDescricao.setAttribute('cols', '30');
                         divDescricao.setAttribute('readonly', 'readonly');
-                        iconeComentario.setAttribute("name", "chatbox-outline");
-                        var btnComentar = document.createElement("button");
+                        // var btnComentar = document.createElement("button");
                         // var btnEditar = document.createElement("button");
                         // var btnDeletar = document.createElement("button");
 
@@ -161,7 +215,7 @@
                         console.log(publicacao.dtHora)
                         spanHorario.innerHTML = `${diaDoPost.getDay()}/${diaDoPost.getMonth()}/${diaDoPost.getFullYear()} ${diaDoPost.getHours()}:${diaDoPost.getMinutes()}` + "<br>";
                         divDescricao.innerHTML = publicacao.post;
-                        btnComentar.innerHTML = 'Comentar';
+                        // btnComentar.innerHTML = 'Comentar';
                         // spanTitulo.innerHTML = publicacao. + "<br>";
                         // spanHoras.innerHTML = horaFormatado;
                         // divDescricao.innerHTML = publicacao.likes + "<br>";
@@ -170,23 +224,23 @@
 
                         divPublicacao.className = "post";
                         divDescricao.className = "publicacao-descricao" + "<br>";
-                        btnComentar.setAttribute("onclick", `editar(${publicacao.idPost})`);
-                        // spanTitulo.id = "username_post" + publicacao.idPost;
+                        // btnComentar.setAttribute("onclick", `editar(${publicacao.idAviso})`);
+                        // spanTitulo.id = "username_post" + publicacao.idAviso;
                         // spanNome.className = "publicacao-nome";
                         // spanTitulo.className = "publicacao-titulo";
                         // btnComentar.className = "div-buttons"
 
                         // btnEditar.className = "publicacao-btn-editar"
-                        // btnEditar.id = "btnEditar" + publicacao.idPost;
+                        // btnEditar.id = "btnEditar" + publicacao.idAviso;
 
                         // btnDeletar.className = "publicacao-btn-editar"
-                        // btnDeletar.id = "btnDeletar" + publicacao.idPost;
-                        // btnDeletar.setAttribute("onclick", `deletar(${publicacao.idPost})`);
+                        // btnDeletar.id = "btnDeletar" + publicacao.idAviso;
+                        // btnDeletar.setAttribute("onclick", `deletar(${publicacao.idAviso})`);
 
                         spanHorario.appendChild(divDetalhes);
                         // divDescricao.appendChild(iconeCurtir);
                         spanUsuario.appendChild(spanHorario);
-                        spanHorario.appendChild(btnComentar);
+                        // spanHorario.appendChild(btnComentar);
                         divPublicacao.appendChild(spanUsuario);
                         // divPublicacao.appendChild(spanNome);
                         divPublicacao.appendChild(divDescricao);
@@ -208,12 +262,12 @@
             finalizarAguardar();
         });
     }
-    function editar(idPost) {
-        sessionStorage.ID_POSTAGEM_COMENTARIO = idPost;
-        console.log("cliquei em editar - " + idPost);
-        // window.alert("Você será redirecionado à página de edição do aviso de id número: " + idPost);
-        window.location = "/logado/comentarios.html"
+
+    function editar(idAviso) {
+        sessionStorage.ID_POSTAGEM_EDITANDO = idAviso;
+        console.log("cliquei em editar - " + idAviso);
+        // window.alert("Você será redirecionado à página de edição do aviso de id número: " + idAviso);
+        window.location = "/dashboard/publicacoes-comentarios.html"
 
     }
-
 </script>

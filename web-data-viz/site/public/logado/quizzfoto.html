@@ -139,8 +139,8 @@
             <!-- Resultado -->
             <div class="quizz-foto" id="tela_final">
                 <h1>Resultado</h1>
-                <img src="../assets/resultados-quiz1.png">
-                <h4>Você acertou <span id='resultado'>x</span> questões</h4>
+                <img src="../assets/resultados-quiz4.png" id="final_foto">
+                <h4>Você acertou <span id='resultado'>x</span> de 7 questões</h4>
                 <span class=respostas>
                     <button onclick="refazer()">Refazer</button>
                     <button onclick="salvar()">Salvar resultado</button>
@@ -244,6 +244,15 @@
         }
     }
 
+    function zerar() {
+        pontos = 0;
+        resposta1 = ``
+        resposta2 = ``
+        resposta3 = ``
+        resposta4 = ``
+        resposta5 = ``
+    }
+
     function finalizar() {
         resposta7 = R_Q7.value
         if (resposta7 != "") {
@@ -262,7 +271,7 @@
 
     function refazer() {
         pontos = 0;
-        foto.style.display = "flex";
+        foto_1.style.display = "flex";
         foto_2.style.display = "none";
         foto_3.style.display = "none";
         foto_4.style.display = "none";
@@ -299,11 +308,11 @@
             console.log("resposta: ", resposta);
 
             if (resposta.ok) {
-                alert(`Foi registrada a pontuação de ${pontos}`);
-                finalizarAguardar();
-                refazer();
+                alert(`Foi registrado o resultado de ${pontos} pontos`);
+               // finalizarAguardar();
+                zerar();
                 setTimeout(() => {
-                    window.location = "logado/quizdash.html";
+                    window.location = "quizdash.html";
                 }, "2000")
 
                 finalizarAguardar();

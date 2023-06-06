@@ -11,8 +11,16 @@ router.get("/listar", function (req, res) {
     avisoController.listar(req, res);
 });
 
-router.get("/listar/:idUsuario", function (req, res) {
-    avisoController.listarPorUsuario(req, res);
+// router.get("/listar/:idUsuario", function (req, res) {
+//     avisoController.listarPorUsuario(req, res);
+// });
+
+router.get("/listar/:idPost", function (req, res) {
+    avisoController.listarPorPost(req, res);
+});
+
+router.get("/pegarPost/:idPost", function (req, res) {
+    avisoController.pegarPost(req, res);
 });
 
 router.get("/pesquisar/:descricao", function (req, res) {
@@ -23,6 +31,10 @@ router.post("/publicar/:idUsuario", function (req, res) {
     avisoController.publicar(req, res);
 });
 
+router.post("/publicarComentario/:idUsuario", function (req, res) {
+    avisoController.publicarComentario(req, res);
+});
+
 router.put("/editar/:idAviso", function (req, res) {
     avisoController.editar(req, res);
 });
@@ -30,5 +42,6 @@ router.put("/editar/:idAviso", function (req, res) {
 router.delete("/deletar/:idAviso", function (req, res) {
     avisoController.deletar(req, res);
 });
+
 
 module.exports = router;

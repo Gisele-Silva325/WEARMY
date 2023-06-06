@@ -4,13 +4,14 @@ function listar() {
     console.log("ACESSEI O AVISO  MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function listar()");
     var instrucao = `
         SELECT 
+            postagem.idPost,
             postagem.post,
             postagem.likes,
             postagem.dtHora,
             usuario.username
         FROM postagem
             JOIN usuario
-                ON postagem.fkUsuario = usuario.idUsuario;
+                ON postagem.fkUsuario = usuario.idUsuario order by idPost desc;
     `;
     var instrucao2 = `
         SELECT 
@@ -64,10 +65,34 @@ function listarPorUsuario(idUsuario) {
     return database.executar(instrucao);
 }
 
+function listarPorPost(idPost) {
+    console.log("ACESSEI O AVISO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function listarPorPost(): ", idPost);
+    var instrucao = `
+    SELECT  postagem.idPost, postagem.post, postagem.likes, postagem.dtHora, usuario.username FROM postagem JOIN usuario ON postagem.fkUsuario = usuario.idUsuario where fkPost = '${idPost}' order by idPost desc;`;
+    console.log("Executando a instrução SQL: \n" + instrucao);
+    return database.executar(instrucao);
+}
+
+function pegarPost(idPost) {
+    console.log("ACESSEI O AVISO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function listarPorPost(): ", idPost);
+    var instrucao = `SELECT  postagem.idPost, postagem.post, postagem.likes, postagem.dtHora, usuario.username FROM postagem JOIN usuario ON postagem.fkUsuario = usuario.idUsuario where idPost = '${idPost}';`;
+    console.log("Executando a instrução SQL: \n" + instrucao);
+    return database.executar(instrucao);
+}
+
 function publicar(post, idUsuario) {
     console.log("ACESSEI O AVISO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function publicar(): ", post, idUsuario);
     var instrucao = `
         INSERT INTO postagem (post, likes, dthora, fkUsuario) VALUES ('${post}', 0, now(), ${idUsuario});
+    `;
+    console.log("Executando a instrução SQL: \n" + instrucao);
+    return database.executar(instrucao);
+}
+
+function publicarComentario(post, idUsuario, fkPost) {
+    console.log("ACESSEI O AVISO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function publicar(): ", post, idUsuario, fkPost);
+    var instrucao = `
+        INSERT INTO postagem (post, likes, dthora, fkPost, fkUsuario) VALUES ('${post}', 0, now(), '${fkPost}', ${idUsuario});
     `;
     console.log("Executando a instrução SQL: \n" + instrucao);
     return database.executar(instrucao);
@@ -94,7 +119,10 @@ function deletar(idAviso) {
 module.exports = {
     listar,
     listarPorUsuario,
+    listarPorPost,
+    pegarPost,
     pesquisarDescricao,
+    publicarComentario,
     publicar,
     editar,
     deletar

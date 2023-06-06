@@ -307,6 +307,7 @@ iframe{
 .box-wearmy{
     display: flex;
     flex-direction: column;
+    margin-right: 3%;
 }
 .box-wearmy h1{
     display: flex;
@@ -622,4 +623,19 @@ iframe{
 ion-icon {
     color: blue;
     stroke: red;
+  }
+
+  .lista-album{
+    margin-top: 0;
+    margin-left: 4%;
+  }
+
+  #texto-discografia h3{
+    color: #3F2D6F;
+    margin: 0;
+    margin-bottom: 2%;
+  }
+
+  #texto-discografia b{
+    color: #3F2D6F;
   }

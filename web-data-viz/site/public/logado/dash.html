@@ -26,14 +26,14 @@
                     <li id="opcao_nav"><a href="home.html">home</a></li>
                     <li id="opcao_nav">perfil</li>
                     <li id="opcao_nav"><a href="quizdash.html">quizz</a></li>
-                    <li id="opcao_nav"><a href="">dashboard</a></li>
+                    <li id="opcao_nav"><a href="dash.html">dashboard</a></li>
                     <li id="opcao_nav" onclick="logout()">logout</li>
                 </ul>
             </div>
         </div>
         <div class="feed-graphs">
             <div id="graph" class="quizzes">
-                Pontuação dos Usuarios por Quizz
+                <h2>Pontuação dos Usuarios por Quizz</h2>
                 <div class="linha-quizz" id="linha-1">
                     <div class="grafico">
                         <h3 class="quizz">
@@ -178,8 +178,8 @@
         // Inserindo valores recebidos em estrutura para plotar o gráfico
         for (i = 0; i < resposta.length; i++) {
             var registro = resposta[i];
-            console.log(registro)
-            console.log(registro.pontos);
+            // console.log(registro)
+            // console.log(registro.pontos);
             labels.push(registro.username);
             dado.datasets[0].data.push(registro.pontos);
             // // labels.push(registro.fkUsuario);

@@ -85,7 +85,7 @@ a{
         flex-direction: column;
         padding: 2vb;
         background-color: #DFDEDE;
-        width: 75%;
+        width: 87.97%;;
         height: fit-content;
         align-items: center;
     }
@@ -101,6 +101,14 @@ a{
         color: #3F2D6F;
         font-weight: 900;
     }
+    #comentario{
+        width: 87.97%;
+        height: 100%;
+    }
+    #comentario h3{
+        color: #3F2D6F;
+    }
+
     .feedPostagems{
         width: 80%;
         height: auto;
@@ -128,22 +136,12 @@ a{
         padding: 2%;
     }
     .post span{
-        font-size: larger;
+        font-size: large;
         font-weight: 600;
     }
     .post ion-icon{
         color: #3F2D6F;
     }
-
-
-    /* KPIS DINAMICAS */
-    
- .kpi-home{
-        display: flex;
-        flex-direction: column;
-        background-color: blueviolet;
-        height: 100%;
-    } 
 
     /* DASH DE QUIZZ */
     .dash-quizz {
@@ -445,10 +443,18 @@ a{
         .quizz-foto input{
             margin-left: 20px;
         }
+
+        #final_foto{
+                align-self: center;
+                width: 40vw;
+                height: 15vw;
+                margin-bottom: 2%;
+        }
+        
         /* DASHBOARD */
-    .feed-graphs {
-        position: relative;
-        left: -9%;
+        .feed-graphs {
+            position: relative;
+        left: 11%;
         display: flex;
         flex-direction: column;
         padding: 2vb;
@@ -457,11 +463,15 @@ a{
         height: 96vh;
         align-items: center;
     }
+    .feed-graphs h2{
+        color: #3f2d6f;
+        margin-left: 9%;
+    }
 
     .linha-quizz{
         display: flex;
         flex-direction: row;
-        width: 50vw;
+        width: 70vw;
         justify-content: space-around;
     }
     .grafico{
@@ -470,9 +480,10 @@ a{
     }
     canvas{
         background-color: #DED6D3;
-        color: rgb(179, 126, 181);
-        color: rgb(207, 197, 193);
-        color: rgb(63, 45, 111);
+        width: 30vw;
+        /* color: rgb(179, 126, 181); */
+        /* color: rgb(207, 197, 193); */
+        /* color: rgb(63, 45, 111); */
     }
     .quizzes{
         display: flex;

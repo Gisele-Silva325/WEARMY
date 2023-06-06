@@ -25,7 +25,7 @@
                     <li id="opcao_nav"><a href="home.html">home</a></li>
                     <li id="opcao_nav">perfil</li>
                     <li id="opcao_nav"><a href="quizdash.html">quizz</a></li>
-                    <li id="opcao_nav"><a href="">dashboard</a></li>
+                    <li id="opcao_nav"><a href="dash.html">dashboard</a></li>
                     <li id="opcao_nav" onclick="logout()">logout</li>
                 </ul>
             </div>
@@ -55,8 +55,8 @@
                     <h4>Você acertou <span id="num_acertos">0</span> de 118</h4>
                 </div>
                 <span class="botoes">
-                    <button onclick="salvar()">Salvar resultado</button>
                     <button onclick="refazer()">Tentar Novamente</button>
+                    <button onclick="salvar()">Salvar resultado</button>
                 </span>
             </div>
         </div>
@@ -69,7 +69,7 @@
     tela_final.style.display = 'none';
     var answer = ["Save Me", "Fire", "Not Today", "War of Hormone", "Idol", "DNA", "I Need U", "Fire", "Danger", "21st Century Girl", "Mic Drop", "Fake Love", "Blood Sweat \u0026 Tears", "Blood Sweat and Tears", "Blood Sweat Tears", "No More Dream", "Magic Shop", "Just One Day", "Dimple", "Waste It On Me", "Euphoria", "Trivia: Just Dance", "Just Dance", "Serendipity", "Her", "The Truth Untold", "Trivia: Love", "Love", "Trivia: Seesaw", "Seesaw", "Tear", "Answer: Love Myself", "Love Myself", "Best Of Me", "Airplane pt. 2", "airplane part 2", "Anpanman", "Go Go", "Run", "Dope", "Miss Right", "Coffee", "Boy In Luv", "Butterfly", "We Are Bulletproof Pt. 2", "I Like It", "I Like It Pt. 2", "Like", "N.O", "NO", "N.O.", "We On", "If I Ruled the World", "BTS Cypher Pt.1", "Cypher Pt.1", "Cypher 1", "Attack on Bangtan", "Attack on BTS", "Paldogangsan", "Satoori Rap", "Tomorrow", "Spine Breaker", "Where Did You Come From?", "Where You From", "Jump", "Converse High", "Ma City", "Autumn Leaves", "Dead Leaves", "Whalien 52", "Silver Spoon", "Baepsae", "Hold Me Tight", "Boyz with Fun", "Moving On", "Hip Hop Phile", "Hip Hop Lover", "Let Me Know", "Cypher Pt. 2: Triptych", "Cypher Pt. 2", "BTS Cypher 2", "Cypher Pt. 3: Killer", "Cypher Pt. 3", "BTS Cypher 3", "Rain", "Could You Turn Off Your Cell Phone", "Embarrassed", "24/7=Heaven", "24/7 Heaven", "2nd Grade", "Second Grade", "Look Here", "Begin", "Lie", "Stigma", "First Love", "Reflection", "MAMA", "Awake", "Lost", "BTS Cypher Pt. 4", "Cypher Pt. 4", "Cypher 4", "BTS Cypher 4", "Am I Wrong", "2! 3!", "A Supplementary Story: You Never Walk Alone", "You Never Walk Alone", "Pied Piper", "Paradise", "134340", "Love Maze", "I\u0027m Fine", "Epiphany", "Epilogue: Young Forever", "Young Forever", "Sea", "Blanket Kick"]
     var listaAcerto = []
-    var pontuacao = 0
+    var pontos = 0
 
     function listagemMusica() {
         var respostaUser = musica.value
@@ -79,7 +79,7 @@
                 musica.value = ``
             } else {
                 listaAcerto.push(respostaUser)
-                pontuacao++
+                pontos++
                 acertos_lista.innerHTML += `${respostaUser} | `
                 acertos_lista_final.innerHTML += `${respostaUser} | `
                 musica.value = ``
@@ -134,21 +134,25 @@
         document.getElementById("musica").placeholder = 'Clique em Começar para poder inicializar o jogo ';
         listagem.style.display = 'none';
         tela_final.style.display = 'flex';
-        num_acertos.innerHTML = pontuacao;
+        num_acertos.innerHTML = pontos;
         clearInterval(interval);
         listaAcerto = []
     }
     
     function refazer() {
+        zerar()
         listagem.style.display = 'flex';
         tela_final.style.display = 'none';
-        pontuacao = 0;
-        listaAcerto = []
         acertos_lista.innerHTML = ``
         acertos_lista_final.innerHTML = ``
         minutos_contador.innerHTML = '3'
         segundos_contador.innerHTML = '00'
-
+        
+    }
+    
+    function zerar(){
+        pontos = 0;
+        listaAcerto = []
     }
 
     function salvar() {
@@ -161,7 +165,7 @@
             body: JSON.stringify({
                 // crie um atributo que recebe o valor recuperado aqui
                 // Agora vá para o arquivo routes/usuario.js
-                pontosServer: pontuacao,
+                pontosServer: pontos,
                 usernameServer: usernameVar
             })
         }).then(function (resposta) {
@@ -169,11 +173,11 @@
             console.log("resposta: ", resposta);
 
             if (resposta.ok) {
-                alert(`Foi registrada a pontuação de ${pontuacao}`);
-                finalizarAguardar();
-                refazer();
+                alert(`Foi registrado o resultado de ${pontos} pontos`);
+                // finalizarAguardar();
+                zerar();
                 setTimeout(() => {
-                    window.location = "logado/quizdash.html";
+                    window.location = "quizdash.html";
                 }, "2000")
 
                 finalizarAguardar();
